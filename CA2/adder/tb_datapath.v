@@ -1,4 +1,3 @@
-
 `timescale 1ns / 1ps
 
 module tb_datapath;
@@ -28,7 +27,6 @@ module tb_datapath;
             b = val_b;
 
             #20;
-
             test_count = test_count + 1;
 
             if (out === expected) begin
@@ -58,61 +56,93 @@ module tb_datapath;
         b = 16'h0000;
 
         $display("==============================================");
-        $display("       FP16 ADDER TEST - MODELSIM 2020");
+        $display("          FP16 ADDER TESTBENCH");
         $display("==============================================");
 
-        // Zero and identity
+        // 1. Zero inputs
         run_test(16'h0000, 16'h0000, 16'h0000,
                  "Zero + Zero");
 
+        // 2. One valid input and one zero input
         run_test(16'h4600, 16'h0000, 16'h4600,
-                 "Normal + Zero");
+                 "Positive + Zero");
 
-        // Equal positive operands
+        run_test(16'h0000, 16'h4600, 16'h4600,
+                 "Zero + Positive");
+
+        // 3. Addition of equal positive operands
         run_test(16'h3E00, 16'h3E00, 16'h4200,
                  "Positive + Positive");
 
-        // Equal negative operands
+        // 4. Addition of equal negative operands
         run_test(16'hBE00, 16'hBE00, 16'hC200,
                  "Negative + Negative");
 
-        // Exact cancellation
+        // 5. Exact cancellation
         run_test(16'h3E00, 16'hBE00, 16'h0000,
                  "Positive + Negative");
 
         run_test(16'hBE00, 16'h3E00, 16'h0000,
                  "Negative + Positive");
 
-        // Different exponents
-        run_test(16'h4000, 16'h3E00, 16'h4100,
+        // 6. Negative result from subtraction
+        // 1.5 + (-3.0) = -1.5
+        run_test(16'h3E00, 16'hC200, 16'hBE00,
+                 "Negative Subtraction Result");
+
+        run_test(16'hC200, 16'h3E00, 16'hBE00,
+                 "Negative Result - Swapped Inputs");
+
+        // 7. Different exponents
+        // 1.75 + 1.125 = 2.875
+        run_test(16'h3F00, 16'h3C80, 16'h41C0,
                  "Different Exponents");
 
-        // Carry and normalization
-        run_test(16'h3E00, 16'h3E00, 16'h4200,
-                 "Carry Normalization");
+        run_test(16'h3C80, 16'h3F00, 16'h41C0,
+                 "Different Exponents - Swapped Inputs");
 
-        // Input order / swapping
-        run_test(16'h4000, 16'h3E00, 16'h4100,
-                 "A Larger");
+        // 8. Negative addition with different exponents
+        // -1.75 + (-1.125) = -2.875
+        run_test(16'hBF00, 16'hBC80, 16'hC1C0,
+                 "Negative Different Exponents");
 
-        run_test(16'h3E00, 16'h4000, 16'h4100,
-                 "B Larger");
+        // 9. Subtraction with a positive result
+        // 1.75 - 1.5 = 0.25
+        run_test(16'h3F00, 16'hBE00, 16'h3400,
+                 "Positive Subtraction Result");
 
-        // Subnormal flush-to-zero, according to project rules
-        run_test(16'h0401, 16'h0000, 16'h0000,
-                 "Subnormal Input + Zero");
+        // 10. Exponent and fraction special cases
+        // Under the project rules, exponent=0 means zero.
+        run_test(16'h0001, 16'h3E00, 16'h3E00,
+                 "Subnormal Input Treated As Zero");
 
-        // Print summary
+        run_test(16'h3E00, 16'h0001, 16'h3E00,
+                 "Subnormal Input In Second Operand");
+
+        // 0401 has exponent=1 and nonzero fraction,
+        // so it is not subnormal.
+        run_test(16'h0401, 16'h0000, 16'h0401,
+                 "Smallest Exponent - Valid Input");
+
+        // Under the project rule, a zero fraction
+        // makes the entire input zero.
+        run_test(16'h4000, 16'h3E00, 16'h3E00,
+                 "Zero Fraction In First Operand");
+
+        run_test(16'h3E00, 16'h4000, 16'h3E00,
+                 "Zero Fraction In Second Operand");
+
+        // 11. Summary
         $display("");
         $display("==============================================");
-        $display("                 FINAL REPORT");
+        $display("                FINAL REPORT");
         $display("==============================================");
         $display("Total tests : %0d", test_count);
         $display("Passed      : %0d", pass_count);
         $display("Failed      : %0d", fail_count);
 
         if (fail_count == 0)
-            $display("RESULT: ALL DIRECTED TESTS PASSED");
+            $display("RESULT: ALL TESTS PASSED");
         else
             $display("RESULT: FAILURES DETECTED");
 

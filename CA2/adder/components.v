@@ -65,18 +65,19 @@ module Comparator_15_bit (
     output wire        out
 );
     wire [14:0] c;
-    c2 u_comp_0 (
-        .D00(1'b0), .D01(1'b1), .D10(1'b0), .D11(1'b0),
-        .A1(a[0]),  .B1(a[0]),  .A0(b[0]),  .B0(b[0]),
-        .out(c[0])
+    c1 u_comp_0 (
+        .A0(b[0]), .A1(1'b0), .SA(a[0]),
+        .B0(1'b0), .B1(1'b0), .SB(1'b0),
+        .S0(1'b0), .S1(1'b0), .f(c[0])
     );
     genvar i;
     generate
         for (i = 1; i < 15; i = i + 1) begin : gen_comp
-            c2 u_comp_i (
-                .D00(c[i-1]), .D01(1'b1), .D10(1'b0), .D11(c[i-1]),
-                .A1(a[i]),    .B1(a[i]),  .A0(b[i]),  .B0(b[i]),
-                .out(c[i])
+            // If a[i] != b[i], this bit decides a < b; otherwise keep c[i-1].
+            c1 u_comp_i (
+                .A0(c[i-1]), .A1(1'b1), .SA(b[i]),
+                .B0(1'b0),   .B1(c[i-1]), .SB(b[i]),
+                .S0(a[i]),   .S1(1'b0), .f(c[i])
             );
         end
     endgenerate
@@ -96,6 +97,30 @@ module Sub_5_bit (
     full_adder_b_invert u_sub3 (.a(a[3]), .b(b[3]), .c(c[2]), .Sum(d[3]), .Co(c[3]));
     full_adder_b_invert u_sub4 (.a(a[4]), .b(b[4]), .c(c[3]), .Sum(d[4]), .Co(c[4]));
     assign Co = c[4];
+endmodule
+
+module Sub_exp_pe_5_bit (
+    input  wire [4:0] a,
+    input  wire [3:0] b,
+    output wire [4:0] d,
+    output wire       Co
+);
+    wire [3:0] c;
+    full_adder_b_invert u_sub0 (.a(a[0]), .b(b[0]), .c(1'b1), .Sum(d[0]), .Co(c[0]));
+    full_adder_b_invert u_sub1 (.a(a[1]), .b(b[1]), .c(c[0]), .Sum(d[1]), .Co(c[1]));
+    full_adder_b_invert u_sub2 (.a(a[2]), .b(b[2]), .c(c[1]), .Sum(d[2]), .Co(c[2]));
+    full_adder_b_invert u_sub3 (.a(a[3]), .b(b[3]), .c(c[2]), .Sum(d[3]), .Co(c[3]));
+
+    // b[4] is known to be zero, so the top subtraction stage simplifies.
+    c2 u_diff4 (
+        .D00(1'b1), .D01(1'b0), .D10(1'b0), .D11(1'b1),
+        .A1(a[4]), .B1(a[4]), .A0(c[3]), .B0(c[3]), .out(d[4])
+    );
+    c1 u_carry4 (
+        .A0(a[4]), .A1(1'b1), .SA(c[3]),
+        .B0(1'b0), .B1(1'b0), .SB(1'b0),
+        .S0(1'b0), .S1(1'b0), .f(Co)
+    );
 endmodule
 
 module Adder_11_bit (
@@ -172,38 +197,66 @@ module Shift_right_11_bit (
     endgenerate
 endmodule
 
-module Shift_left_11_bit (
-    input  wire [10:0] in,
-    input  wire [3:0]  d,
-    output wire [10:0] out
+module Shift_left_10_bit (
+    input  wire [9:0] in,
+    input  wire [3:0] d,
+    output wire [9:0] out
 );
-    wire [10:0] s0, s1, s2;
+    wire [9:0] s0, s1, s2;
     genvar i;
     generate
-        MUX_2_to_1_1bit u_m0_0 (.i0(in[0]), .i1(1'b0), .Sel(d[0]), .out(s0[0]));
-        for (i = 1; i < 11; i = i + 1) begin : sl0
-            MUX_2_to_1_1bit u_m (.i0(in[i]), .i1(in[i-1]), .Sel(d[0]), .out(s0[i]));
+        for (i = 0; i < 10; i = i + 1) begin : sl0
+            if (i == 0) begin : sl0_zero
+                MUX_2_to_1_1bit u_m (.i0(in[i]), .i1(1'b0), .Sel(d[0]), .out(s0[i]));
+            end else begin : sl0_shift
+                MUX_2_to_1_1bit u_m (.i0(in[i]), .i1(in[i-1]), .Sel(d[0]), .out(s0[i]));
+            end
         end
+        for (i = 0; i < 10; i = i + 1) begin : sl1
+            if (i < 2) begin : sl1_zero
+                MUX_2_to_1_1bit u_m (.i0(s0[i]), .i1(1'b0), .Sel(d[1]), .out(s1[i]));
+            end else begin : sl1_shift
+                MUX_2_to_1_1bit u_m (.i0(s0[i]), .i1(s0[i-2]), .Sel(d[1]), .out(s1[i]));
+            end
+        end
+        for (i = 0; i < 10; i = i + 1) begin : sl2
+            if (i < 4) begin : sl2_zero
+                MUX_2_to_1_1bit u_m (.i0(s1[i]), .i1(1'b0), .Sel(d[2]), .out(s2[i]));
+            end else begin : sl2_shift
+                MUX_2_to_1_1bit u_m (.i0(s1[i]), .i1(s1[i-4]), .Sel(d[2]), .out(s2[i]));
+            end
+        end
+        for (i = 0; i < 10; i = i + 1) begin : sl3
+            if (i < 8) begin : sl3_zero
+                MUX_2_to_1_1bit u_m (.i0(s2[i]), .i1(1'b0), .Sel(d[3]), .out(out[i]));
+            end else begin : sl3_shift
+                MUX_2_to_1_1bit u_m (.i0(s2[i]), .i1(s2[i-8]), .Sel(d[3]), .out(out[i]));
+            end
+        end
+    endgenerate
+endmodule
 
-        for (i = 0; i < 2; i = i + 1) begin : sl1_z
-            MUX_2_to_1_1bit u_m (.i0(s0[i]), .i1(1'b0), .Sel(d[1]), .out(s1[i]));
-        end
-        for (i = 2; i < 11; i = i + 1) begin : sl1
-            MUX_2_to_1_1bit u_m (.i0(s0[i]), .i1(s0[i-2]), .Sel(d[1]), .out(s1[i]));
-        end
-
-        for (i = 0; i < 4; i = i + 1) begin : sl2_z
-            MUX_2_to_1_1bit u_m (.i0(s1[i]), .i1(1'b0), .Sel(d[2]), .out(s2[i]));
-        end
-        for (i = 4; i < 11; i = i + 1) begin : sl2
-            MUX_2_to_1_1bit u_m (.i0(s1[i]), .i1(s1[i-4]), .Sel(d[2]), .out(s2[i]));
-        end
-
-        for (i = 0; i < 8; i = i + 1) begin : sl3_z
-            MUX_2_to_1_1bit u_m (.i0(s2[i]), .i1(1'b0), .Sel(d[3]), .out(out[i]));
-        end
-        for (i = 8; i < 11; i = i + 1) begin : sl3
-            MUX_2_to_1_1bit u_m (.i0(s2[i]), .i1(s2[i-8]), .Sel(d[3]), .out(out[i]));
+module Increment_5_bit (
+    input  wire [4:0] a,
+    input  wire       Cin,
+    output wire [4:0] out
+);
+    wire [3:0] carry;
+    a_xor_b u_xor0 (.a(a[0]), .b(Cin), .out(out[0]));
+    c2 u_and0 (
+        .D00(1'b0), .D01(1'b0), .D10(1'b0), .D11(1'b1),
+        .A1(a[0]), .B1(a[0]), .A0(Cin), .B0(Cin), .out(carry[0])
+    );
+    genvar j;
+    generate
+        for (j = 1; j < 5; j = j + 1) begin : gen_increment
+            a_xor_b u_xor (.a(a[j]), .b(carry[j-1]), .out(out[j]));
+            if (j < 4) begin : gen_carry
+                c2 u_and (
+                    .D00(1'b0), .D01(1'b0), .D10(1'b0), .D11(1'b1),
+                    .A1(a[j]), .B1(a[j]), .A0(carry[j-1]), .B0(carry[j-1]), .out(carry[j])
+                );
+            end
         end
     endgenerate
 endmodule

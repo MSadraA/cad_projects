@@ -9,36 +9,45 @@ module Data_path (
     output wire [15:0] out
 );
     wire        A_valid_raw, B_valid_raw;
-    wire [15:0] a_clean, b_clean;
 
     Zero_detector u_zd_a (.in(a), .valid(A_valid_raw));
     Zero_detector u_zd_b (.in(b), .valid(B_valid_raw));
 
-    MUX_2_to_1_16bit u_mux_in_a (.a(16'b0000_0000_0000_0000), .b(a), .Sel(A_valid_raw), .out(a_clean));
-    MUX_2_to_1_16bit u_mux_in_b (.a(16'b0000_0000_0000_0000), .b(b), .Sel(B_valid_raw), .out(b_clean));
-
+    wire        comp_raw;
     wire        comp_out;
     wire [15:0] A_num, B_num;
 
+    // Compare the raw magnitudes, then account for operands treated as zero.
     Comparator_15_bit u_comp (
-        .a(a_clean[14:0]),
-        .b(b_clean[14:0]),
-        .out(comp_out)
+        .a(a[14:0]),
+        .b(b[14:0]),
+        .out(comp_raw)
     );
 
-    MUX_2_to_1_16bit u_mux_swap_top (
-        .a(a_clean),
-        .b(b_clean),
-        .Sel(comp_out),
-        .out(A_num)
+    // comp_out = B_valid && (!A_valid || comp_raw)
+    c1 u_comp_valid (
+        .A0(1'b0), .A1(1'b0), .SA(1'b0),
+        .B0(1'b1), .B1(comp_raw), .SB(A_valid_raw),
+        .S0(B_valid_raw), .S1(1'b0),
+        .f(comp_out)
     );
 
-    MUX_2_to_1_16bit u_mux_swap_bot (
-        .a(b_clean),
-        .b(a_clean),
-        .Sel(comp_out),
-        .out(B_num)
-    );
+    // Combine input-zeroing and operand swapping in a single C1 per output bit.
+    genvar mux_i;
+    generate
+        for (mux_i = 0; mux_i < 16; mux_i = mux_i + 1) begin : gen_valid_swap
+            c1 u_mux_A_num (
+                .A0(1'b0), .A1(a[mux_i]), .SA(A_valid_raw),
+                .B0(1'b0), .B1(b[mux_i]), .SB(B_valid_raw),
+                .S0(comp_out), .S1(1'b0), .f(A_num[mux_i])
+            );
+            c1 u_mux_B_num (
+                .A0(1'b0), .A1(b[mux_i]), .SA(B_valid_raw),
+                .B0(1'b0), .B1(a[mux_i]), .SB(A_valid_raw),
+                .S0(comp_out), .S1(1'b0), .f(B_num[mux_i])
+            );
+        end
+    endgenerate
 
     wire Avalid, Bvalid;
     MUX_2_to_1_1bit u_mux_avalid (.i0(A_valid_raw), .i1(B_valid_raw), .Sel(comp_out), .out(Avalid));
@@ -108,7 +117,7 @@ module Data_path (
 
     wire [3:0]  pe_out;
     wire        mant_nonzero;
-    wire [10:0] shift_left_out;
+    wire [9:0] shift_left_out;
 
     Priority_encoder u_pe (
         .in(adder_out),
@@ -116,47 +125,28 @@ module Data_path (
         .valid_any(mant_nonzero)
     );
 
-    Shift_left_11_bit u_shift_left (
-        .in(adder_out),
+    Shift_left_10_bit u_shift_left (
+        .in(adder_out[9:0]),
         .d(pe_out),
         .out(shift_left_out)
     );
 
-    wire [9:0] final_frac;
-    MUX_2_to_1_10bit u_mux_frac (
-        .a(shift_left_out[9:0]),
-        .b(adder_out[10:1]),
-        .Sel(real_overflow_co),
-        .out(final_frac)
-    );
-
     wire [4:0] exp_add_out;
-    wire       exp_add_co_unused;
 
-    Adder_5_bit u_exp_adder (
+    Increment_5_bit u_exp_increment (
         .a(Aexp),
-        .b(5'b00000),
         .Cin(real_overflow_co),
-        .out(exp_add_out),
-        .Co(exp_add_co_unused)
+        .out(exp_add_out)
     );
 
     wire [4:0] exp_sub_out;
     wire       exp_sub_Co;
 
-    Sub_5_bit u_exp_sub (
+    Sub_exp_pe_5_bit u_exp_sub (
         .a(Aexp),
-        .b({1'b0, pe_out}),
+        .b(pe_out),
         .d(exp_sub_out),
         .Co(exp_sub_Co)
-    );
-
-    wire [4:0] final_exp;
-    MUX_2_to_1_5bit u_mux_exp (
-        .a(exp_sub_out),
-        .b(exp_add_out),
-        .Sel(real_overflow_co),
-        .out(final_exp)
     );
 
     wire sub_path_valid;
@@ -175,13 +165,27 @@ module Data_path (
         .out(valid_out_sel)
     );
 
-    wire [15:0] pre_out = {Asign, final_exp, final_frac};
+    // Merge branch selection and output-valid gating into one C1 per bit.
+    genvar out_i;
+    generate
+        for (out_i = 0; out_i < 10; out_i = out_i + 1) begin : gen_final_frac
+            c1 u_final_frac (
+                .A0(1'b0), .A1(shift_left_out[out_i]), .SA(valid_out_sel),
+                .B0(1'b0), .B1(adder_out[out_i+1]), .SB(valid_out_sel),
+                .S0(real_overflow_co), .S1(1'b0), .f(out[out_i])
+            );
+        end
+        for (out_i = 0; out_i < 5; out_i = out_i + 1) begin : gen_final_exp
+            c1 u_final_exp (
+                .A0(1'b0), .A1(exp_sub_out[out_i]), .SA(valid_out_sel),
+                .B0(1'b0), .B1(exp_add_out[out_i]), .SB(valid_out_sel),
+                .S0(real_overflow_co), .S1(1'b0), .f(out[out_i+10])
+            );
+        end
+    endgenerate
 
-    MUX_2_to_1_16bit u_mux_out (
-        .a(16'b0000_0000_0000_0000),
-        .b(pre_out),
-        .Sel(valid_out_sel),
-        .out(out)
+    MUX_2_to_1_1bit u_final_sign (
+        .i0(1'b0), .i1(Asign), .Sel(valid_out_sel), .out(out[15])
     );
 
 endmodule
