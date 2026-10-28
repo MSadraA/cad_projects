@@ -1,0 +1,1846 @@
+{
+  "modules": {
+    "fcnn_accumulator_bank": {
+      "file": "rtl/fcnn_accumulator_bank.v",
+      "parameters": [
+        "N_HIDDEN",
+        "N_OUTPUTS"
+      ],
+      "parameter_defaults": {
+        "N_HIDDEN": "8",
+        "N_OUTPUTS": "10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rst": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "run_init": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "layer_sel": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "product_valid": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "product_ready": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "product_data": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "product_dest": {
+          "direction": "input",
+          "width": "[DEST_W-1:0]"
+        },
+        "product_last": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "bias_neuron": {
+          "direction": "output",
+          "width": "[H_W-1:0]"
+        },
+        "fc1_bias": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "fc2_biases": {
+          "direction": "input",
+          "width": "[16*N_OUTPUTS-1:0]"
+        },
+        "add_a": {
+          "direction": "output",
+          "width": "[15:0]"
+        },
+        "add_b": {
+          "direction": "output",
+          "width": "[15:0]"
+        },
+        "add_result": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "add_commit": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "fc1_final_valid": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "fc1_final_value": {
+          "direction": "output",
+          "width": "[15:0]"
+        },
+        "fc1_final_idx": {
+          "direction": "output",
+          "width": "[H_W-1:0]"
+        },
+        "fc2_all_committed": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "fc2_results": {
+          "direction": "output",
+          "width": "[16*N_OUTPUTS-1:0]"
+        }
+      },
+      "port_style": "non_ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "one FC1 accumulator and N_OUTPUTS FC2 accumulators, initially zero."
+        },
+        {
+          "number": 2,
+          "description": "the SAME adder handles products and, one edge later, final bias."
+        },
+        {
+          "number": 3,
+          "description": "look ahead at the final bias commit, including its live result."
+        },
+        {
+          "number": 4,
+          "description": "finalize each neuron only after its separate final bias operation."
+        }
+      ],
+      "clocked_blocks": 1,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    },
+    "fcnn_activation_regfile": {
+      "file": "rtl/fcnn_activation_regfile.v",
+      "parameters": [
+        "N_HIDDEN",
+        "N_OUTPUTS"
+      ],
+      "parameter_defaults": {
+        "N_HIDDEN": "8",
+        "N_OUTPUTS": "10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rst": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "run_init": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "hidden_wr_en": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "hidden_wr_idx": {
+          "direction": "input",
+          "width": "[H_W-1:0]"
+        },
+        "hidden_wr_data": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "hidden_rd_idx": {
+          "direction": "input",
+          "width": "[H_W-1:0]"
+        },
+        "hidden_rd_data": {
+          "direction": "output",
+          "width": "[15:0]"
+        },
+        "hidden_all_valid": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "final_wr_en": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "final_wr_data": {
+          "direction": "input",
+          "width": "[16*N_OUTPUTS-1:0]"
+        },
+        "final_ready": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "logits": {
+          "direction": "output",
+          "width": "[16*N_OUTPUTS-1:0]"
+        }
+      },
+      "port_style": "non_ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "reuse one RF; no duplicate hidden/output storage array."
+        },
+        {
+          "number": 2,
+          "description": "validity clears for each run; reset also clears RF payload."
+        },
+        {
+          "number": 3,
+          "description": "asynchronous read and parallel packed logits, index zero in LSBs."
+        }
+      ],
+      "clocked_blocks": 1,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    },
+    "fcnn_address_generator": {
+      "file": "rtl/fcnn_address_generator.v",
+      "parameters": [
+        "N_INPUTS",
+        "N_HIDDEN",
+        "N_OUTPUTS",
+        "LANES"
+      ],
+      "parameter_defaults": {
+        "N_INPUTS": "784",
+        "N_HIDDEN": "8",
+        "N_OUTPUTS": "10",
+        "LANES": "7"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rst": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "run_init": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "request_layer": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "advance_row": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "fc1_neuron": {
+          "direction": "output",
+          "width": "[H_W-1:0]"
+        },
+        "fc1_row": {
+          "direction": "output",
+          "width": "[R1_W-1:0]"
+        },
+        "fc2_row": {
+          "direction": "output",
+          "width": "[R2_W-1:0]"
+        },
+        "weight_addr": {
+          "direction": "output",
+          "width": "[ADDR_W-1:0]"
+        },
+        "input_addr": {
+          "direction": "output",
+          "width": "[R1_W-1:0]"
+        },
+        "weight_meta": {
+          "direction": "output",
+          "width": "[META_W-1:0]"
+        },
+        "input_meta": {
+          "direction": "output",
+          "width": "[META_W-1:0]"
+        }
+      },
+      "port_style": "non_ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "one owner for request progress; Scheduler reads these counters."
+        },
+        {
+          "number": 2,
+          "description": "advance exactly once per accepted request."
+        },
+        {
+          "number": 3,
+          "description": "physical row addresses. Metadata = {layer, hidden_neuron, row}."
+        }
+      ],
+      "clocked_blocks": 1,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    },
+    "fcnn_argmax": {
+      "file": "rtl/fcnn_argmax.v",
+      "parameters": [
+        "N_OUTPUTS"
+      ],
+      "parameter_defaults": {
+        "N_OUTPUTS": "10"
+      },
+      "ports": {
+        "logits": {
+          "direction": "input",
+          "width": "[16*N_OUTPUTS-1:0]"
+        },
+        "logits_valid": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "predicted_digit": {
+          "direction": "output",
+          "width": "[INDEX_W-1:0]"
+        },
+        "argmax_valid": {
+          "direction": "output",
+          "width": "1 bit"
+        }
+      },
+      "port_style": "non_ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "balanced tree size; local node wires avoid array feedback warnings."
+        },
+        {
+          "number": 2,
+          "description": "numerical FP16 order; first index wins ties and all-NaN inputs."
+        },
+        {
+          "number": 3,
+          "description": "validity gates prediction until the RF contains final logits."
+        }
+      ],
+      "clocked_blocks": 0,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    },
+    "fcnn_bias_rom": {
+      "file": "rtl/fcnn_bias_rom.v",
+      "parameters": [
+        "N_HIDDEN",
+        "N_OUTPUTS",
+        "FC1_BIAS_FILE",
+        "FC2_BIAS_FILE"
+      ],
+      "parameter_defaults": {
+        "N_HIDDEN": "8",
+        "N_OUTPUTS": "10",
+        "FC1_BIAS_FILE": "\"fc1_bias.mem\"",
+        "FC2_BIAS_FILE": "\"fc2_bias.mem\""
+      },
+      "ports": {
+        "fc1_neuron": {
+          "direction": "input",
+          "width": "[H_W-1:0]"
+        },
+        "fc1_bias": {
+          "direction": "output",
+          "width": "[15:0]"
+        },
+        "fc2_biases": {
+          "direction": "output",
+          "width": "[16*N_OUTPUTS-1:0]"
+        }
+      },
+      "port_style": "non_ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "independent scalar bias ROMs."
+        },
+        {
+          "number": 2,
+          "description": "FC1 is indexed by the backend destination, never request progress."
+        }
+      ],
+      "clocked_blocks": 0,
+      "combinational_blocks": 0,
+      "initial_blocks": 1
+    },
+    "fcnn_controller": {
+      "file": "rtl/fcnn_controller.v",
+      "parameters": [],
+      "parameter_defaults": {},
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rst": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "start": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "fc1_finished": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "fc2_finished": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "run_init": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "fc1_active": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "fc2_active": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "busy": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "done": {
+          "direction": "output",
+          "width": "1 bit"
+        }
+      },
+      "port_style": "ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "the four phases are protocol states, not tunable parameters."
+        },
+        {
+          "number": 2,
+          "description": "synchronous active-high reset."
+        },
+        {
+          "number": 3,
+          "description": "start is accepted only in IDLE; busy starts are ignored."
+        },
+        {
+          "number": 4,
+          "description": "DONE lasts one cycle. A held start is accepted on returning IDLE."
+        }
+      ],
+      "clocked_blocks": 1,
+      "combinational_blocks": 1,
+      "initial_blocks": 0
+    },
+    "fcnn_datapath": {
+      "file": "rtl/fcnn_datapath.v",
+      "parameters": [
+        "N_INPUTS",
+        "N_HIDDEN",
+        "N_OUTPUTS",
+        "LANES",
+        "SRAM_LATENCY",
+        "FC1_WEIGHTS_FILE",
+        "FC2_WEIGHTS_FILE",
+        "INPUT_FILE",
+        "FC1_BIAS_FILE",
+        "FC2_BIAS_FILE"
+      ],
+      "parameter_defaults": {
+        "N_INPUTS": "784",
+        "N_HIDDEN": "8",
+        "N_OUTPUTS": "10",
+        "LANES": "7",
+        "SRAM_LATENCY": "7",
+        "FC1_WEIGHTS_FILE": "\"fc1_weights.mem\"",
+        "FC2_WEIGHTS_FILE": "\"fc2_weights.mem\"",
+        "INPUT_FILE": "\"test_image.mem\"",
+        "FC1_BIAS_FILE": "\"fc1_bias.mem\"",
+        "FC2_BIAS_FILE": "\"fc2_bias.mem\""
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rst": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "run_init": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "fc1_active": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "fc2_active": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "fc1_finished": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "fc2_finished": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "logits": {
+          "direction": "output",
+          "width": "[16*N_OUTPUTS-1:0]"
+        },
+        "predicted_digit": {
+          "direction": "output",
+          "width": "[INDEX_W-1:0]"
+        }
+      },
+      "port_style": "non_ansi",
+      "instances": [
+        {
+          "module": "fcnn_address_generator",
+          "name": "address_inst",
+          "parameters": {
+            "N_INPUTS": "N_INPUTS",
+            "N_HIDDEN": "N_HIDDEN",
+            "N_OUTPUTS": "N_OUTPUTS",
+            "LANES": "LANES"
+          },
+          "ports": {
+            "clk": "clk",
+            "rst": "rst",
+            "run_init": "run_init",
+            "request_layer": "request_layer",
+            "advance_row": "weight_req",
+            "fc1_neuron": "request_neuron",
+            "fc1_row": "request_fc1_row",
+            "fc2_row": "request_fc2_row",
+            "weight_addr": "weight_addr",
+            "input_addr": "input_addr",
+            "weight_meta": "weight_request_meta",
+            "input_meta": "input_request_meta"
+          }
+        },
+        {
+          "module": "fcnn_row_sram",
+          "name": "weight_sram_inst",
+          "parameters": {
+            "N_INPUTS": "N_INPUTS",
+            "N_HIDDEN": "N_HIDDEN",
+            "N_OUTPUTS": "N_OUTPUTS",
+            "LANES": "LANES",
+            "SRAM_LATENCY": "SRAM_LATENCY",
+            "SOURCE_KIND": "1",
+            "INIT_FILE": "FC1_WEIGHTS_FILE",
+            "FC2_WEIGHTS_FILE": "FC2_WEIGHTS_FILE"
+          },
+          "ports": {
+            "clk": "clk",
+            "rst": "pipe_reset",
+            "req_valid": "weight_req",
+            "req_addr": "weight_addr",
+            "req_meta": "weight_request_meta",
+            "row_valid": "weight_sram_valid",
+            "row_data": "weight_sram_data",
+            "row_meta": "weight_sram_meta"
+          }
+        },
+        {
+          "module": "fcnn_row_sram",
+          "name": "input_sram_inst",
+          "parameters": {
+            "N_INPUTS": "N_INPUTS",
+            "N_HIDDEN": "N_HIDDEN",
+            "N_OUTPUTS": "N_OUTPUTS",
+            "LANES": "LANES",
+            "SRAM_LATENCY": "SRAM_LATENCY",
+            "SOURCE_KIND": "0",
+            "INIT_FILE": "INPUT_FILE",
+            "FC2_WEIGHTS_FILE": "FC2_WEIGHTS_FILE"
+          },
+          "ports": {
+            "clk": "clk",
+            "rst": "pipe_reset",
+            "req_valid": "input_req",
+            "req_addr": "input_addr",
+            "req_meta": "input_request_meta",
+            "row_valid": "input_sram_valid",
+            "row_data": "input_sram_data",
+            "row_meta": "input_sram_meta"
+          }
+        },
+        {
+          "module": "fcnn_row_stage",
+          "name": "weight_stage_inst",
+          "parameters": {
+            "LANES": "LANES",
+            "META_W": "META_W"
+          },
+          "ports": {
+            "clk": "clk",
+            "rst": "pipe_reset",
+            "in_valid": "weight_sram_valid",
+            "in_data": "weight_sram_data",
+            "in_meta": "weight_sram_meta",
+            "consume_row": "consume_weight_row",
+            "can_accept": "",
+            "stored_valid": "weight_available",
+            "stored_data": "weight_stage_data",
+            "stored_meta": "weight_stage_meta"
+          }
+        },
+        {
+          "module": "fcnn_row_stage",
+          "name": "input_stage_inst",
+          "parameters": {
+            "LANES": "LANES",
+            "META_W": "META_W"
+          },
+          "ports": {
+            "clk": "clk",
+            "rst": "pipe_reset",
+            "in_valid": "input_sram_valid",
+            "in_data": "input_sram_data",
+            "in_meta": "input_sram_meta",
+            "consume_row": "consume_input_row",
+            "can_accept": "",
+            "stored_valid": "input_available",
+            "stored_data": "input_stage_data",
+            "stored_meta": "input_stage_meta"
+          }
+        },
+        {
+          "module": "fcnn_local_scheduler",
+          "name": "scheduler_inst",
+          "parameters": {
+            "N_INPUTS": "N_INPUTS",
+            "N_HIDDEN": "N_HIDDEN",
+            "N_OUTPUTS": "N_OUTPUTS",
+            "LANES": "LANES"
+          },
+          "ports": {
+            "clk": "clk",
+            "rst": "rst",
+            "run_init": "run_init",
+            "fc1_active": "fc1_active",
+            "fc2_active": "fc2_active",
+            "request_neuron": "request_neuron",
+            "request_fc1_row": "request_fc1_row",
+            "request_fc2_row": "request_fc2_row",
+            "weight_available": "weight_available",
+            "input_available": "input_available",
+            "compute_layer": "compute_layer",
+            "compute_row": "compute_row",
+            "product_ready": "product_ready",
+            "pp_wr_ready": "pp_wr_ready",
+            "term_last": "term_last",
+            "hidden_all_valid": "hidden_all_valid",
+            "activation_last_use": "mul_issue && activation_last_term",
+            "fc2_all_committed": "fc2_all_committed",
+            "final_ready": "final_ready",
+            "argmax_valid": "argmax_valid",
+            "request_layer": "request_layer",
+            "weight_req": "weight_req",
+            "input_req": "input_req",
+            "consume_weight_row": "consume_weight_row",
+            "consume_input_row": "consume_input_row",
+            "lane_idx": "lane_idx",
+            "mul_issue": "mul_issue",
+            "group_last": "group_last",
+            "rf_final_we": "rf_final_we",
+            "fc1_finished": "fc1_finished",
+            "fc2_finished": "fc2_finished"
+          }
+        },
+        {
+          "module": "fcnn_operand_router",
+          "name": "router_inst",
+          "parameters": {
+            "N_INPUTS": "N_INPUTS",
+            "N_HIDDEN": "N_HIDDEN",
+            "N_OUTPUTS": "N_OUTPUTS",
+            "LANES": "LANES"
+          },
+          "ports": {
+            "weight_row": "weight_stage_data",
+            "input_row": "input_stage_data",
+            "weight_meta": "weight_stage_meta",
+            "input_meta": "input_stage_meta",
+            "lane_idx": "lane_idx",
+            "hidden_value": "hidden_rd_data",
+            "hidden_rd_idx": "hidden_rd_idx",
+            "mul_weight": "mul_weight",
+            "mul_input": "mul_input",
+            "term_valid": "term_valid",
+            "term_dest": "term_dest",
+            "term_last": "term_last",
+            "activation_last_term": "activation_last_term"
+          }
+        },
+        {
+          "module": "fcnn_fp16_multiplier",
+          "name": "multiplier_inst",
+          "parameters": {},
+          "ports": {
+            "a": "mul_weight",
+            "b": "mul_input",
+            "result": "mul_result"
+          }
+        },
+        {
+          "module": "fcnn_product_register",
+          "name": "product_inst",
+          "parameters": {
+            "DEST_W": "DEST_W"
+          },
+          "ports": {
+            "clk": "clk",
+            "rst": "pipe_reset",
+            "in_valid": "mul_issue && term_valid",
+            "in_ready": "product_ready",
+            "in_data": "mul_result",
+            "in_dest": "term_dest",
+            "in_last": "term_last",
+            "in_group_last": "group_last",
+            "out_valid": "pp_wr_valid",
+            "out_ready": "pp_wr_ready",
+            "out_data": "pp_wr_data",
+            "out_dest": "pp_wr_dest",
+            "out_last": "pp_wr_last",
+            "out_group_last": "pp_wr_group_last"
+          }
+        },
+        {
+          "module": "fcnn_ping_pong_buffer",
+          "name": "ping_pong_inst",
+          "parameters": {
+            "LANES": "LANES",
+            "DEST_W": "DEST_W"
+          },
+          "ports": {
+            "clk": "clk",
+            "rst": "pipe_reset",
+            "wr_valid": "pp_wr_valid",
+            "wr_ready": "pp_wr_ready",
+            "wr_data": "pp_wr_data",
+            "wr_dest": "pp_wr_dest",
+            "wr_last": "pp_wr_last",
+            "wr_group_last": "pp_wr_group_last",
+            "rd_valid": "pp_rd_valid",
+            "rd_ready": "pp_rd_ready",
+            "rd_data": "pp_rd_data",
+            "rd_dest": "pp_rd_dest",
+            "rd_last": "pp_rd_last",
+            "bank_full": "",
+            "bank_empty": "",
+            "bank_select": ""
+          }
+        },
+        {
+          "module": "fcnn_fp16_adder",
+          "name": "adder_inst",
+          "parameters": {},
+          "ports": {
+            "a": "add_a",
+            "b": "add_b",
+            "result": "add_result"
+          }
+        },
+        {
+          "module": "fcnn_bias_rom",
+          "name": "bias_inst",
+          "parameters": {
+            "N_HIDDEN": "N_HIDDEN",
+            "N_OUTPUTS": "N_OUTPUTS",
+            "FC1_BIAS_FILE": "FC1_BIAS_FILE",
+            "FC2_BIAS_FILE": "FC2_BIAS_FILE"
+          },
+          "ports": {
+            "fc1_neuron": "bias_neuron",
+            "fc1_bias": "fc1_bias",
+            "fc2_biases": "fc2_biases"
+          }
+        },
+        {
+          "module": "fcnn_accumulator_bank",
+          "name": "accumulator_inst",
+          "parameters": {
+            "N_HIDDEN": "N_HIDDEN",
+            "N_OUTPUTS": "N_OUTPUTS"
+          },
+          "ports": {
+            "clk": "clk",
+            "rst": "rst",
+            "run_init": "run_init",
+            "layer_sel": "fc2_active",
+            "product_valid": "pp_rd_valid",
+            "product_ready": "pp_rd_ready",
+            "product_data": "pp_rd_data",
+            "product_dest": "pp_rd_dest",
+            "product_last": "pp_rd_last",
+            "bias_neuron": "bias_neuron",
+            "fc1_bias": "fc1_bias",
+            "fc2_biases": "fc2_biases",
+            "add_a": "add_a",
+            "add_b": "add_b",
+            "add_result": "add_result",
+            "add_commit": "add_commit",
+            "fc1_final_valid": "fc1_final_valid",
+            "fc1_final_value": "fc1_final_value",
+            "fc1_final_idx": "fc1_final_idx",
+            "fc2_all_committed": "fc2_all_committed",
+            "fc2_results": "fc2_results"
+          }
+        },
+        {
+          "module": "fcnn_relu_fp16",
+          "name": "relu_inst",
+          "parameters": {},
+          "ports": {
+            "x": "fc1_final_value",
+            "y": "relu_out"
+          }
+        },
+        {
+          "module": "fcnn_activation_regfile",
+          "name": "regfile_inst",
+          "parameters": {
+            "N_HIDDEN": "N_HIDDEN",
+            "N_OUTPUTS": "N_OUTPUTS"
+          },
+          "ports": {
+            "clk": "clk",
+            "rst": "rst",
+            "run_init": "run_init",
+            "hidden_wr_en": "fc1_final_valid",
+            "hidden_wr_idx": "fc1_final_idx",
+            "hidden_wr_data": "relu_out",
+            "hidden_rd_idx": "hidden_rd_idx",
+            "hidden_rd_data": "hidden_rd_data",
+            "hidden_all_valid": "hidden_all_valid",
+            "final_wr_en": "rf_final_we",
+            "final_wr_data": "fc2_results",
+            "final_ready": "final_ready",
+            "logits": "logits"
+          }
+        },
+        {
+          "module": "fcnn_argmax",
+          "name": "argmax_inst",
+          "parameters": {
+            "N_OUTPUTS": "N_OUTPUTS"
+          },
+          "ports": {
+            "logits": "logits",
+            "logits_valid": "final_ready",
+            "predicted_digit": "predicted_digit",
+            "argmax_valid": "argmax_valid"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "description": "derived sizes and named interconnect. No user configuration here."
+        },
+        {
+          "number": 2,
+          "description": "request address ownership and the two synchronous SRAM row paths."
+        },
+        {
+          "number": 3,
+          "description": "Scheduler controls handshakes; Router owns arithmetic operand tags."
+        },
+        {
+          "number": 4,
+          "description": "the only FP16 multiplier; registered products enter two-bank PP."
+        },
+        {
+          "number": 5,
+          "description": "the only FP16 adder; the backend mux schedules the separate bias."
+        },
+        {
+          "number": 6,
+          "description": "ReLU -> reused RF -> balanced parallel argmax."
+        },
+        {
+          "number": 7,
+          "description": "local contracts cover phase/tag errors and premature RF reuse."
+        }
+      ],
+      "clocked_blocks": 0,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    },
+    "fcnn_fp16_adder": {
+      "file": "rtl/fcnn_fp16_adder.v",
+      "parameters": [],
+      "parameter_defaults": {},
+      "ports": {
+        "a": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "b": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "result": {
+          "direction": "output",
+          "width": "[15:0]"
+        }
+      },
+      "port_style": "ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "Unpacking, Classification & Magnitude Compare (باز کردن بسته‌بندی، طبقه‌بندی و مقایسه اندازه)"
+        },
+        {
+          "number": 2,
+          "description": "Operand Swapping & Mantissa Alignment (مرتب‌سازی عملوندها و تراز کردن مانتیس‌ها)"
+        },
+        {
+          "number": 3,
+          "description": "Mantissa Addition / Subtraction (جمع یا تفریق مانتیس‌های تراز شده)"
+        },
+        {
+          "number": 4,
+          "description": "Normalization & LZC (نرمال‌سازی، شمارش صفرهای پیشرو و مدیریت Gradual Underflow)"
+        },
+        {
+          "number": 5,
+          "description": "RNE Rounding & Post-Normalization (گرد کردن به نزدیک‌ترین زوج)"
+        },
+        {
+          "number": 6,
+          "description": "Exception Handling & Output Muxing (مدیریت استثناها و انتخاب خروجی نهایی)"
+        }
+      ],
+      "clocked_blocks": 0,
+      "combinational_blocks": 1,
+      "initial_blocks": 0
+    },
+    "fcnn_fp16_multiplier": {
+      "file": "rtl/fcnn_fp16_multiplier.v",
+      "parameters": [],
+      "parameter_defaults": {},
+      "ports": {
+        "a": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "b": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "result": {
+          "direction": "output",
+          "width": "[15:0]"
+        }
+      },
+      "port_style": "ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "Unpacking & Classification (باز کردن بسته‌بندی ورودی‌ها و تشخیص حالات خاص)"
+        },
+        {
+          "number": 2,
+          "description": "Input Pre-Normalization (نرمال‌سازی عملوندهای ورودی Subnormal)"
+        },
+        {
+          "number": 3,
+          "description": "Core Multiplication & Exponent Calculation (ضرب مانتیس ۱۱×۱۱ و محاسبه نمای اولیه)"
+        },
+        {
+          "number": 4,
+          "description": "Alignment & GRS Extraction (مدیریت Gradual Underflow و استخراج بیت‌های GRS)"
+        },
+        {
+          "number": 5,
+          "description": "RNE Rounding & Post-Normalization (گرد کردن به نزدیک‌ترین زوج)"
+        },
+        {
+          "number": 6,
+          "description": "Exception Handling & Output Muxing (مدیریت استثناها و انتخاب خروجی نهایی)"
+        }
+      ],
+      "clocked_blocks": 0,
+      "combinational_blocks": 2,
+      "initial_blocks": 0
+    },
+    "fcnn_local_scheduler": {
+      "file": "rtl/fcnn_local_scheduler.v",
+      "parameters": [
+        "N_INPUTS",
+        "N_HIDDEN",
+        "N_OUTPUTS",
+        "LANES"
+      ],
+      "parameter_defaults": {
+        "N_INPUTS": "784",
+        "N_HIDDEN": "8",
+        "N_OUTPUTS": "10",
+        "LANES": "7"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rst": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "run_init": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "fc1_active": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "fc2_active": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "request_neuron": {
+          "direction": "input",
+          "width": "[H_W-1:0]"
+        },
+        "request_fc1_row": {
+          "direction": "input",
+          "width": "[R1_W-1:0]"
+        },
+        "request_fc2_row": {
+          "direction": "input",
+          "width": "[R2_W-1:0]"
+        },
+        "weight_available": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "input_available": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "compute_layer": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "compute_row": {
+          "direction": "input",
+          "width": "[ROW_W-1:0]"
+        },
+        "product_ready": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "pp_wr_ready": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "term_last": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "hidden_all_valid": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "activation_last_use": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "fc2_all_committed": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "final_ready": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "argmax_valid": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "request_layer": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "weight_req": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "input_req": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "consume_weight_row": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "consume_input_row": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "lane_idx": {
+          "direction": "output",
+          "width": "[LANE_W-1:0]"
+        },
+        "mul_issue": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "group_last": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "rf_final_we": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "fc1_finished": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "fc2_finished": {
+          "direction": "output",
+          "width": "1 bit"
+        }
+      },
+      "port_style": "non_ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "control progress, not duplicated address counters."
+        },
+        {
+          "number": 2,
+          "description": "reserve responses at the exact consumption cadence."
+        },
+        {
+          "number": 3,
+          "description": "completion derives from committed values and last activation read."
+        },
+        {
+          "number": 4,
+          "description": "an unexpected stall invalidates the single-row calendar."
+        }
+      ],
+      "clocked_blocks": 1,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    },
+    "fcnn_operand_router": {
+      "file": "rtl/fcnn_operand_router.v",
+      "parameters": [
+        "N_INPUTS",
+        "N_HIDDEN",
+        "N_OUTPUTS",
+        "LANES"
+      ],
+      "parameter_defaults": {
+        "N_INPUTS": "784",
+        "N_HIDDEN": "8",
+        "N_OUTPUTS": "10",
+        "LANES": "7"
+      },
+      "ports": {
+        "weight_row": {
+          "direction": "input",
+          "width": "[16*LANES-1:0]"
+        },
+        "input_row": {
+          "direction": "input",
+          "width": "[16*LANES-1:0]"
+        },
+        "weight_meta": {
+          "direction": "input",
+          "width": "[META_W-1:0]"
+        },
+        "input_meta": {
+          "direction": "input",
+          "width": "[META_W-1:0]"
+        },
+        "lane_idx": {
+          "direction": "input",
+          "width": "[LANE_W-1:0]"
+        },
+        "hidden_value": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "hidden_rd_idx": {
+          "direction": "output",
+          "width": "[H_W-1:0]"
+        },
+        "mul_weight": {
+          "direction": "output",
+          "width": "[15:0]"
+        },
+        "mul_input": {
+          "direction": "output",
+          "width": "[15:0]"
+        },
+        "term_valid": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "term_dest": {
+          "direction": "output",
+          "width": "[DEST_W-1:0]"
+        },
+        "term_last": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "activation_last_term": {
+          "direction": "output",
+          "width": "1 bit"
+        }
+      },
+      "port_style": "non_ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "decode request metadata independently of the current request phase."
+        },
+        {
+          "number": 2,
+          "description": "all but the final hidden input, then final input across outputs."
+        },
+        {
+          "number": 3,
+          "description": "the hidden address has no combinational dependence on hidden data."
+        }
+      ],
+      "clocked_blocks": 0,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    },
+    "fcnn_ping_pong_buffer": {
+      "file": "rtl/fcnn_ping_pong_buffer.v",
+      "parameters": [
+        "LANES",
+        "DEST_W"
+      ],
+      "parameter_defaults": {
+        "LANES": "7",
+        "DEST_W": "4"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rst": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "wr_valid": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "wr_ready": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "wr_data": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "wr_dest": {
+          "direction": "input",
+          "width": "[DEST_W-1:0]"
+        },
+        "wr_last": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "wr_group_last": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rd_valid": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "rd_ready": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rd_data": {
+          "direction": "output",
+          "width": "[15:0]"
+        },
+        "rd_dest": {
+          "direction": "output",
+          "width": "[DEST_W-1:0]"
+        },
+        "rd_last": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "bank_full": {
+          "direction": "output",
+          "width": "[1:0]"
+        },
+        "bank_empty": {
+          "direction": "output",
+          "width": "[1:0]"
+        },
+        "bank_select": {
+          "direction": "output",
+          "width": "1 bit"
+        }
+      },
+      "port_style": "ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "two physical banks. Pointer width includes the full sentinel."
+        },
+        {
+          "number": 2,
+          "description": "seal prevents reopening even a partially filled undrained bank."
+        },
+        {
+          "number": 3,
+          "description": "write and seal a group (including a short final group)."
+        },
+        {
+          "number": 4,
+          "description": "read only a completed bank; release on its group terminator."
+        },
+        {
+          "number": 5,
+          "description": "simultaneous push/pop has a net occupancy change of zero."
+        }
+      ],
+      "clocked_blocks": 1,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    },
+    "fcnn_product_register": {
+      "file": "rtl/fcnn_product_register.v",
+      "parameters": [
+        "DEST_W"
+      ],
+      "parameter_defaults": {
+        "DEST_W": "4"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rst": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "in_valid": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "in_ready": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "in_data": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "in_dest": {
+          "direction": "input",
+          "width": "[DEST_W-1:0]"
+        },
+        "in_last": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "in_group_last": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "out_valid": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "out_ready": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "out_data": {
+          "direction": "output",
+          "width": "[15:0]"
+        },
+        "out_dest": {
+          "direction": "output",
+          "width": "[DEST_W-1:0]"
+        },
+        "out_last": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "out_group_last": {
+          "direction": "output",
+          "width": "1 bit"
+        }
+      },
+      "port_style": "ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "one elastic payload register, including every sideband bit."
+        },
+        {
+          "number": 2,
+          "description": "replace on ready, clear valid on a pop without a replacement."
+        }
+      ],
+      "clocked_blocks": 1,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    },
+    "fcnn_relu_fp16": {
+      "file": "rtl/fcnn_relu_fp16.v",
+      "parameters": [],
+      "parameter_defaults": {},
+      "ports": {
+        "x": {
+          "direction": "input",
+          "width": "[15:0]"
+        },
+        "y": {
+          "direction": "output",
+          "width": "[15:0]"
+        }
+      },
+      "port_style": "ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "canonicalize any NaN; map every non-NaN negative to positive zero."
+        }
+      ],
+      "clocked_blocks": 0,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    },
+    "fcnn_row_sram": {
+      "file": "rtl/fcnn_row_sram.v",
+      "parameters": [
+        "N_INPUTS",
+        "N_HIDDEN",
+        "N_OUTPUTS",
+        "LANES",
+        "SRAM_LATENCY",
+        "SOURCE_KIND",
+        "INIT_FILE",
+        "FC2_WEIGHTS_FILE"
+      ],
+      "parameter_defaults": {
+        "N_INPUTS": "784",
+        "N_HIDDEN": "8",
+        "N_OUTPUTS": "10",
+        "LANES": "7",
+        "SRAM_LATENCY": "7",
+        "SOURCE_KIND": "1",
+        "INIT_FILE": "\"fc1_weights.mem\"",
+        "FC2_WEIGHTS_FILE": "\"fc2_weights.mem\""
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rst": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "req_valid": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "req_addr": {
+          "direction": "input",
+          "width": "[ADDR_W-1:0]"
+        },
+        "req_meta": {
+          "direction": "input",
+          "width": "[META_W-1:0]"
+        },
+        "row_valid": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "row_data": {
+          "direction": "output",
+          "width": "[16*LANES-1:0]"
+        },
+        "row_meta": {
+          "direction": "output",
+          "width": "[META_W-1:0]"
+        }
+      },
+      "port_style": "non_ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "layout and widths derive only from network parameters."
+        },
+        {
+          "number": 2,
+          "description": "raw files stay 16-bit/neuron-major; rows are assembled inside SRAM."
+        },
+        {
+          "number": 3,
+          "description": "a request sampled at E is sampled downstream at E+SRAM_LATENCY."
+        }
+      ],
+      "clocked_blocks": 1,
+      "combinational_blocks": 0,
+      "initial_blocks": 2
+    },
+    "fcnn_row_stage": {
+      "file": "rtl/fcnn_row_stage.v",
+      "parameters": [
+        "LANES",
+        "META_W"
+      ],
+      "parameter_defaults": {
+        "LANES": "7",
+        "META_W": "12"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rst": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "in_valid": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "in_data": {
+          "direction": "input",
+          "width": "[16*LANES-1:0]"
+        },
+        "in_meta": {
+          "direction": "input",
+          "width": "[META_W-1:0]"
+        },
+        "consume_row": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "can_accept": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "stored_valid": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "stored_data": {
+          "direction": "output",
+          "width": "[16*LANES-1:0]"
+        },
+        "stored_meta": {
+          "direction": "output",
+          "width": "[META_W-1:0]"
+        }
+      },
+      "port_style": "ansi",
+      "instances": [],
+      "steps": [
+        {
+          "number": 1,
+          "description": "one row only; same-edge replacement does not allocate extra storage."
+        },
+        {
+          "number": 2,
+          "description": "reset, accept/replace, consume, otherwise hold."
+        },
+        {
+          "number": 3,
+          "description": "diagnose a calendar error rather than silently losing data."
+        }
+      ],
+      "clocked_blocks": 1,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    },
+    "fcnn_top": {
+      "file": "rtl/fcnn_top.v",
+      "parameters": [
+        "N_INPUTS",
+        "N_HIDDEN",
+        "N_OUTPUTS",
+        "LANES",
+        "SRAM_LATENCY",
+        "FC1_WEIGHTS_FILE",
+        "FC2_WEIGHTS_FILE",
+        "INPUT_FILE",
+        "FC1_BIAS_FILE",
+        "FC2_BIAS_FILE"
+      ],
+      "parameter_defaults": {
+        "N_INPUTS": "784",
+        "N_HIDDEN": "8",
+        "N_OUTPUTS": "10",
+        "LANES": "7",
+        "SRAM_LATENCY": "7",
+        "FC1_WEIGHTS_FILE": "\"fc1_weights.mem\"",
+        "FC2_WEIGHTS_FILE": "\"fc2_weights.mem\"",
+        "INPUT_FILE": "\"test_image.mem\"",
+        "FC1_BIAS_FILE": "\"fc1_bias.mem\"",
+        "FC2_BIAS_FILE": "\"fc2_bias.mem\""
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "rst": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "start": {
+          "direction": "input",
+          "width": "1 bit"
+        },
+        "busy": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "done": {
+          "direction": "output",
+          "width": "1 bit"
+        },
+        "logits": {
+          "direction": "output",
+          "width": "[16*N_OUTPUTS-1:0]"
+        },
+        "predicted_digit": {
+          "direction": "output",
+          "width": "[((N_OUTPUTS>1)?$clog2(N_OUTPUTS):1)-1:0]"
+        }
+      },
+      "port_style": "ansi",
+      "instances": [
+        {
+          "module": "fcnn_controller",
+          "name": "controller_inst",
+          "parameters": {},
+          "ports": {
+            "clk": "clk",
+            "rst": "rst",
+            "start": "start",
+            "fc1_finished": "fc1_finished",
+            "fc2_finished": "fc2_finished",
+            "run_init": "run_init",
+            "fc1_active": "fc1_active",
+            "fc2_active": "fc2_active",
+            "busy": "busy",
+            "done": "done"
+          }
+        },
+        {
+          "module": "fcnn_datapath",
+          "name": "datapath_inst",
+          "parameters": {
+            "N_INPUTS": "N_INPUTS",
+            "N_HIDDEN": "N_HIDDEN",
+            "N_OUTPUTS": "N_OUTPUTS",
+            "LANES": "LANES",
+            "SRAM_LATENCY": "SRAM_LATENCY",
+            "FC1_WEIGHTS_FILE": "FC1_WEIGHTS_FILE",
+            "FC2_WEIGHTS_FILE": "FC2_WEIGHTS_FILE",
+            "INPUT_FILE": "INPUT_FILE",
+            "FC1_BIAS_FILE": "FC1_BIAS_FILE",
+            "FC2_BIAS_FILE": "FC2_BIAS_FILE"
+          },
+          "ports": {
+            "clk": "clk",
+            "rst": "rst",
+            "run_init": "run_init",
+            "fc1_active": "fc1_active",
+            "fc2_active": "fc2_active",
+            "fc1_finished": "fc1_finished",
+            "fc2_finished": "fc2_finished",
+            "logits": "logits",
+            "predicted_digit": "predicted_digit"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "description": "the public configuration boundary. All user choices enter here."
+        },
+        {
+          "number": 2,
+          "description": "control/status only; no arithmetic or storage in Top."
+        },
+        {
+          "number": 3,
+          "description": "propagate every public setting by name."
+        },
+        {
+          "number": 4,
+          "description": "configuration errors are explicit simulation failures."
+        }
+      ],
+      "clocked_blocks": 0,
+      "combinational_blocks": 0,
+      "initial_blocks": 0
+    }
+  },
+  "hierarchy": [
+    {
+      "path": "dut",
+      "module": "fcnn_top",
+      "parent": null
+    },
+    {
+      "path": "dut.controller_inst",
+      "module": "fcnn_controller",
+      "parent": "dut"
+    },
+    {
+      "path": "dut.datapath_inst",
+      "module": "fcnn_datapath",
+      "parent": "dut"
+    },
+    {
+      "path": "dut.datapath_inst.address_inst",
+      "module": "fcnn_address_generator",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.weight_sram_inst",
+      "module": "fcnn_row_sram",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.input_sram_inst",
+      "module": "fcnn_row_sram",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.weight_stage_inst",
+      "module": "fcnn_row_stage",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.input_stage_inst",
+      "module": "fcnn_row_stage",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.scheduler_inst",
+      "module": "fcnn_local_scheduler",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.router_inst",
+      "module": "fcnn_operand_router",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.multiplier_inst",
+      "module": "fcnn_fp16_multiplier",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.product_inst",
+      "module": "fcnn_product_register",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.ping_pong_inst",
+      "module": "fcnn_ping_pong_buffer",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.adder_inst",
+      "module": "fcnn_fp16_adder",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.bias_inst",
+      "module": "fcnn_bias_rom",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.accumulator_inst",
+      "module": "fcnn_accumulator_bank",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.relu_inst",
+      "module": "fcnn_relu_fp16",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.regfile_inst",
+      "module": "fcnn_activation_regfile",
+      "parent": "dut.datapath_inst"
+    },
+    {
+      "path": "dut.datapath_inst.argmax_inst",
+      "module": "fcnn_argmax",
+      "parent": "dut.datapath_inst"
+    }
+  ],
+  "instance_counts": {
+    "fcnn_top": 1,
+    "fcnn_controller": 1,
+    "fcnn_datapath": 1,
+    "fcnn_address_generator": 1,
+    "fcnn_row_sram": 2,
+    "fcnn_row_stage": 2,
+    "fcnn_local_scheduler": 1,
+    "fcnn_operand_router": 1,
+    "fcnn_fp16_multiplier": 1,
+    "fcnn_product_register": 1,
+    "fcnn_ping_pong_buffer": 1,
+    "fcnn_fp16_adder": 1,
+    "fcnn_bias_rom": 1,
+    "fcnn_accumulator_bank": 1,
+    "fcnn_relu_fp16": 1,
+    "fcnn_activation_regfile": 1,
+    "fcnn_argmax": 1
+  }
+}

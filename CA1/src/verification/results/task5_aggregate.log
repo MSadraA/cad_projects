@@ -1,0 +1,3 @@
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=1 hidden=8 logits=10 reset_abort=0
+FCNN_Clean/verification/tb_fcnn.v:195: $finish called at 64130000 (1ps)

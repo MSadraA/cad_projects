@@ -1,0 +1,19 @@
+digraph FCNN {
+graph [fontname="DejaVu Sans", rankdir=TB, bgcolor="white", pad="0.3", nodesep="0.35", ranksep="0.55", splines=polyline];
+node [fontname="DejaVu Sans", fontsize=11, shape=box, style="rounded,filled", fillcolor="#edf3fa", color="#526780", margin="0.15,0.12"];
+edge [fontname="DejaVu Sans", fontsize=9, color="#526780", arrowsize=0.7];
+label="Backend protocol - bias_pending control flag"; labelloc=t; fontsize=19;
+
+        rankdir=LR;splines=spline;
+        PRODUCT [label="PRODUCT
+product_ready=1
+ADD(acc, product)
+hold unless last accepted"];
+        BIAS [label="BIAS_PENDING
+product_ready=0
+ADD(acc, bias)"];
+        PRODUCT:s -> BIAS:s [label="last product accepted",minlen=2];
+        BIAS:n -> PRODUCT:n [label="bias committed",constraint=false];
+        reset [shape=point];reset -> PRODUCT [label="rst / run_init"];
+    
+}

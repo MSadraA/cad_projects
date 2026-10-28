@@ -1,0 +1,118 @@
+{
+  "simulator": "icarus",
+  "actual_modelsim_execution": false,
+  "checks": [
+    {
+      "name": "default_no_args",
+      "passed": true,
+      "expected_failure": false,
+      "inferences": 2,
+      "tb_parameters": {}
+    },
+    {
+      "name": "edit_image_reset_clock",
+      "passed": true,
+      "expected_failure": false,
+      "inferences": 1,
+      "tb_parameters": {
+        "INPUT_FILE": "data/cases/digit_7/test_image.mem",
+        "RUNS": 1,
+        "RESET_AFTER": 6350,
+        "CLOCK_PERIOD_NS": 4,
+        "INJECT_BUSY_START": 0
+      }
+    },
+    {
+      "name": "unseen_image",
+      "passed": true,
+      "expected_failure": false,
+      "inferences": 1,
+      "tb_parameters": {
+        "INPUT_FILE": "build/gui_validation/custom_image.mem",
+        "RUNS": 1
+      }
+    },
+    {
+      "name": "small_model_wave",
+      "passed": true,
+      "expected_failure": false,
+      "inferences": 3,
+      "tb_parameters": {
+        "N_INPUTS": 15,
+        "N_HIDDEN": 3,
+        "N_OUTPUTS": 5,
+        "LANES": 7,
+        "SRAM_LATENCY": 3,
+        "CLOCK_PERIOD_NS": 4,
+        "RUNS": 3,
+        "DUMP_WAVE": 1,
+        "VCD_FILE": "build/gui_validation/small_model_wave/fcnn.vcd",
+        "FC1_WEIGHTS_FILE": "build/gui_validation/small_model/model/fc1_weights.mem",
+        "FC2_WEIGHTS_FILE": "build/gui_validation/small_model/model/fc2_weights.mem",
+        "FC1_BIAS_FILE": "build/gui_validation/small_model/model/fc1_bias.mem",
+        "FC2_BIAS_FILE": "build/gui_validation/small_model/model/fc2_bias.mem",
+        "INPUT_FILE": "build/gui_validation/small_model/random.mem"
+      }
+    },
+    {
+      "name": "manual_golden_parameters",
+      "passed": true,
+      "expected_failure": false,
+      "inferences": 1,
+      "tb_parameters": {
+        "RUNS": 1,
+        "CHECK_OUTPUTS": 1,
+        "EXPECTED_DIGIT": 2,
+        "EXPECTED_LOGITS_FILE": "build/gui_validation/expected_logits.mem",
+        "EXPECTED_HIDDEN_FILE": "build/gui_validation/expected_hidden.mem"
+      }
+    },
+    {
+      "name": "missing_expected_setting",
+      "passed": true,
+      "expected_failure": true,
+      "inferences": 0,
+      "tb_parameters": {
+        "CHECK_OUTPUTS": 1
+      }
+    },
+    {
+      "name": "missing_image",
+      "passed": true,
+      "expected_failure": true,
+      "inferences": 0,
+      "tb_parameters": {
+        "INPUT_FILE": "build/gui_validation/does_not_exist.mem"
+      }
+    },
+    {
+      "name": "short_image",
+      "passed": true,
+      "expected_failure": true,
+      "inferences": 0,
+      "tb_parameters": {
+        "INPUT_FILE": "build/gui_validation/short_image.mem"
+      }
+    }
+  ],
+  "passed": true,
+  "tcl_script_flow": {
+    "engine": "9.0.4",
+    "stubbed_modelsim_commands": true,
+    "actual_modelsim_execution": false,
+    "checks": [
+      {
+        "autorun": 0,
+        "wave_signals": 87,
+        "passed": true,
+        "script_path_mode": "Tcl source"
+      },
+      {
+        "autorun": 1,
+        "wave_signals": 87,
+        "passed": true,
+        "script_path_mode": "empty DO info script"
+      }
+    ]
+  }
+}

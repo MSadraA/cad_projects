@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "module_types": 17,
+  "module_instances": 19,
+  "fp16_adders": 1,
+  "fp16_multipliers": 1,
+  "top_parameters_forwarded": 10,
+  "port_width_declaration_order_checked": 17,
+  "non_ansi_derived_width_interfaces": 9,
+  "modelsim_wave_paths_checked": 87,
+  "data_files_verified": 26,
+  "input_cases": 11
+}

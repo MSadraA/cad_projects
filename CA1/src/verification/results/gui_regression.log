@@ -1,0 +1,984 @@
+### build/gui_release_official/reference/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=100 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=411a
+[RESULT] run=1 logit[1]=c2bb
+[RESULT] run=1 logit[2]=4844
+[RESULT] run=1 logit[3]=43eb
+[RESULT] run=1 logit[4]=cd2b
+[RESULT] run=1 logit[5]=43e7
+[RESULT] run=1 logit[6]=444e
+[RESULT] run=1 logit[7]=caa2
+[RESULT] run=1 logit[8]=3336
+[RESULT] run=1 logit[9]=cad4
+[RESULT] run=1 predicted_digit=2
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[RESULT] run=2 logit[0]=411a
+[RESULT] run=2 logit[1]=c2bb
+[RESULT] run=2 logit[2]=4844
+[RESULT] run=2 logit[3]=43eb
+[RESULT] run=2 logit[4]=cd2b
+[RESULT] run=2 logit[5]=43e7
+[RESULT] run=2 logit[6]=444e
+[RESULT] run=2 logit[7]=caa2
+[RESULT] run=2 logit[8]=3336
+[RESULT] run=2 logit[9]=cad4
+[RESULT] run=2 predicted_digit=2
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1 checked_outputs=1
+
+
+### build/gui_release_official/digit_0/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=100 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=4655
+[RESULT] run=1 logit[1]=cc9b
+[RESULT] run=1 logit[2]=bdfe
+[RESULT] run=1 logit[3]=c694
+[RESULT] run=1 logit[4]=c682
+[RESULT] run=1 logit[5]=b875
+[RESULT] run=1 logit[6]=c2c3
+[RESULT] run=1 logit[7]=c5b3
+[RESULT] run=1 logit[8]=b9a6
+[RESULT] run=1 logit[9]=c358
+[RESULT] run=1 predicted_digit=0
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=0
+[RESULT] run=2 logit[0]=4655
+[RESULT] run=2 logit[1]=cc9b
+[RESULT] run=2 logit[2]=bdfe
+[RESULT] run=2 logit[3]=c694
+[RESULT] run=2 logit[4]=c682
+[RESULT] run=2 logit[5]=b875
+[RESULT] run=2 logit[6]=c2c3
+[RESULT] run=2 logit[7]=c5b3
+[RESULT] run=2 logit[8]=b9a6
+[RESULT] run=2 logit[9]=c358
+[RESULT] run=2 predicted_digit=0
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=0
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1 checked_outputs=1
+
+
+### build/gui_release_official/digit_1/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=100 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=ca58
+[RESULT] run=1 logit[1]=46b9
+[RESULT] run=1 logit[2]=321a
+[RESULT] run=1 logit[3]=b360
+[RESULT] run=1 logit[4]=c507
+[RESULT] run=1 logit[5]=c357
+[RESULT] run=1 logit[6]=c1a2
+[RESULT] run=1 logit[7]=bca9
+[RESULT] run=1 logit[8]=b022
+[RESULT] run=1 logit[9]=b864
+[RESULT] run=1 predicted_digit=1
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=1
+[RESULT] run=2 logit[0]=ca58
+[RESULT] run=2 logit[1]=46b9
+[RESULT] run=2 logit[2]=321a
+[RESULT] run=2 logit[3]=b360
+[RESULT] run=2 logit[4]=c507
+[RESULT] run=2 logit[5]=c357
+[RESULT] run=2 logit[6]=c1a2
+[RESULT] run=2 logit[7]=bca9
+[RESULT] run=2 logit[8]=b022
+[RESULT] run=2 logit[9]=b864
+[RESULT] run=2 predicted_digit=1
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=1
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1 checked_outputs=1
+
+
+### build/gui_release_official/digit_2/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=100 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=c216
+[RESULT] run=1 logit[1]=c66d
+[RESULT] run=1 logit[2]=480f
+[RESULT] run=1 logit[3]=384d
+[RESULT] run=1 logit[4]=c93c
+[RESULT] run=1 logit[5]=c4f4
+[RESULT] run=1 logit[6]=b1de
+[RESULT] run=1 logit[7]=c6b3
+[RESULT] run=1 logit[8]=bb82
+[RESULT] run=1 logit[9]=c4aa
+[RESULT] run=1 predicted_digit=2
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[RESULT] run=2 logit[0]=c216
+[RESULT] run=2 logit[1]=c66d
+[RESULT] run=2 logit[2]=480f
+[RESULT] run=2 logit[3]=384d
+[RESULT] run=2 logit[4]=c93c
+[RESULT] run=2 logit[5]=c4f4
+[RESULT] run=2 logit[6]=b1de
+[RESULT] run=2 logit[7]=c6b3
+[RESULT] run=2 logit[8]=bb82
+[RESULT] run=2 logit[9]=c4aa
+[RESULT] run=2 predicted_digit=2
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1 checked_outputs=1
+
+
+### build/gui_release_official/digit_3/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=100 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=c6af
+[RESULT] run=1 logit[1]=c518
+[RESULT] run=1 logit[2]=3934
+[RESULT] run=1 logit[3]=4807
+[RESULT] run=1 logit[4]=cb23
+[RESULT] run=1 logit[5]=383b
+[RESULT] run=1 logit[6]=c872
+[RESULT] run=1 logit[7]=c815
+[RESULT] run=1 logit[8]=3433
+[RESULT] run=1 logit[9]=c312
+[RESULT] run=1 predicted_digit=3
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=3
+[RESULT] run=2 logit[0]=c6af
+[RESULT] run=2 logit[1]=c518
+[RESULT] run=2 logit[2]=3934
+[RESULT] run=2 logit[3]=4807
+[RESULT] run=2 logit[4]=cb23
+[RESULT] run=2 logit[5]=383b
+[RESULT] run=2 logit[6]=c872
+[RESULT] run=2 logit[7]=c815
+[RESULT] run=2 logit[8]=3433
+[RESULT] run=2 logit[9]=c312
+[RESULT] run=2 predicted_digit=3
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=3
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1 checked_outputs=1
+
+
+### build/gui_release_official/digit_4/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=100 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=c83a
+[RESULT] run=1 logit[1]=c705
+[RESULT] run=1 logit[2]=c5c9
+[RESULT] run=1 logit[3]=c7ad
+[RESULT] run=1 logit[4]=486a
+[RESULT] run=1 logit[5]=bf76
+[RESULT] run=1 logit[6]=3ebe
+[RESULT] run=1 logit[7]=c885
+[RESULT] run=1 logit[8]=c1ac
+[RESULT] run=1 logit[9]=3f65
+[RESULT] run=1 predicted_digit=4
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=4
+[RESULT] run=2 logit[0]=c83a
+[RESULT] run=2 logit[1]=c705
+[RESULT] run=2 logit[2]=c5c9
+[RESULT] run=2 logit[3]=c7ad
+[RESULT] run=2 logit[4]=486a
+[RESULT] run=2 logit[5]=bf76
+[RESULT] run=2 logit[6]=3ebe
+[RESULT] run=2 logit[7]=c885
+[RESULT] run=2 logit[8]=c1ac
+[RESULT] run=2 logit[9]=3f65
+[RESULT] run=2 predicted_digit=4
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=4
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1 checked_outputs=1
+
+
+### build/gui_release_official/digit_5/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=100 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=c16e
+[RESULT] run=1 logit[1]=cb5c
+[RESULT] run=1 logit[2]=c908
+[RESULT] run=1 logit[3]=bd5a
+[RESULT] run=1 logit[4]=c8b6
+[RESULT] run=1 logit[5]=4425
+[RESULT] run=1 logit[6]=c871
+[RESULT] run=1 logit[7]=c7ef
+[RESULT] run=1 logit[8]=b8e2
+[RESULT] run=1 logit[9]=c197
+[RESULT] run=1 predicted_digit=5
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=5
+[RESULT] run=2 logit[0]=c16e
+[RESULT] run=2 logit[1]=cb5c
+[RESULT] run=2 logit[2]=c908
+[RESULT] run=2 logit[3]=bd5a
+[RESULT] run=2 logit[4]=c8b6
+[RESULT] run=2 logit[5]=4425
+[RESULT] run=2 logit[6]=c871
+[RESULT] run=2 logit[7]=c7ef
+[RESULT] run=2 logit[8]=b8e2
+[RESULT] run=2 logit[9]=c197
+[RESULT] run=2 predicted_digit=5
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=5
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1 checked_outputs=1
+
+
+### build/gui_release_official/digit_6/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=100 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=c435
+[RESULT] run=1 logit[1]=c847
+[RESULT] run=1 logit[2]=3ebb
+[RESULT] run=1 logit[3]=c6b0
+[RESULT] run=1 logit[4]=3e55
+[RESULT] run=1 logit[5]=3d14
+[RESULT] run=1 logit[6]=4984
+[RESULT] run=1 logit[7]=ccde
+[RESULT] run=1 logit[8]=3db1
+[RESULT] run=1 logit[9]=c7f3
+[RESULT] run=1 predicted_digit=6
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=6
+[RESULT] run=2 logit[0]=c435
+[RESULT] run=2 logit[1]=c847
+[RESULT] run=2 logit[2]=3ebb
+[RESULT] run=2 logit[3]=c6b0
+[RESULT] run=2 logit[4]=3e55
+[RESULT] run=2 logit[5]=3d14
+[RESULT] run=2 logit[6]=4984
+[RESULT] run=2 logit[7]=ccde
+[RESULT] run=2 logit[8]=3db1
+[RESULT] run=2 logit[9]=c7f3
+[RESULT] run=2 predicted_digit=6
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=6
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1 checked_outputs=1
+
+
+### build/gui_release_official/digit_7/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=100 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=c61b
+[RESULT] run=1 logit[1]=bd32
+[RESULT] run=1 logit[2]=c255
+[RESULT] run=1 logit[3]=c5b4
+[RESULT] run=1 logit[4]=c5f0
+[RESULT] run=1 logit[5]=c359
+[RESULT] run=1 logit[6]=c4f4
+[RESULT] run=1 logit[7]=43f6
+[RESULT] run=1 logit[8]=386e
+[RESULT] run=1 logit[9]=ac84
+[RESULT] run=1 predicted_digit=7
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=7
+[RESULT] run=2 logit[0]=c61b
+[RESULT] run=2 logit[1]=bd32
+[RESULT] run=2 logit[2]=c255
+[RESULT] run=2 logit[3]=c5b4
+[RESULT] run=2 logit[4]=c5f0
+[RESULT] run=2 logit[5]=c359
+[RESULT] run=2 logit[6]=c4f4
+[RESULT] run=2 logit[7]=43f6
+[RESULT] run=2 logit[8]=386e
+[RESULT] run=2 logit[9]=ac84
+[RESULT] run=2 predicted_digit=7
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=7
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1 checked_outputs=1
+
+
+### build/gui_release_official/digit_8/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=100 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=c79e
+[RESULT] run=1 logit[1]=c7ff
+[RESULT] run=1 logit[2]=c4c7
+[RESULT] run=1 logit[3]=c42c
+[RESULT] run=1 logit[4]=c574
+[RESULT] run=1 logit[5]=c03a
+[RESULT] run=1 logit[6]=c6c4
+[RESULT] run=1 logit[7]=c5ae
+[RESULT] run=1 logit[8]=45a6
+[RESULT] run=1 logit[9]=c03b
+[RESULT] run=1 predicted_digit=8
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=8
+[RESULT] run=2 logit[0]=c79e
+[RESULT] run=2 logit[1]=c7ff
+[RESULT] run=2 logit[2]=c4c7
+[RESULT] run=2 logit[3]=c42c
+[RESULT] run=2 logit[4]=c574
+[RESULT] run=2 logit[5]=c03a
+[RESULT] run=2 logit[6]=c6c4
+[RESULT] run=2 logit[7]=c5ae
+[RESULT] run=2 logit[8]=45a6
+[RESULT] run=2 logit[9]=c03b
+[RESULT] run=2 predicted_digit=8
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=8
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1 checked_outputs=1
+
+
+### build/gui_release_official/digit_9/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=100 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=c7a6
+[RESULT] run=1 logit[1]=c8f0
+[RESULT] run=1 logit[2]=c7bf
+[RESULT] run=1 logit[3]=c045
+[RESULT] run=1 logit[4]=b78b
+[RESULT] run=1 logit[5]=c10c
+[RESULT] run=1 logit[6]=c8d8
+[RESULT] run=1 logit[7]=bbc4
+[RESULT] run=1 logit[8]=ba76
+[RESULT] run=1 logit[9]=43fd
+[RESULT] run=1 predicted_digit=9
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=9
+[RESULT] run=2 logit[0]=c7a6
+[RESULT] run=2 logit[1]=c8f0
+[RESULT] run=2 logit[2]=c7bf
+[RESULT] run=2 logit[3]=c045
+[RESULT] run=2 logit[4]=b78b
+[RESULT] run=2 logit[5]=c10c
+[RESULT] run=2 logit[6]=c8d8
+[RESULT] run=2 logit[7]=bbc4
+[RESULT] run=2 logit[8]=ba76
+[RESULT] run=2 logit[9]=43fd
+[RESULT] run=2 predicted_digit=9
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=9
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1 checked_outputs=1
+
+
+### build/parameters_0/zero/simulation.log
+[CONFIG] inputs=15 hidden=3 outputs=5 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=352
+[RESULT] run=1 logit[0]=9f80
+[RESULT] run=1 logit[1]=3220
+[RESULT] run=1 logit[2]=2c08
+[RESULT] run=1 logit[3]=ae76
+[RESULT] run=1 logit[4]=b28f
+[RESULT] run=1 predicted_digit=1
+[MEASURE] run=1 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[RESULT] run=2 logit[0]=9f80
+[RESULT] run=2 logit[1]=3220
+[RESULT] run=2 logit[2]=2c08
+[RESULT] run=2 logit[3]=ae76
+[RESULT] run=2 logit[4]=b28f
+[RESULT] run=2 predicted_digit=1
+[MEASURE] run=2 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[PASS] E2E runs=2 hidden=3 logits=5 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_0/negative/simulation.log
+[CONFIG] inputs=15 hidden=3 outputs=5 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=352
+[RESULT] run=1 logit[0]=b951
+[RESULT] run=1 logit[1]=3662
+[RESULT] run=1 logit[2]=b8bc
+[RESULT] run=1 logit[3]=336c
+[RESULT] run=1 logit[4]=2e5e
+[RESULT] run=1 predicted_digit=1
+[MEASURE] run=1 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[RESULT] run=2 logit[0]=b951
+[RESULT] run=2 logit[1]=3662
+[RESULT] run=2 logit[2]=b8bc
+[RESULT] run=2 logit[3]=336c
+[RESULT] run=2 logit[4]=2e5e
+[RESULT] run=2 predicted_digit=1
+[MEASURE] run=2 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[PASS] E2E runs=2 hidden=3 logits=5 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_0/alternating/simulation.log
+[CONFIG] inputs=15 hidden=3 outputs=5 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=352
+[RESULT] run=1 logit[0]=b868
+[RESULT] run=1 logit[1]=a9f4
+[RESULT] run=1 logit[2]=b39c
+[RESULT] run=1 logit[3]=292c
+[RESULT] run=1 logit[4]=ba37
+[RESULT] run=1 predicted_digit=3
+[MEASURE] run=1 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=3
+[RESULT] run=2 logit[0]=b868
+[RESULT] run=2 logit[1]=a9f4
+[RESULT] run=2 logit[2]=b39c
+[RESULT] run=2 logit[3]=292c
+[RESULT] run=2 logit[4]=ba37
+[RESULT] run=2 predicted_digit=3
+[MEASURE] run=2 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=3
+[PASS] E2E runs=2 hidden=3 logits=5 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_0/random/simulation.log
+[CONFIG] inputs=15 hidden=3 outputs=5 lanes=7 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=352
+[RESULT] run=1 logit[0]=b434
+[RESULT] run=1 logit[1]=32a0
+[RESULT] run=1 logit[2]=3101
+[RESULT] run=1 logit[3]=b2aa
+[RESULT] run=1 logit[4]=af5b
+[RESULT] run=1 predicted_digit=1
+[MEASURE] run=1 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[RESULT] run=2 logit[0]=b434
+[RESULT] run=2 logit[1]=32a0
+[RESULT] run=2 logit[2]=3101
+[RESULT] run=2 logit[3]=b2aa
+[RESULT] run=2 logit[4]=af5b
+[RESULT] run=2 predicted_digit=1
+[MEASURE] run=2 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[PASS] E2E runs=2 hidden=3 logits=5 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_1/zero/simulation.log
+[CONFIG] inputs=1 hidden=1 outputs=1 lanes=1 latency=1 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=32
+[RESULT] run=1 logit[0]=a4cc
+[RESULT] run=1 predicted_digit=0
+[MEASURE] run=1 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[RESULT] run=2 logit[0]=a4cc
+[RESULT] run=2 predicted_digit=0
+[MEASURE] run=2 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[PASS] E2E runs=2 hidden=1 logits=1 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_1/negative/simulation.log
+[CONFIG] inputs=1 hidden=1 outputs=1 lanes=1 latency=1 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=32
+[RESULT] run=1 logit[0]=28b8
+[RESULT] run=1 predicted_digit=0
+[MEASURE] run=1 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[RESULT] run=2 logit[0]=28b8
+[RESULT] run=2 predicted_digit=0
+[MEASURE] run=2 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[PASS] E2E runs=2 hidden=1 logits=1 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_1/alternating/simulation.log
+[CONFIG] inputs=1 hidden=1 outputs=1 lanes=1 latency=1 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=32
+[RESULT] run=1 logit[0]=28b8
+[RESULT] run=1 predicted_digit=0
+[MEASURE] run=1 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[RESULT] run=2 logit[0]=28b8
+[RESULT] run=2 predicted_digit=0
+[MEASURE] run=2 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[PASS] E2E runs=2 hidden=1 logits=1 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_1/random/simulation.log
+[CONFIG] inputs=1 hidden=1 outputs=1 lanes=1 latency=1 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=32
+[RESULT] run=1 logit[0]=a4cc
+[RESULT] run=1 predicted_digit=0
+[MEASURE] run=1 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[RESULT] run=2 logit[0]=a4cc
+[RESULT] run=2 predicted_digit=0
+[MEASURE] run=2 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[PASS] E2E runs=2 hidden=1 logits=1 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_2/zero/simulation.log
+[CONFIG] inputs=14 hidden=8 outputs=3 lanes=7 latency=3 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=684
+[RESULT] run=1 logit[0]=b072
+[RESULT] run=1 logit[1]=aae3
+[RESULT] run=1 logit[2]=ad34
+[RESULT] run=1 predicted_digit=1
+[MEASURE] run=1 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=1
+[RESULT] run=2 logit[0]=b072
+[RESULT] run=2 logit[1]=aae3
+[RESULT] run=2 logit[2]=ad34
+[RESULT] run=2 predicted_digit=1
+[MEASURE] run=2 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=1
+[PASS] E2E runs=2 hidden=8 logits=3 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_2/negative/simulation.log
+[CONFIG] inputs=14 hidden=8 outputs=3 lanes=7 latency=3 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=684
+[RESULT] run=1 logit[0]=b209
+[RESULT] run=1 logit[1]=ad82
+[RESULT] run=1 logit[2]=39ad
+[RESULT] run=1 predicted_digit=2
+[MEASURE] run=1 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[RESULT] run=2 logit[0]=b209
+[RESULT] run=2 logit[1]=ad82
+[RESULT] run=2 logit[2]=39ad
+[RESULT] run=2 predicted_digit=2
+[MEASURE] run=2 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[PASS] E2E runs=2 hidden=8 logits=3 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_2/alternating/simulation.log
+[CONFIG] inputs=14 hidden=8 outputs=3 lanes=7 latency=3 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=684
+[RESULT] run=1 logit[0]=b5cc
+[RESULT] run=1 logit[1]=b4c9
+[RESULT] run=1 logit[2]=a5a0
+[RESULT] run=1 predicted_digit=2
+[MEASURE] run=1 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[RESULT] run=2 logit[0]=b5cc
+[RESULT] run=2 logit[1]=b4c9
+[RESULT] run=2 logit[2]=a5a0
+[RESULT] run=2 predicted_digit=2
+[MEASURE] run=2 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[PASS] E2E runs=2 hidden=8 logits=3 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_2/random/simulation.log
+[CONFIG] inputs=14 hidden=8 outputs=3 lanes=7 latency=3 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=684
+[RESULT] run=1 logit[0]=b2e8
+[RESULT] run=1 logit[1]=b569
+[RESULT] run=1 logit[2]=b061
+[RESULT] run=1 predicted_digit=2
+[MEASURE] run=1 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[RESULT] run=2 logit[0]=b2e8
+[RESULT] run=2 logit[1]=b569
+[RESULT] run=2 logit[2]=b061
+[RESULT] run=2 predicted_digit=2
+[MEASURE] run=2 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[PASS] E2E runs=2 hidden=8 logits=3 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_3/zero/simulation.log
+[CONFIG] inputs=20 hidden=11 outputs=17 lanes=5 latency=11 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=2116
+[RESULT] run=1 logit[0]=2908
+[RESULT] run=1 logit[1]=b18d
+[RESULT] run=1 logit[2]=2ff0
+[RESULT] run=1 logit[3]=9a58
+[RESULT] run=1 logit[4]=a3b0
+[RESULT] run=1 logit[5]=b401
+[RESULT] run=1 logit[6]=2cd8
+[RESULT] run=1 logit[7]=b1e0
+[RESULT] run=1 logit[8]=320d
+[RESULT] run=1 logit[9]=b404
+[RESULT] run=1 logit[10]=b512
+[RESULT] run=1 logit[11]=255e
+[RESULT] run=1 logit[12]=b2ad
+[RESULT] run=1 logit[13]=afe8
+[RESULT] run=1 logit[14]=35b0
+[RESULT] run=1 logit[15]=3017
+[RESULT] run=1 logit[16]=3403
+[RESULT] run=1 predicted_digit=14
+[MEASURE] run=1 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[RESULT] run=2 logit[0]=2908
+[RESULT] run=2 logit[1]=b18d
+[RESULT] run=2 logit[2]=2ff0
+[RESULT] run=2 logit[3]=9a58
+[RESULT] run=2 logit[4]=a3b0
+[RESULT] run=2 logit[5]=b401
+[RESULT] run=2 logit[6]=2cd8
+[RESULT] run=2 logit[7]=b1e0
+[RESULT] run=2 logit[8]=320d
+[RESULT] run=2 logit[9]=b404
+[RESULT] run=2 logit[10]=b512
+[RESULT] run=2 logit[11]=255e
+[RESULT] run=2 logit[12]=b2ad
+[RESULT] run=2 logit[13]=afe8
+[RESULT] run=2 logit[14]=35b0
+[RESULT] run=2 logit[15]=3017
+[RESULT] run=2 logit[16]=3403
+[RESULT] run=2 predicted_digit=14
+[MEASURE] run=2 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[PASS] E2E runs=2 hidden=11 logits=17 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_3/negative/simulation.log
+[CONFIG] inputs=20 hidden=11 outputs=17 lanes=5 latency=11 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=2116
+[RESULT] run=1 logit[0]=38cd
+[RESULT] run=1 logit[1]=bce0
+[RESULT] run=1 logit[2]=bbac
+[RESULT] run=1 logit[3]=393f
+[RESULT] run=1 logit[4]=3984
+[RESULT] run=1 logit[5]=beaf
+[RESULT] run=1 logit[6]=ba59
+[RESULT] run=1 logit[7]=bd49
+[RESULT] run=1 logit[8]=b907
+[RESULT] run=1 logit[9]=bc66
+[RESULT] run=1 logit[10]=ad20
+[RESULT] run=1 logit[11]=9900
+[RESULT] run=1 logit[12]=3c03
+[RESULT] run=1 logit[13]=b088
+[RESULT] run=1 logit[14]=3c28
+[RESULT] run=1 logit[15]=3cfa
+[RESULT] run=1 logit[16]=32ff
+[RESULT] run=1 predicted_digit=15
+[MEASURE] run=1 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=15
+[RESULT] run=2 logit[0]=38cd
+[RESULT] run=2 logit[1]=bce0
+[RESULT] run=2 logit[2]=bbac
+[RESULT] run=2 logit[3]=393f
+[RESULT] run=2 logit[4]=3984
+[RESULT] run=2 logit[5]=beaf
+[RESULT] run=2 logit[6]=ba59
+[RESULT] run=2 logit[7]=bd49
+[RESULT] run=2 logit[8]=b907
+[RESULT] run=2 logit[9]=bc66
+[RESULT] run=2 logit[10]=ad20
+[RESULT] run=2 logit[11]=9900
+[RESULT] run=2 logit[12]=3c03
+[RESULT] run=2 logit[13]=b088
+[RESULT] run=2 logit[14]=3c28
+[RESULT] run=2 logit[15]=3cfa
+[RESULT] run=2 logit[16]=32ff
+[RESULT] run=2 predicted_digit=15
+[MEASURE] run=2 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=15
+[PASS] E2E runs=2 hidden=11 logits=17 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_3/alternating/simulation.log
+[CONFIG] inputs=20 hidden=11 outputs=17 lanes=5 latency=11 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=2116
+[RESULT] run=1 logit[0]=37ad
+[RESULT] run=1 logit[1]=b446
+[RESULT] run=1 logit[2]=b92c
+[RESULT] run=1 logit[3]=3723
+[RESULT] run=1 logit[4]=bba1
+[RESULT] run=1 logit[5]=bd7a
+[RESULT] run=1 logit[6]=b5e7
+[RESULT] run=1 logit[7]=bd82
+[RESULT] run=1 logit[8]=2060
+[RESULT] run=1 logit[9]=bd89
+[RESULT] run=1 logit[10]=b7ee
+[RESULT] run=1 logit[11]=3c79
+[RESULT] run=1 logit[12]=ad86
+[RESULT] run=1 logit[13]=399a
+[RESULT] run=1 logit[14]=4069
+[RESULT] run=1 logit[15]=3fe2
+[RESULT] run=1 logit[16]=3da6
+[RESULT] run=1 predicted_digit=14
+[MEASURE] run=1 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[RESULT] run=2 logit[0]=37ad
+[RESULT] run=2 logit[1]=b446
+[RESULT] run=2 logit[2]=b92c
+[RESULT] run=2 logit[3]=3723
+[RESULT] run=2 logit[4]=bba1
+[RESULT] run=2 logit[5]=bd7a
+[RESULT] run=2 logit[6]=b5e7
+[RESULT] run=2 logit[7]=bd82
+[RESULT] run=2 logit[8]=2060
+[RESULT] run=2 logit[9]=bd89
+[RESULT] run=2 logit[10]=b7ee
+[RESULT] run=2 logit[11]=3c79
+[RESULT] run=2 logit[12]=ad86
+[RESULT] run=2 logit[13]=399a
+[RESULT] run=2 logit[14]=4069
+[RESULT] run=2 logit[15]=3fe2
+[RESULT] run=2 logit[16]=3da6
+[RESULT] run=2 predicted_digit=14
+[MEASURE] run=2 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[PASS] E2E runs=2 hidden=11 logits=17 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_3/random/simulation.log
+[CONFIG] inputs=20 hidden=11 outputs=17 lanes=5 latency=11 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=2116
+[RESULT] run=1 logit[0]=2a47
+[RESULT] run=1 logit[1]=b4a9
+[RESULT] run=1 logit[2]=abd8
+[RESULT] run=1 logit[3]=312a
+[RESULT] run=1 logit[4]=316a
+[RESULT] run=1 logit[5]=b576
+[RESULT] run=1 logit[6]=b00e
+[RESULT] run=1 logit[7]=b204
+[RESULT] run=1 logit[8]=2590
+[RESULT] run=1 logit[9]=b3e6
+[RESULT] run=1 logit[10]=b4ea
+[RESULT] run=1 logit[11]=b071
+[RESULT] run=1 logit[12]=2690
+[RESULT] run=1 logit[13]=b1d3
+[RESULT] run=1 logit[14]=367a
+[RESULT] run=1 logit[15]=26a1
+[RESULT] run=1 logit[16]=3051
+[RESULT] run=1 predicted_digit=14
+[MEASURE] run=1 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[RESULT] run=2 logit[0]=2a47
+[RESULT] run=2 logit[1]=b4a9
+[RESULT] run=2 logit[2]=abd8
+[RESULT] run=2 logit[3]=312a
+[RESULT] run=2 logit[4]=316a
+[RESULT] run=2 logit[5]=b576
+[RESULT] run=2 logit[6]=b00e
+[RESULT] run=2 logit[7]=b204
+[RESULT] run=2 logit[8]=2590
+[RESULT] run=2 logit[9]=b3e6
+[RESULT] run=2 logit[10]=b4ea
+[RESULT] run=2 logit[11]=b071
+[RESULT] run=2 logit[12]=2690
+[RESULT] run=2 logit[13]=b1d3
+[RESULT] run=2 logit[14]=367a
+[RESULT] run=2 logit[15]=26a1
+[RESULT] run=2 logit[16]=3051
+[RESULT] run=2 predicted_digit=14
+[MEASURE] run=2 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[PASS] E2E runs=2 hidden=11 logits=17 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_4/zero/simulation.log
+[CONFIG] inputs=9 hidden=11 outputs=3 lanes=4 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=784
+[RESULT] run=1 logit[0]=ad56
+[RESULT] run=1 logit[1]=aef2
+[RESULT] run=1 logit[2]=328c
+[RESULT] run=1 predicted_digit=2
+[MEASURE] run=1 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=2
+[RESULT] run=2 logit[0]=ad56
+[RESULT] run=2 logit[1]=aef2
+[RESULT] run=2 logit[2]=328c
+[RESULT] run=2 predicted_digit=2
+[MEASURE] run=2 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=2
+[PASS] E2E runs=2 hidden=11 logits=3 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_4/negative/simulation.log
+[CONFIG] inputs=9 hidden=11 outputs=3 lanes=4 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=784
+[RESULT] run=1 logit[0]=2d12
+[RESULT] run=1 logit[1]=3858
+[RESULT] run=1 logit[2]=b46a
+[RESULT] run=1 predicted_digit=1
+[MEASURE] run=1 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=1
+[RESULT] run=2 logit[0]=2d12
+[RESULT] run=2 logit[1]=3858
+[RESULT] run=2 logit[2]=b46a
+[RESULT] run=2 predicted_digit=1
+[MEASURE] run=2 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=1
+[PASS] E2E runs=2 hidden=11 logits=3 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_4/alternating/simulation.log
+[CONFIG] inputs=9 hidden=11 outputs=3 lanes=4 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=784
+[RESULT] run=1 logit[0]=392b
+[RESULT] run=1 logit[1]=3946
+[RESULT] run=1 logit[2]=aa30
+[RESULT] run=1 predicted_digit=1
+[MEASURE] run=1 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=1
+[RESULT] run=2 logit[0]=392b
+[RESULT] run=2 logit[1]=3946
+[RESULT] run=2 logit[2]=aa30
+[RESULT] run=2 predicted_digit=1
+[MEASURE] run=2 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=1
+[PASS] E2E runs=2 hidden=11 logits=3 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_4/random/simulation.log
+[CONFIG] inputs=9 hidden=11 outputs=3 lanes=4 latency=7 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=784
+[RESULT] run=1 logit[0]=3452
+[RESULT] run=1 logit[1]=2cac
+[RESULT] run=1 logit[2]=2430
+[RESULT] run=1 predicted_digit=0
+[MEASURE] run=1 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=0
+[RESULT] run=2 logit[0]=3452
+[RESULT] run=2 logit[1]=2cac
+[RESULT] run=2 logit[2]=2430
+[RESULT] run=2 predicted_digit=0
+[MEASURE] run=2 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=0
+[PASS] E2E runs=2 hidden=11 logits=3 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_5/zero/simulation.log
+[CONFIG] inputs=7 hidden=2 outputs=2 lanes=7 latency=1 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=108
+[RESULT] run=1 logit[0]=337b
+[RESULT] run=1 logit[1]=b372
+[RESULT] run=1 predicted_digit=0
+[MEASURE] run=1 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[RESULT] run=2 logit[0]=337b
+[RESULT] run=2 logit[1]=b372
+[RESULT] run=2 predicted_digit=0
+[MEASURE] run=2 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[PASS] E2E runs=2 hidden=2 logits=2 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_5/negative/simulation.log
+[CONFIG] inputs=7 hidden=2 outputs=2 lanes=7 latency=1 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=108
+[RESULT] run=1 logit[0]=3b21
+[RESULT] run=1 logit[1]=b560
+[RESULT] run=1 predicted_digit=0
+[MEASURE] run=1 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[RESULT] run=2 logit[0]=3b21
+[RESULT] run=2 logit[1]=b560
+[RESULT] run=2 predicted_digit=0
+[MEASURE] run=2 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[PASS] E2E runs=2 hidden=2 logits=2 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_5/alternating/simulation.log
+[CONFIG] inputs=7 hidden=2 outputs=2 lanes=7 latency=1 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=108
+[RESULT] run=1 logit[0]=35ca
+[RESULT] run=1 logit[1]=b2c8
+[RESULT] run=1 predicted_digit=0
+[MEASURE] run=1 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[RESULT] run=2 logit[0]=35ca
+[RESULT] run=2 logit[1]=b2c8
+[RESULT] run=2 predicted_digit=0
+[MEASURE] run=2 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[PASS] E2E runs=2 hidden=2 logits=2 reset_abort=0 checked_outputs=1
+
+
+### build/parameters_5/random/simulation.log
+[CONFIG] inputs=7 hidden=2 outputs=2 lanes=7 latency=1 runs=2 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=108
+[RESULT] run=1 logit[0]=3353
+[RESULT] run=1 logit[1]=b378
+[RESULT] run=1 predicted_digit=0
+[MEASURE] run=1 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[RESULT] run=2 logit[0]=3353
+[RESULT] run=2 logit[1]=b378
+[RESULT] run=2 predicted_digit=0
+[MEASURE] run=2 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[PASS] E2E runs=2 hidden=2 logits=2 reset_abort=0 checked_outputs=1
+
+
+### build/gui_file_paths/reference/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=1 checked_outputs=1
+[CONFIG] image=inputs/pixels.mem
+[CONFIG] fc1_weights=inputs/first.mem fc2_weights=inputs/second.mem
+[CONFIG] fc1_bias=inputs/bias_a.mem fc2_bias=inputs/bias_b.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=411a
+[RESULT] run=1 logit[1]=c2bb
+[RESULT] run=1 logit[2]=4844
+[RESULT] run=1 logit[3]=43eb
+[RESULT] run=1 logit[4]=cd2b
+[RESULT] run=1 logit[5]=43e7
+[RESULT] run=1 logit[6]=444e
+[RESULT] run=1 logit[7]=caa2
+[RESULT] run=1 logit[8]=3336
+[RESULT] run=1 logit[9]=cad4
+[RESULT] run=1 predicted_digit=2
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=1 hidden=8 logits=10 reset_abort=0 checked_outputs=1
+
+
+### build/gui_spaced_paths/reference/simulation.log
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=1 checked_outputs=1
+[CONFIG] image=input files/image pixels.mem
+[CONFIG] fc1_weights=input files/first weights.mem fc2_weights=input files/second weights.mem
+[CONFIG] fc1_bias=input files/first bias.mem fc2_bias=input files/second bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=411a
+[RESULT] run=1 logit[1]=c2bb
+[RESULT] run=1 logit[2]=4844
+[RESULT] run=1 logit[3]=43eb
+[RESULT] run=1 logit[4]=cd2b
+[RESULT] run=1 logit[5]=43e7
+[RESULT] run=1 logit[6]=444e
+[RESULT] run=1 logit[7]=caa2
+[RESULT] run=1 logit[8]=3336
+[RESULT] run=1 logit[9]=cad4
+[RESULT] run=1 predicted_digit=2
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=1 hidden=8 logits=10 reset_abort=0 checked_outputs=1
+
+
+### aggregate code with current TB
+[CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=1 checked_outputs=1
+[CONFIG] image=data/cases/reference/test_image.mem
+[CONFIG] fc1_weights=data/model/fc1_weights.mem fc2_weights=data/model/fc2_weights.mem
+[CONFIG] fc1_bias=data/model/fc1_bias.mem fc2_bias=data/model/fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=29144
+[RESULT] run=1 logit[0]=411a
+[RESULT] run=1 logit[1]=c2bb
+[RESULT] run=1 logit[2]=4844
+[RESULT] run=1 logit[3]=43eb
+[RESULT] run=1 logit[4]=cd2b
+[RESULT] run=1 logit[5]=43e7
+[RESULT] run=1 logit[6]=444e
+[RESULT] run=1 logit[7]=caa2
+[RESULT] run=1 logit[8]=3336
+[RESULT] run=1 logit[9]=cad4
+[RESULT] run=1 predicted_digit=2
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=1 hidden=8 logits=10 reset_abort=0 checked_outputs=1

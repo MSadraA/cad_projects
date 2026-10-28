@@ -1,0 +1,17 @@
+rtl/fcnn_accumulator_bank.v
+rtl/fcnn_activation_regfile.v
+rtl/fcnn_address_generator.v
+rtl/fcnn_argmax.v
+rtl/fcnn_bias_rom.v
+rtl/fcnn_controller.v
+rtl/fcnn_datapath.v
+rtl/fcnn_fp16_adder.v
+rtl/fcnn_fp16_multiplier.v
+rtl/fcnn_local_scheduler.v
+rtl/fcnn_operand_router.v
+rtl/fcnn_ping_pong_buffer.v
+rtl/fcnn_product_register.v
+rtl/fcnn_relu_fp16.v
+rtl/fcnn_row_sram.v
+rtl/fcnn_row_stage.v
+rtl/fcnn_top.v

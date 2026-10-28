@@ -1,0 +1,78 @@
+{
+  "parameters": {
+    "N_INPUTS": 784,
+    "N_HIDDEN": 8,
+    "N_OUTPUTS": 10,
+    "LANES": 7,
+    "SRAM_LATENCY": 7
+  },
+  "model_dir": "data/model",
+  "cases": [
+    {
+      "name": "reference",
+      "image": "data/cases/reference/test_image.mem",
+      "legacy_golden": "reference"
+    },
+    {
+      "name": "digit_0",
+      "image": "data/cases/digit_0/test_image.mem",
+      "true_label": 0,
+      "legacy_golden": "digit_0"
+    },
+    {
+      "name": "digit_1",
+      "image": "data/cases/digit_1/test_image.mem",
+      "true_label": 1,
+      "legacy_golden": "digit_1"
+    },
+    {
+      "name": "digit_2",
+      "image": "data/cases/digit_2/test_image.mem",
+      "true_label": 2,
+      "legacy_golden": "digit_2"
+    },
+    {
+      "name": "digit_3",
+      "image": "data/cases/digit_3/test_image.mem",
+      "true_label": 3,
+      "legacy_golden": "digit_3"
+    },
+    {
+      "name": "digit_4",
+      "image": "data/cases/digit_4/test_image.mem",
+      "true_label": 4,
+      "legacy_golden": "digit_4"
+    },
+    {
+      "name": "digit_5",
+      "image": "data/cases/digit_5/test_image.mem",
+      "true_label": 5,
+      "legacy_golden": "digit_5"
+    },
+    {
+      "name": "digit_6",
+      "image": "data/cases/digit_6/test_image.mem",
+      "true_label": 6,
+      "legacy_golden": "digit_6"
+    },
+    {
+      "name": "digit_7",
+      "image": "data/cases/digit_7/test_image.mem",
+      "true_label": 7,
+      "legacy_golden": "digit_7"
+    },
+    {
+      "name": "digit_8",
+      "image": "data/cases/digit_8/test_image.mem",
+      "true_label": 8,
+      "legacy_golden": "digit_8"
+    },
+    {
+      "name": "digit_9",
+      "image": "data/cases/digit_9/test_image.mem",
+      "true_label": 9,
+      "legacy_golden": "digit_9"
+    }
+  ],
+  "legacy_goldens": "data/legacy_bias_first.json"
+}

@@ -1,0 +1,31 @@
+### build/fc2_abort/reference/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 191780000 (1ps)
+
+
+### build/long_latency/reference/simulation.log
+[MEASURE] run=1 cycles=6407 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=1 hidden=8 logits=10 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 64170000 (1ps)
+
+
+### build/file_paths/reference/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=1 hidden=8 logits=10 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 64130000 (1ps)
+
+
+### build/spaced_paths/reference/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=1 hidden=8 logits=10 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 64130000 (1ps)
+
+
+### build/waveform_probe/random/simulation.log
+VCD info: dumpfile fcnn.vcd opened for output.
+[MEASURE] run=1 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[PASS] E2E runs=1 hidden=3 logits=5 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 1260000 (1ps)
+

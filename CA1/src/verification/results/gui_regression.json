@@ -1,0 +1,2420 @@
+{
+  "revision": "modelsim-gui-tb",
+  "date": "2026-10-20",
+  "simulator": "Icarus 12.0",
+  "language": "Verilog-2005",
+  "actual_modelsim_execution": false,
+  "successful_inferences": 81,
+  "full_tb_numerical_scoreboard_inferences": 74,
+  "protocol_tb_inferences_with_independently_checked_final_outputs": 7,
+  "official_suite": {
+    "simulator": "icarus",
+    "suite": "config/regression.json",
+    "parameters": {
+      "N_INPUTS": 784,
+      "N_HIDDEN": 8,
+      "N_OUTPUTS": 10,
+      "LANES": 7,
+      "SRAM_LATENCY": 7
+    },
+    "file_parameters": {
+      "FC1_WEIGHTS_FILE": "fc1_weights.mem",
+      "FC2_WEIGHTS_FILE": "fc2_weights.mem",
+      "INPUT_FILE": "test_image.mem",
+      "FC1_BIAS_FILE": "fc1_bias.mem",
+      "FC2_BIAS_FILE": "fc2_bias.mem"
+    },
+    "runs": 2,
+    "reset_after": 100,
+    "cases": [
+      {
+        "name": "reference",
+        "passed": true,
+        "measurements": [
+          {
+            "run": 1,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 2
+          },
+          {
+            "run": 2,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 2
+          }
+        ],
+        "oracle": {
+          "pre_hidden": [
+            18111,
+            49420,
+            19381,
+            17624,
+            18496,
+            18181,
+            17284,
+            49887
+          ],
+          "hidden": [
+            18111,
+            0,
+            19381,
+            17624,
+            18496,
+            18181,
+            17284,
+            0
+          ],
+          "logits": [
+            16666,
+            49851,
+            18500,
+            17387,
+            52523,
+            17383,
+            17486,
+            51874,
+            13110,
+            51924
+          ],
+          "predicted_digit": 2,
+          "bias_order": "last"
+        },
+        "legacy_golden_validated": true,
+        "changed_logit_words": 4,
+        "legacy_predicted_digit": 2
+      },
+      {
+        "name": "digit_0",
+        "passed": true,
+        "measurements": [
+          {
+            "run": 1,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 0
+          },
+          {
+            "run": 2,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 0
+          }
+        ],
+        "oracle": {
+          "pre_hidden": [
+            17515,
+            18633,
+            18739,
+            18541,
+            15450,
+            17258,
+            17321,
+            19002
+          ],
+          "hidden": [
+            17515,
+            18633,
+            18739,
+            18541,
+            15450,
+            17258,
+            17321,
+            19002
+          ],
+          "logits": [
+            18005,
+            52379,
+            48638,
+            50836,
+            50818,
+            47221,
+            49859,
+            50611,
+            47526,
+            50008
+          ],
+          "predicted_digit": 0,
+          "bias_order": "last"
+        },
+        "legacy_golden_validated": true,
+        "changed_logit_words": 9,
+        "legacy_predicted_digit": 0,
+        "true_label": 0,
+        "classification_correct": true
+      },
+      {
+        "name": "digit_1",
+        "passed": true,
+        "measurements": [
+          {
+            "run": 1,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 1
+          },
+          {
+            "run": 2,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 1
+          }
+        ],
+        "oracle": {
+          "pre_hidden": [
+            17992,
+            18547,
+            16346,
+            13750,
+            18956,
+            48248,
+            16375,
+            48450
+          ],
+          "hidden": [
+            17992,
+            18547,
+            16346,
+            13750,
+            18956,
+            0,
+            16375,
+            0
+          ],
+          "logits": [
+            51800,
+            18105,
+            12826,
+            45920,
+            50439,
+            50007,
+            49570,
+            48297,
+            45090,
+            47204
+          ],
+          "predicted_digit": 1,
+          "bias_order": "last"
+        },
+        "legacy_golden_validated": true,
+        "changed_logit_words": 8,
+        "legacy_predicted_digit": 1,
+        "true_label": 1,
+        "classification_correct": true
+      },
+      {
+        "name": "digit_2",
+        "passed": true,
+        "measurements": [
+          {
+            "run": 1,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 2
+          },
+          {
+            "run": 2,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 2
+          }
+        ],
+        "oracle": {
+          "pre_hidden": [
+            17480,
+            17473,
+            18769,
+            18037,
+            18860,
+            14668,
+            17911,
+            17567
+          ],
+          "hidden": [
+            17480,
+            17473,
+            18769,
+            18037,
+            18860,
+            14668,
+            17911,
+            17567
+          ],
+          "logits": [
+            49686,
+            50797,
+            18447,
+            14413,
+            51516,
+            50420,
+            45534,
+            50867,
+            48002,
+            50346
+          ],
+          "predicted_digit": 2,
+          "bias_order": "last"
+        },
+        "legacy_golden_validated": true,
+        "changed_logit_words": 10,
+        "legacy_predicted_digit": 2,
+        "true_label": 2,
+        "classification_correct": true
+      },
+      {
+        "name": "digit_3",
+        "passed": true,
+        "measurements": [
+          {
+            "run": 1,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 3
+          },
+          {
+            "run": 2,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 3
+          }
+        ],
+        "oracle": {
+          "pre_hidden": [
+            16583,
+            18594,
+            18429,
+            18658,
+            19069,
+            17899,
+            47174,
+            15043
+          ],
+          "hidden": [
+            16583,
+            18594,
+            18429,
+            18658,
+            19069,
+            17899,
+            0,
+            15043
+          ],
+          "logits": [
+            50863,
+            50456,
+            14644,
+            18439,
+            52003,
+            14395,
+            51314,
+            51221,
+            13363,
+            49938
+          ],
+          "predicted_digit": 3,
+          "bias_order": "last"
+        },
+        "legacy_golden_validated": true,
+        "changed_logit_words": 9,
+        "legacy_predicted_digit": 3,
+        "true_label": 3,
+        "classification_correct": true
+      },
+      {
+        "name": "digit_4",
+        "passed": true,
+        "measurements": [
+          {
+            "run": 1,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 4
+          },
+          {
+            "run": 2,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 4
+          }
+        ],
+        "oracle": {
+          "pre_hidden": [
+            17973,
+            19462,
+            13778,
+            17855,
+            16056,
+            48620,
+            18619,
+            16878
+          ],
+          "hidden": [
+            17973,
+            19462,
+            13778,
+            17855,
+            16056,
+            0,
+            18619,
+            16878
+          ],
+          "logits": [
+            51258,
+            50949,
+            50633,
+            51117,
+            18538,
+            49014,
+            16062,
+            51333,
+            49580,
+            16229
+          ],
+          "predicted_digit": 4,
+          "bias_order": "last"
+        },
+        "legacy_golden_validated": true,
+        "changed_logit_words": 9,
+        "legacy_predicted_digit": 4,
+        "true_label": 4,
+        "classification_correct": true
+      },
+      {
+        "name": "digit_5",
+        "passed": true,
+        "measurements": [
+          {
+            "run": 1,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 5
+          },
+          {
+            "run": 2,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 5
+          }
+        ],
+        "oracle": {
+          "pre_hidden": [
+            17573,
+            19661,
+            18469,
+            18681,
+            17507,
+            18455,
+            15461,
+            18315
+          ],
+          "hidden": [
+            17573,
+            19661,
+            18469,
+            18681,
+            17507,
+            18455,
+            15461,
+            18315
+          ],
+          "logits": [
+            49518,
+            52060,
+            51464,
+            48474,
+            51382,
+            17445,
+            51313,
+            51183,
+            47330,
+            49559
+          ],
+          "predicted_digit": 5,
+          "bias_order": "last"
+        },
+        "legacy_golden_validated": true,
+        "changed_logit_words": 9,
+        "legacy_predicted_digit": 5,
+        "true_label": 5,
+        "classification_correct": true
+      },
+      {
+        "name": "digit_6",
+        "passed": true,
+        "measurements": [
+          {
+            "run": 1,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 6
+          },
+          {
+            "run": 2,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 6
+          }
+        ],
+        "oracle": {
+          "pre_hidden": [
+            18789,
+            18844,
+            18717,
+            18267,
+            16129,
+            46445,
+            18937,
+            45804
+          ],
+          "hidden": [
+            18789,
+            18844,
+            18717,
+            18267,
+            16129,
+            0,
+            18937,
+            0
+          ],
+          "logits": [
+            50229,
+            51271,
+            16059,
+            50864,
+            15957,
+            15636,
+            18820,
+            52446,
+            15793,
+            51187
+          ],
+          "predicted_digit": 6,
+          "bias_order": "last"
+        },
+        "legacy_golden_validated": true,
+        "changed_logit_words": 9,
+        "legacy_predicted_digit": 6,
+        "true_label": 6,
+        "classification_correct": true
+      },
+      {
+        "name": "digit_7",
+        "passed": true,
+        "measurements": [
+          {
+            "run": 1,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 7
+          },
+          {
+            "run": 2,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 7
+          }
+        ],
+        "oracle": {
+          "pre_hidden": [
+            17890,
+            18773,
+            17533,
+            43128,
+            18351,
+            46897,
+            48374,
+            18380
+          ],
+          "hidden": [
+            17890,
+            18773,
+            17533,
+            0,
+            18351,
+            0,
+            0,
+            18380
+          ],
+          "logits": [
+            50715,
+            48434,
+            49749,
+            50612,
+            50672,
+            50009,
+            50420,
+            17398,
+            14446,
+            44164
+          ],
+          "predicted_digit": 7,
+          "bias_order": "last"
+        },
+        "legacy_golden_validated": true,
+        "changed_logit_words": 7,
+        "legacy_predicted_digit": 7,
+        "true_label": 7,
+        "classification_correct": true
+      },
+      {
+        "name": "digit_8",
+        "passed": true,
+        "measurements": [
+          {
+            "run": 1,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 8
+          },
+          {
+            "run": 2,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 8
+          }
+        ],
+        "oracle": {
+          "pre_hidden": [
+            18586,
+            19477,
+            18488,
+            18472,
+            18575,
+            45850,
+            42160,
+            18296
+          ],
+          "hidden": [
+            18586,
+            19477,
+            18488,
+            18472,
+            18575,
+            0,
+            0,
+            18296
+          ],
+          "logits": [
+            51102,
+            51199,
+            50375,
+            50220,
+            50548,
+            49210,
+            50884,
+            50606,
+            17830,
+            49211
+          ],
+          "predicted_digit": 8,
+          "bias_order": "last"
+        },
+        "legacy_golden_validated": true,
+        "changed_logit_words": 4,
+        "legacy_predicted_digit": 8,
+        "true_label": 8,
+        "classification_correct": true
+      },
+      {
+        "name": "digit_9",
+        "passed": true,
+        "measurements": [
+          {
+            "run": 1,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 9
+          },
+          {
+            "run": 2,
+            "cycles": 6403,
+            "mul": 6352,
+            "add": 6370,
+            "weight_rows": 908,
+            "input_rows": 896,
+            "fc1_gaps": 7,
+            "fc2_gaps": 9,
+            "digit": 9
+          }
+        ],
+        "oracle": {
+          "pre_hidden": [
+            16401,
+            19499,
+            16471,
+            18295,
+            17978,
+            16011,
+            15824,
+            18178
+          ],
+          "hidden": [
+            16401,
+            19499,
+            16471,
+            18295,
+            17978,
+            16011,
+            15824,
+            18178
+          ],
+          "logits": [
+            51110,
+            51440,
+            51135,
+            49221,
+            46987,
+            49420,
+            51416,
+            48068,
+            47734,
+            17405
+          ],
+          "predicted_digit": 9,
+          "bias_order": "last"
+        },
+        "legacy_golden_validated": true,
+        "changed_logit_words": 9,
+        "legacy_predicted_digit": 9,
+        "true_label": 9,
+        "classification_correct": true
+      }
+    ],
+    "passed": true
+  },
+  "parameter_profiles": [
+    {
+      "simulator": "icarus",
+      "suite": "build/verification/generated_0/suite.json",
+      "parameters": {
+        "N_INPUTS": 15,
+        "N_HIDDEN": 3,
+        "N_OUTPUTS": 5,
+        "LANES": 7,
+        "SRAM_LATENCY": 7
+      },
+      "file_parameters": {
+        "FC1_WEIGHTS_FILE": "fc1_weights.mem",
+        "FC2_WEIGHTS_FILE": "fc2_weights.mem",
+        "INPUT_FILE": "test_image.mem",
+        "FC1_BIAS_FILE": "fc1_bias.mem",
+        "FC2_BIAS_FILE": "fc2_bias.mem"
+      },
+      "runs": 2,
+      "reset_after": 0,
+      "cases": [
+        {
+          "name": "zero",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 116,
+              "mul": 60,
+              "add": 68,
+              "weight_rows": 12,
+              "input_rows": 9,
+              "fc1_gaps": 14,
+              "fc2_gaps": 4,
+              "digit": 1
+            },
+            {
+              "run": 2,
+              "cycles": 116,
+              "mul": 60,
+              "add": 68,
+              "weight_rows": 12,
+              "input_rows": 9,
+              "fc1_gaps": 14,
+              "fc2_gaps": 4,
+              "digit": 1
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              13269,
+              11387,
+              10058
+            ],
+            "hidden": [
+              13269,
+              11387,
+              10058
+            ],
+            "logits": [
+              40832,
+              12832,
+              11272,
+              44662,
+              45711
+            ],
+            "predicted_digit": 1,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "negative",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 116,
+              "mul": 60,
+              "add": 68,
+              "weight_rows": 12,
+              "input_rows": 9,
+              "fc1_gaps": 14,
+              "fc2_gaps": 4,
+              "digit": 1
+            },
+            {
+              "run": 2,
+              "cycles": 116,
+              "mul": 60,
+              "add": 68,
+              "weight_rows": 12,
+              "input_rows": 9,
+              "fc1_gaps": 14,
+              "fc2_gaps": 4,
+              "digit": 1
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              16455,
+              14193,
+              47478
+            ],
+            "hidden": [
+              16455,
+              14193,
+              0
+            ],
+            "logits": [
+              47441,
+              13922,
+              47292,
+              13164,
+              11870
+            ],
+            "predicted_digit": 1,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "alternating",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 116,
+              "mul": 60,
+              "add": 68,
+              "weight_rows": 12,
+              "input_rows": 9,
+              "fc1_gaps": 14,
+              "fc2_gaps": 4,
+              "digit": 3
+            },
+            {
+              "run": 2,
+              "cycles": 116,
+              "mul": 60,
+              "add": 68,
+              "weight_rows": 12,
+              "input_rows": 9,
+              "fc1_gaps": 14,
+              "fc2_gaps": 4,
+              "digit": 3
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              48505,
+              15987,
+              44826
+            ],
+            "hidden": [
+              0,
+              15987,
+              0
+            ],
+            "logits": [
+              47208,
+              43508,
+              45980,
+              10540,
+              47671
+            ],
+            "predicted_digit": 3,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "random",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 116,
+              "mul": 60,
+              "add": 68,
+              "weight_rows": 12,
+              "input_rows": 9,
+              "fc1_gaps": 14,
+              "fc2_gaps": 4,
+              "digit": 1
+            },
+            {
+              "run": 2,
+              "cycles": 116,
+              "mul": 60,
+              "add": 68,
+              "weight_rows": 12,
+              "input_rows": 9,
+              "fc1_gaps": 14,
+              "fc2_gaps": 4,
+              "digit": 1
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              15018,
+              45842,
+              14533
+            ],
+            "hidden": [
+              15018,
+              0,
+              14533
+            ],
+            "logits": [
+              46132,
+              12960,
+              12545,
+              45738,
+              44891
+            ],
+            "predicted_digit": 1,
+            "bias_order": "last"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "simulator": "icarus",
+      "suite": "build/verification/generated_1/suite.json",
+      "parameters": {
+        "N_INPUTS": 1,
+        "N_HIDDEN": 1,
+        "N_OUTPUTS": 1,
+        "LANES": 1,
+        "SRAM_LATENCY": 1
+      },
+      "file_parameters": {
+        "FC1_WEIGHTS_FILE": "fc1_weights.mem",
+        "FC2_WEIGHTS_FILE": "fc2_weights.mem",
+        "INPUT_FILE": "test_image.mem",
+        "FC1_BIAS_FILE": "fc1_bias.mem",
+        "FC2_BIAS_FILE": "fc2_bias.mem"
+      },
+      "runs": 2,
+      "reset_after": 0,
+      "cases": [
+        {
+          "name": "zero",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 13,
+              "mul": 2,
+              "add": 4,
+              "weight_rows": 2,
+              "input_rows": 1,
+              "fc1_gaps": 0,
+              "fc2_gaps": 0,
+              "digit": 0
+            },
+            {
+              "run": 2,
+              "cycles": 13,
+              "mul": 2,
+              "add": 4,
+              "weight_rows": 2,
+              "input_rows": 1,
+              "fc1_gaps": 0,
+              "fc2_gaps": 0,
+              "digit": 0
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              45490
+            ],
+            "hidden": [
+              0
+            ],
+            "logits": [
+              42188
+            ],
+            "predicted_digit": 0,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "negative",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 13,
+              "mul": 2,
+              "add": 4,
+              "weight_rows": 2,
+              "input_rows": 1,
+              "fc1_gaps": 0,
+              "fc2_gaps": 0,
+              "digit": 0
+            },
+            {
+              "run": 2,
+              "cycles": 13,
+              "mul": 2,
+              "add": 4,
+              "weight_rows": 2,
+              "input_rows": 1,
+              "fc1_gaps": 0,
+              "fc2_gaps": 0,
+              "digit": 0
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              13449
+            ],
+            "hidden": [
+              13449
+            ],
+            "logits": [
+              10424
+            ],
+            "predicted_digit": 0,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "alternating",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 13,
+              "mul": 2,
+              "add": 4,
+              "weight_rows": 2,
+              "input_rows": 1,
+              "fc1_gaps": 0,
+              "fc2_gaps": 0,
+              "digit": 0
+            },
+            {
+              "run": 2,
+              "cycles": 13,
+              "mul": 2,
+              "add": 4,
+              "weight_rows": 2,
+              "input_rows": 1,
+              "fc1_gaps": 0,
+              "fc2_gaps": 0,
+              "digit": 0
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              13449
+            ],
+            "hidden": [
+              13449
+            ],
+            "logits": [
+              10424
+            ],
+            "predicted_digit": 0,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "random",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 13,
+              "mul": 2,
+              "add": 4,
+              "weight_rows": 2,
+              "input_rows": 1,
+              "fc1_gaps": 0,
+              "fc2_gaps": 0,
+              "digit": 0
+            },
+            {
+              "run": 2,
+              "cycles": 13,
+              "mul": 2,
+              "add": 4,
+              "weight_rows": 2,
+              "input_rows": 1,
+              "fc1_gaps": 0,
+              "fc2_gaps": 0,
+              "digit": 0
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              46434
+            ],
+            "hidden": [
+              0
+            ],
+            "logits": [
+              42188
+            ],
+            "predicted_digit": 0,
+            "bias_order": "last"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "simulator": "icarus",
+      "suite": "build/verification/generated_2/suite.json",
+      "parameters": {
+        "N_INPUTS": 14,
+        "N_HIDDEN": 8,
+        "N_OUTPUTS": 3,
+        "LANES": 7,
+        "SRAM_LATENCY": 3
+      },
+      "file_parameters": {
+        "FC1_WEIGHTS_FILE": "fc1_weights.mem",
+        "FC2_WEIGHTS_FILE": "fc2_weights.mem",
+        "INPUT_FILE": "test_image.mem",
+        "FC1_BIAS_FILE": "fc1_bias.mem",
+        "FC2_BIAS_FILE": "fc2_bias.mem"
+      },
+      "runs": 2,
+      "reset_after": 0,
+      "cases": [
+        {
+          "name": "zero",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 170,
+              "mul": 136,
+              "add": 147,
+              "weight_rows": 20,
+              "input_rows": 16,
+              "fc1_gaps": 7,
+              "fc2_gaps": 2,
+              "digit": 1
+            },
+            {
+              "run": 2,
+              "cycles": 170,
+              "mul": 136,
+              "add": 147,
+              "weight_rows": 20,
+              "input_rows": 16,
+              "fc1_gaps": 7,
+              "fc2_gaps": 2,
+              "digit": 1
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              13159,
+              12226,
+              11770,
+              42632,
+              45176,
+              11809,
+              12172,
+              46059
+            ],
+            "hidden": [
+              13159,
+              12226,
+              11770,
+              0,
+              0,
+              11809,
+              12172,
+              0
+            ],
+            "logits": [
+              45170,
+              43747,
+              44340
+            ],
+            "predicted_digit": 1,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "negative",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 170,
+              "mul": 136,
+              "add": 147,
+              "weight_rows": 20,
+              "input_rows": 16,
+              "fc1_gaps": 7,
+              "fc2_gaps": 2,
+              "digit": 2
+            },
+            {
+              "run": 2,
+              "cycles": 170,
+              "mul": 136,
+              "add": 147,
+              "weight_rows": 20,
+              "input_rows": 16,
+              "fc1_gaps": 7,
+              "fc2_gaps": 2,
+              "digit": 2
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              16104,
+              15578,
+              14452,
+              45765,
+              15186,
+              15436,
+              44960,
+              47675
+            ],
+            "hidden": [
+              16104,
+              15578,
+              14452,
+              0,
+              15186,
+              15436,
+              0,
+              0
+            ],
+            "logits": [
+              45577,
+              44418,
+              14765
+            ],
+            "predicted_digit": 2,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "alternating",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 170,
+              "mul": 136,
+              "add": 147,
+              "weight_rows": 20,
+              "input_rows": 16,
+              "fc1_gaps": 7,
+              "fc2_gaps": 2,
+              "digit": 2
+            },
+            {
+              "run": 2,
+              "cycles": 170,
+              "mul": 136,
+              "add": 147,
+              "weight_rows": 20,
+              "input_rows": 16,
+              "fc1_gaps": 7,
+              "fc2_gaps": 2,
+              "digit": 2
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              47180,
+              44840,
+              45286,
+              46772,
+              47441,
+              44495,
+              14932,
+              15351
+            ],
+            "hidden": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              14932,
+              15351
+            ],
+            "logits": [
+              46540,
+              46281,
+              42400
+            ],
+            "predicted_digit": 2,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "random",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 170,
+              "mul": 136,
+              "add": 147,
+              "weight_rows": 20,
+              "input_rows": 16,
+              "fc1_gaps": 7,
+              "fc2_gaps": 2,
+              "digit": 2
+            },
+            {
+              "run": 2,
+              "cycles": 170,
+              "mul": 136,
+              "add": 147,
+              "weight_rows": 20,
+              "input_rows": 16,
+              "fc1_gaps": 7,
+              "fc2_gaps": 2,
+              "digit": 2
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              14871,
+              46500,
+              13183,
+              45021,
+              13330,
+              12716,
+              47554,
+              13522
+            ],
+            "hidden": [
+              14871,
+              0,
+              13183,
+              0,
+              13330,
+              12716,
+              0,
+              13522
+            ],
+            "logits": [
+              45800,
+              46441,
+              45153
+            ],
+            "predicted_digit": 2,
+            "bias_order": "last"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "simulator": "icarus",
+      "suite": "build/verification/generated_3/suite.json",
+      "parameters": {
+        "N_INPUTS": 20,
+        "N_HIDDEN": 11,
+        "N_OUTPUTS": 17,
+        "LANES": 5,
+        "SRAM_LATENCY": 11
+      },
+      "file_parameters": {
+        "FC1_WEIGHTS_FILE": "fc1_weights.mem",
+        "FC2_WEIGHTS_FILE": "fc2_weights.mem",
+        "INPUT_FILE": "test_image.mem",
+        "FC1_BIAS_FILE": "fc1_bias.mem",
+        "FC2_BIAS_FILE": "fc2_bias.mem"
+      },
+      "runs": 2,
+      "reset_after": 0,
+      "cases": [
+        {
+          "name": "zero",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 466,
+              "mul": 407,
+              "add": 435,
+              "weight_rows": 82,
+              "input_rows": 44,
+              "fc1_gaps": 10,
+              "fc2_gaps": 16,
+              "digit": 14
+            },
+            {
+              "run": 2,
+              "cycles": 466,
+              "mul": 407,
+              "add": 435,
+              "weight_rows": 82,
+              "input_rows": 44,
+              "fc1_gaps": 10,
+              "fc2_gaps": 16,
+              "digit": 14
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              11738,
+              44243,
+              13044,
+              12905,
+              44999,
+              44448,
+              11387,
+              45546,
+              44770,
+              45605,
+              11943
+            ],
+            "hidden": [
+              11738,
+              0,
+              13044,
+              12905,
+              0,
+              0,
+              11387,
+              0,
+              0,
+              0,
+              11943
+            ],
+            "logits": [
+              10504,
+              45453,
+              12272,
+              39512,
+              41904,
+              46081,
+              11480,
+              45536,
+              12813,
+              46084,
+              46354,
+              9566,
+              45741,
+              45032,
+              13744,
+              12311,
+              13315
+            ],
+            "predicted_digit": 14,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "negative",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 466,
+              "mul": 407,
+              "add": 435,
+              "weight_rows": 82,
+              "input_rows": 44,
+              "fc1_gaps": 10,
+              "fc2_gaps": 16,
+              "digit": 15
+            },
+            {
+              "run": 2,
+              "cycles": 466,
+              "mul": 407,
+              "add": 435,
+              "weight_rows": 82,
+              "input_rows": 44,
+              "fc1_gaps": 10,
+              "fc2_gaps": 16,
+              "digit": 15
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              16787,
+              48628,
+              11929,
+              16011,
+              47565,
+              49405,
+              48287,
+              6784,
+              48318,
+              47281,
+              47189
+            ],
+            "hidden": [
+              16787,
+              0,
+              11929,
+              16011,
+              0,
+              0,
+              0,
+              6784,
+              0,
+              0,
+              0
+            ],
+            "logits": [
+              14541,
+              48352,
+              48044,
+              14655,
+              14724,
+              48815,
+              47705,
+              48457,
+              47367,
+              48230,
+              44320,
+              39168,
+              15363,
+              45192,
+              15400,
+              15610,
+              13055
+            ],
+            "predicted_digit": 15,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "alternating",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 466,
+              "mul": 407,
+              "add": 435,
+              "weight_rows": 82,
+              "input_rows": 44,
+              "fc1_gaps": 10,
+              "fc2_gaps": 16,
+              "digit": 14
+            },
+            {
+              "run": 2,
+              "cycles": 466,
+              "mul": 407,
+              "add": 435,
+              "weight_rows": 82,
+              "input_rows": 44,
+              "fc1_gaps": 10,
+              "fc2_gaps": 16,
+              "digit": 14
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              16071,
+              46921,
+              16436,
+              16506,
+              9780,
+              48167,
+              49229,
+              14894,
+              48478,
+              48219,
+              14001
+            ],
+            "hidden": [
+              16071,
+              0,
+              16436,
+              16506,
+              9780,
+              0,
+              0,
+              14894,
+              0,
+              0,
+              14001
+            ],
+            "logits": [
+              14253,
+              46150,
+              47404,
+              14115,
+              48033,
+              48506,
+              46567,
+              48514,
+              8288,
+              48521,
+              47086,
+              15481,
+              44422,
+              14746,
+              16489,
+              16354,
+              15782
+            ],
+            "predicted_digit": 14,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "random",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 466,
+              "mul": 407,
+              "add": 435,
+              "weight_rows": 82,
+              "input_rows": 44,
+              "fc1_gaps": 10,
+              "fc2_gaps": 16,
+              "digit": 14
+            },
+            {
+              "run": 2,
+              "cycles": 466,
+              "mul": 407,
+              "add": 435,
+              "weight_rows": 82,
+              "input_rows": 44,
+              "fc1_gaps": 10,
+              "fc2_gaps": 16,
+              "digit": 14
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              13794,
+              48460,
+              45084,
+              13606,
+              48512,
+              47900,
+              13538,
+              47570,
+              46330,
+              42776,
+              47590
+            ],
+            "hidden": [
+              13794,
+              0,
+              0,
+              13606,
+              0,
+              0,
+              13538,
+              0,
+              0,
+              0,
+              0
+            ],
+            "logits": [
+              10823,
+              46249,
+              43992,
+              12586,
+              12650,
+              46454,
+              45070,
+              45572,
+              9616,
+              46054,
+              46314,
+              45169,
+              9872,
+              45523,
+              13946,
+              9889,
+              12369
+            ],
+            "predicted_digit": 14,
+            "bias_order": "last"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "simulator": "icarus",
+      "suite": "build/verification/generated_4/suite.json",
+      "parameters": {
+        "N_INPUTS": 9,
+        "N_HIDDEN": 11,
+        "N_OUTPUTS": 3,
+        "LANES": 4,
+        "SRAM_LATENCY": 7
+      },
+      "file_parameters": {
+        "FC1_WEIGHTS_FILE": "fc1_weights.mem",
+        "FC2_WEIGHTS_FILE": "fc2_weights.mem",
+        "INPUT_FILE": "test_image.mem",
+        "FC1_BIAS_FILE": "fc1_bias.mem",
+        "FC2_BIAS_FILE": "fc2_bias.mem"
+      },
+      "runs": 2,
+      "reset_after": 0,
+      "cases": [
+        {
+          "name": "zero",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 201,
+              "mul": 132,
+              "add": 146,
+              "weight_rows": 42,
+              "input_rows": 33,
+              "fc1_gaps": 40,
+              "fc2_gaps": 2,
+              "digit": 2
+            },
+            {
+              "run": 2,
+              "cycles": 201,
+              "mul": 132,
+              "add": 146,
+              "weight_rows": 42,
+              "input_rows": 33,
+              "fc1_gaps": 40,
+              "fc2_gaps": 2,
+              "digit": 2
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              46021,
+              11498,
+              45204,
+              44307,
+              45444,
+              38797,
+              45014,
+              11274,
+              44765,
+              45593,
+              44409
+            ],
+            "hidden": [
+              0,
+              11498,
+              0,
+              0,
+              0,
+              0,
+              0,
+              11274,
+              0,
+              0,
+              0
+            ],
+            "logits": [
+              44374,
+              44786,
+              12940
+            ],
+            "predicted_digit": 2,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "negative",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 201,
+              "mul": 132,
+              "add": 146,
+              "weight_rows": 42,
+              "input_rows": 33,
+              "fc1_gaps": 40,
+              "fc2_gaps": 2,
+              "digit": 1
+            },
+            {
+              "run": 2,
+              "cycles": 201,
+              "mul": 132,
+              "add": 146,
+              "weight_rows": 42,
+              "input_rows": 33,
+              "fc1_gaps": 40,
+              "fc2_gaps": 2,
+              "digit": 1
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              47691,
+              48059,
+              14770,
+              15146,
+              14345,
+              15395,
+              15804,
+              14791,
+              46807,
+              15421,
+              11611
+            ],
+            "hidden": [
+              0,
+              0,
+              14770,
+              15146,
+              14345,
+              15395,
+              15804,
+              14791,
+              0,
+              15421,
+              11611
+            ],
+            "logits": [
+              11538,
+              14424,
+              46186
+            ],
+            "predicted_digit": 1,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "alternating",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 201,
+              "mul": 132,
+              "add": 146,
+              "weight_rows": 42,
+              "input_rows": 33,
+              "fc1_gaps": 40,
+              "fc2_gaps": 2,
+              "digit": 1
+            },
+            {
+              "run": 2,
+              "cycles": 201,
+              "mul": 132,
+              "add": 146,
+              "weight_rows": 42,
+              "input_rows": 33,
+              "fc1_gaps": 40,
+              "fc2_gaps": 2,
+              "digit": 1
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              14661,
+              15499,
+              12984,
+              45344,
+              47239,
+              15758,
+              46474,
+              15998,
+              13397,
+              13744,
+              44929
+            ],
+            "hidden": [
+              14661,
+              15499,
+              12984,
+              0,
+              0,
+              15758,
+              0,
+              15998,
+              13397,
+              13744,
+              0
+            ],
+            "logits": [
+              14635,
+              14662,
+              43568
+            ],
+            "predicted_digit": 1,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "random",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 201,
+              "mul": 132,
+              "add": 146,
+              "weight_rows": 42,
+              "input_rows": 33,
+              "fc1_gaps": 40,
+              "fc2_gaps": 2,
+              "digit": 0
+            },
+            {
+              "run": 2,
+              "cycles": 201,
+              "mul": 132,
+              "add": 146,
+              "weight_rows": 42,
+              "input_rows": 33,
+              "fc1_gaps": 40,
+              "fc2_gaps": 2,
+              "digit": 0
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              47146,
+              13828,
+              47399,
+              13677,
+              47266,
+              47395,
+              46144,
+              14521,
+              47117,
+              47378,
+              45724
+            ],
+            "hidden": [
+              0,
+              13828,
+              0,
+              13677,
+              0,
+              0,
+              0,
+              14521,
+              0,
+              0,
+              0
+            ],
+            "logits": [
+              13394,
+              11436,
+              9264
+            ],
+            "predicted_digit": 0,
+            "bias_order": "last"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "simulator": "icarus",
+      "suite": "build/verification/generated_5/suite.json",
+      "parameters": {
+        "N_INPUTS": 7,
+        "N_HIDDEN": 2,
+        "N_OUTPUTS": 2,
+        "LANES": 7,
+        "SRAM_LATENCY": 1
+      },
+      "file_parameters": {
+        "FC1_WEIGHTS_FILE": "fc1_weights.mem",
+        "FC2_WEIGHTS_FILE": "fc2_weights.mem",
+        "INPUT_FILE": "test_image.mem",
+        "FC1_BIAS_FILE": "fc1_bias.mem",
+        "FC2_BIAS_FILE": "fc2_bias.mem"
+      },
+      "runs": 2,
+      "reset_after": 0,
+      "cases": [
+        {
+          "name": "zero",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 41,
+              "mul": 18,
+              "add": 22,
+              "weight_rows": 3,
+              "input_rows": 2,
+              "fc1_gaps": 1,
+              "fc2_gaps": 1,
+              "digit": 0
+            },
+            {
+              "run": 2,
+              "cycles": 41,
+              "mul": 18,
+              "add": 22,
+              "weight_rows": 3,
+              "input_rows": 2,
+              "fc1_gaps": 1,
+              "fc2_gaps": 1,
+              "digit": 0
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              8693,
+              44162
+            ],
+            "hidden": [
+              8693,
+              0
+            ],
+            "logits": [
+              13179,
+              45938
+            ],
+            "predicted_digit": 0,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "negative",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 41,
+              "mul": 18,
+              "add": 22,
+              "weight_rows": 3,
+              "input_rows": 2,
+              "fc1_gaps": 1,
+              "fc2_gaps": 1,
+              "digit": 0
+            },
+            {
+              "run": 2,
+              "cycles": 41,
+              "mul": 18,
+              "add": 22,
+              "weight_rows": 3,
+              "input_rows": 2,
+              "fc1_gaps": 1,
+              "fc2_gaps": 1,
+              "digit": 0
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              15333,
+              14596
+            ],
+            "hidden": [
+              15333,
+              14596
+            ],
+            "logits": [
+              15137,
+              46432
+            ],
+            "predicted_digit": 0,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "alternating",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 41,
+              "mul": 18,
+              "add": 22,
+              "weight_rows": 3,
+              "input_rows": 2,
+              "fc1_gaps": 1,
+              "fc2_gaps": 1,
+              "digit": 0
+            },
+            {
+              "run": 2,
+              "cycles": 41,
+              "mul": 18,
+              "add": 22,
+              "weight_rows": 3,
+              "input_rows": 2,
+              "fc1_gaps": 1,
+              "fc2_gaps": 1,
+              "digit": 0
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              13594,
+              47790
+            ],
+            "hidden": [
+              13594,
+              0
+            ],
+            "logits": [
+              13770,
+              45768
+            ],
+            "predicted_digit": 0,
+            "bias_order": "last"
+          }
+        },
+        {
+          "name": "random",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 41,
+              "mul": 18,
+              "add": 22,
+              "weight_rows": 3,
+              "input_rows": 2,
+              "fc1_gaps": 1,
+              "fc2_gaps": 1,
+              "digit": 0
+            },
+            {
+              "run": 2,
+              "cycles": 41,
+              "mul": 18,
+              "add": 22,
+              "weight_rows": 3,
+              "input_rows": 2,
+              "fc1_gaps": 1,
+              "fc2_gaps": 1,
+              "digit": 0
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              46099,
+              43654
+            ],
+            "hidden": [
+              0,
+              0
+            ],
+            "logits": [
+              13139,
+              45944
+            ],
+            "predicted_digit": 0,
+            "bias_order": "last"
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "file_path_runs": {
+    "gui_file_paths": {
+      "simulator": "icarus",
+      "suite": "config/regression.json",
+      "parameters": {
+        "N_INPUTS": 784,
+        "N_HIDDEN": 8,
+        "N_OUTPUTS": 10,
+        "LANES": 7,
+        "SRAM_LATENCY": 7
+      },
+      "file_parameters": {
+        "FC1_WEIGHTS_FILE": "inputs/first.mem",
+        "FC2_WEIGHTS_FILE": "inputs/second.mem",
+        "INPUT_FILE": "inputs/pixels.mem",
+        "FC1_BIAS_FILE": "inputs/bias_a.mem",
+        "FC2_BIAS_FILE": "inputs/bias_b.mem"
+      },
+      "runs": 1,
+      "reset_after": 0,
+      "cases": [
+        {
+          "name": "reference",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 6403,
+              "mul": 6352,
+              "add": 6370,
+              "weight_rows": 908,
+              "input_rows": 896,
+              "fc1_gaps": 7,
+              "fc2_gaps": 9,
+              "digit": 2
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              18111,
+              49420,
+              19381,
+              17624,
+              18496,
+              18181,
+              17284,
+              49887
+            ],
+            "hidden": [
+              18111,
+              0,
+              19381,
+              17624,
+              18496,
+              18181,
+              17284,
+              0
+            ],
+            "logits": [
+              16666,
+              49851,
+              18500,
+              17387,
+              52523,
+              17383,
+              17486,
+              51874,
+              13110,
+              51924
+            ],
+            "predicted_digit": 2,
+            "bias_order": "last"
+          },
+          "legacy_golden_validated": true,
+          "changed_logit_words": 4,
+          "legacy_predicted_digit": 2
+        }
+      ],
+      "passed": true
+    },
+    "gui_spaced_paths": {
+      "simulator": "icarus",
+      "suite": "config/regression.json",
+      "parameters": {
+        "N_INPUTS": 784,
+        "N_HIDDEN": 8,
+        "N_OUTPUTS": 10,
+        "LANES": 7,
+        "SRAM_LATENCY": 7
+      },
+      "file_parameters": {
+        "FC1_WEIGHTS_FILE": "input files/first weights.mem",
+        "FC2_WEIGHTS_FILE": "input files/second weights.mem",
+        "INPUT_FILE": "input files/image pixels.mem",
+        "FC1_BIAS_FILE": "input files/first bias.mem",
+        "FC2_BIAS_FILE": "input files/second bias.mem"
+      },
+      "runs": 1,
+      "reset_after": 0,
+      "cases": [
+        {
+          "name": "reference",
+          "passed": true,
+          "measurements": [
+            {
+              "run": 1,
+              "cycles": 6403,
+              "mul": 6352,
+              "add": 6370,
+              "weight_rows": 908,
+              "input_rows": 896,
+              "fc1_gaps": 7,
+              "fc2_gaps": 9,
+              "digit": 2
+            }
+          ],
+          "oracle": {
+            "pre_hidden": [
+              18111,
+              49420,
+              19381,
+              17624,
+              18496,
+              18181,
+              17284,
+              49887
+            ],
+            "hidden": [
+              18111,
+              0,
+              19381,
+              17624,
+              18496,
+              18181,
+              17284,
+              0
+            ],
+            "logits": [
+              16666,
+              49851,
+              18500,
+              17387,
+              52523,
+              17383,
+              17486,
+              51874,
+              13110,
+              51924
+            ],
+            "predicted_digit": 2,
+            "bias_order": "last"
+          },
+          "legacy_golden_validated": true,
+          "changed_logit_words": 4,
+          "legacy_predicted_digit": 2
+        }
+      ],
+      "passed": true
+    }
+  },
+  "no_plusarg_tb_checks": "gui_validation.json",
+  "aggregate_numerical_scoreboard_passed": true,
+  "unchanged_rtl_files": 17,
+  "previous_project_archive_sha256": "a1bb28bdeb27e04e30c2ff50b3edf27b75cfe3bbec07af02df2fa39b38742d99",
+  "previous_unit_and_lint_evidence_reused_without_rerun": true,
+  "notes": "Tcl flow uses stub commands, not ModelSim. All eight no-plusarg inferences had final logits/digit checked against the independent Python oracle; one also enabled the full TB scoreboard."
+}

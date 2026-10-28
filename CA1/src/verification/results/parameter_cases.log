@@ -1,0 +1,167 @@
+### build/parameters_0/zero/simulation.log
+[MEASURE] run=1 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[MEASURE] run=2 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[PASS] E2E runs=2 hidden=3 logits=5 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 2470000 (1ps)
+
+
+### build/parameters_0/negative/simulation.log
+[MEASURE] run=1 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[MEASURE] run=2 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[PASS] E2E runs=2 hidden=3 logits=5 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 2470000 (1ps)
+
+
+### build/parameters_0/alternating/simulation.log
+[MEASURE] run=1 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=3
+[MEASURE] run=2 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=3
+[PASS] E2E runs=2 hidden=3 logits=5 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 2470000 (1ps)
+
+
+### build/parameters_0/random/simulation.log
+[MEASURE] run=1 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[MEASURE] run=2 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=1
+[PASS] E2E runs=2 hidden=3 logits=5 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 2470000 (1ps)
+
+
+### build/parameters_1/zero/simulation.log
+[MEASURE] run=1 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[MEASURE] run=2 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[PASS] E2E runs=2 hidden=1 logits=1 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 410000 (1ps)
+
+
+### build/parameters_1/negative/simulation.log
+[MEASURE] run=1 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[MEASURE] run=2 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[PASS] E2E runs=2 hidden=1 logits=1 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 410000 (1ps)
+
+
+### build/parameters_1/alternating/simulation.log
+[MEASURE] run=1 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[MEASURE] run=2 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[PASS] E2E runs=2 hidden=1 logits=1 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 410000 (1ps)
+
+
+### build/parameters_1/random/simulation.log
+[MEASURE] run=1 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[MEASURE] run=2 cycles=13 mul=2 add=4 weight_rows=2 input_rows=1 fc1_gaps=0 fc2_gaps=0 digit=0
+[PASS] E2E runs=2 hidden=1 logits=1 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 410000 (1ps)
+
+
+### build/parameters_2/zero/simulation.log
+[MEASURE] run=1 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=1
+[MEASURE] run=2 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=1
+[PASS] E2E runs=2 hidden=8 logits=3 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 3550000 (1ps)
+
+
+### build/parameters_2/negative/simulation.log
+[MEASURE] run=1 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[MEASURE] run=2 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[PASS] E2E runs=2 hidden=8 logits=3 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 3550000 (1ps)
+
+
+### build/parameters_2/alternating/simulation.log
+[MEASURE] run=1 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[MEASURE] run=2 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[PASS] E2E runs=2 hidden=8 logits=3 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 3550000 (1ps)
+
+
+### build/parameters_2/random/simulation.log
+[MEASURE] run=1 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[MEASURE] run=2 cycles=170 mul=136 add=147 weight_rows=20 input_rows=16 fc1_gaps=7 fc2_gaps=2 digit=2
+[PASS] E2E runs=2 hidden=8 logits=3 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 3550000 (1ps)
+
+
+### build/parameters_3/zero/simulation.log
+[MEASURE] run=1 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[MEASURE] run=2 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[PASS] E2E runs=2 hidden=11 logits=17 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 9470000 (1ps)
+
+
+### build/parameters_3/negative/simulation.log
+[MEASURE] run=1 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=15
+[MEASURE] run=2 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=15
+[PASS] E2E runs=2 hidden=11 logits=17 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 9470000 (1ps)
+
+
+### build/parameters_3/alternating/simulation.log
+[MEASURE] run=1 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[MEASURE] run=2 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[PASS] E2E runs=2 hidden=11 logits=17 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 9470000 (1ps)
+
+
+### build/parameters_3/random/simulation.log
+[MEASURE] run=1 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[MEASURE] run=2 cycles=466 mul=407 add=435 weight_rows=82 input_rows=44 fc1_gaps=10 fc2_gaps=16 digit=14
+[PASS] E2E runs=2 hidden=11 logits=17 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 9470000 (1ps)
+
+
+### build/parameters_4/zero/simulation.log
+[MEASURE] run=1 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=2
+[MEASURE] run=2 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=2
+[PASS] E2E runs=2 hidden=11 logits=3 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 4170000 (1ps)
+
+
+### build/parameters_4/negative/simulation.log
+[MEASURE] run=1 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=1
+[MEASURE] run=2 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=1
+[PASS] E2E runs=2 hidden=11 logits=3 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 4170000 (1ps)
+
+
+### build/parameters_4/alternating/simulation.log
+[MEASURE] run=1 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=1
+[MEASURE] run=2 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=1
+[PASS] E2E runs=2 hidden=11 logits=3 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 4170000 (1ps)
+
+
+### build/parameters_4/random/simulation.log
+[MEASURE] run=1 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=0
+[MEASURE] run=2 cycles=201 mul=132 add=146 weight_rows=42 input_rows=33 fc1_gaps=40 fc2_gaps=2 digit=0
+[PASS] E2E runs=2 hidden=11 logits=3 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 4170000 (1ps)
+
+
+### build/parameters_5/zero/simulation.log
+[MEASURE] run=1 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[MEASURE] run=2 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[PASS] E2E runs=2 hidden=2 logits=2 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 970000 (1ps)
+
+
+### build/parameters_5/negative/simulation.log
+[MEASURE] run=1 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[MEASURE] run=2 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[PASS] E2E runs=2 hidden=2 logits=2 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 970000 (1ps)
+
+
+### build/parameters_5/alternating/simulation.log
+[MEASURE] run=1 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[MEASURE] run=2 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[PASS] E2E runs=2 hidden=2 logits=2 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 970000 (1ps)
+
+
+### build/parameters_5/random/simulation.log
+[MEASURE] run=1 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[MEASURE] run=2 cycles=41 mul=18 add=22 weight_rows=3 input_rows=2 fc1_gaps=1 fc2_gaps=1 digit=0
+[PASS] E2E runs=2 hidden=2 logits=2 reset_abort=0
+verification/tb_fcnn.v:195: $finish called at 970000 (1ps)
+

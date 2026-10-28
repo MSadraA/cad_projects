@@ -1,0 +1,110 @@
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+Start time: 14:54:15 on Oct 20,2026
+vlog -reportprogress 300 ./rtl/fcnn_accumulator_bank.v ./rtl/fcnn_activation_regfile.v ./rtl/fcnn_address_generator.v ./rtl/fcnn_argmax.v ./rtl/fcnn_bias_rom.v ./rtl/fcnn_controller.v ./rtl/fcnn_datapath.v ./rtl/fcnn_fp16_adder.v ./rtl/fcnn_fp16_multiplier.v ./rtl/fcnn_local_scheduler.v ./rtl/fcnn_operand_router.v ./rtl/fcnn_ping_pong_buffer.v ./rtl/fcnn_product_register.v ./rtl/fcnn_relu_fp16.v ./rtl/fcnn_row_sram.v ./rtl/fcnn_row_stage.v ./rtl/fcnn_top.v -l compile_errors.txt 
+-- Compiling module fcnn_accumulator_bank
+** Error: ./rtl/fcnn_accumulator_bank.v(7): (vlog-2730) Undefined variable: 'DEST_W'.
+** Error (suppressible): ./rtl/fcnn_accumulator_bank.v(7): (vlog-2388) 'product_dest' already declared in this scope (fcnn_accumulator_bank) at ./rtl/fcnn_accumulator_bank.v(7).
+** Error: ./rtl/fcnn_accumulator_bank.v(9): (vlog-2730) Undefined variable: 'H_W'.
+** Error (suppressible): ./rtl/fcnn_accumulator_bank.v(9): (vlog-2388) 'bias_neuron' already declared in this scope (fcnn_accumulator_bank) at ./rtl/fcnn_accumulator_bank.v(9).
+** Error: ./rtl/fcnn_accumulator_bank.v(18): (vlog-13282) 'H_W' already declared in this scope.
+** Error: ./rtl/fcnn_accumulator_bank.v(21): (vlog-13282) 'DEST_W' already declared in this scope.
+** Error: ./rtl/fcnn_accumulator_bank.v(7): (vlog-13294) Identifier must be declared with a port mode: product_dest.
+** Error: ./rtl/fcnn_accumulator_bank.v(9): (vlog-13294) Identifier must be declared with a port mode: bias_neuron.
+-- Compiling module fcnn_activation_regfile
+** Error: ./rtl/fcnn_activation_regfile.v(6): (vlog-2730) Undefined variable: 'H_W'.
+** Error (suppressible): ./rtl/fcnn_activation_regfile.v(6): (vlog-2388) 'hidden_wr_idx' already declared in this scope (fcnn_activation_regfile) at ./rtl/fcnn_activation_regfile.v(6).
+** Error: ./rtl/fcnn_activation_regfile.v(12): (vlog-13282) 'H_W' already declared in this scope.
+** Error: ./rtl/fcnn_activation_regfile.v(6): (vlog-13294) Identifier must be declared with a port mode: hidden_wr_idx.
+-- Compiling module fcnn_address_generator
+** Error: ./rtl/fcnn_address_generator.v(7): (vlog-2730) Undefined variable: 'H_W'.
+** Error (suppressible): ./rtl/fcnn_address_generator.v(7): (vlog-2388) 'fc1_neuron' already declared in this scope (fcnn_address_generator) at ./rtl/fcnn_address_generator.v(7).
+** Error: ./rtl/fcnn_address_generator.v(8): (vlog-2730) Undefined variable: 'R1_W'.
+** Error (suppressible): ./rtl/fcnn_address_generator.v(8): (vlog-2388) 'fc1_row' already declared in this scope (fcnn_address_generator) at ./rtl/fcnn_address_generator.v(8).
+** Error: ./rtl/fcnn_address_generator.v(9): (vlog-2730) Undefined variable: 'R2_W'.
+** Error (suppressible): ./rtl/fcnn_address_generator.v(9): (vlog-2388) 'fc2_row' already declared in this scope (fcnn_address_generator) at ./rtl/fcnn_address_generator.v(9).
+** Error: ./rtl/fcnn_address_generator.v(10): (vlog-2730) Undefined variable: 'ADDR_W'.
+** Error (suppressible): ./rtl/fcnn_address_generator.v(10): (vlog-2388) 'weight_addr' already declared in this scope (fcnn_address_generator) at ./rtl/fcnn_address_generator.v(10).
+** Error: ./rtl/fcnn_address_generator.v(12): (vlog-2730) Undefined variable: 'META_W'.
+** Error (suppressible): ./rtl/fcnn_address_generator.v(12): (vlog-2388) 'weight_meta' already declared in this scope (fcnn_address_generator) at ./rtl/fcnn_address_generator.v(12).
+** Error: ./rtl/fcnn_address_generator.v(18): (vlog-13282) 'H_W' already declared in this scope.
+** Error: ./rtl/fcnn_address_generator.v(19): (vlog-13282) 'R1_W' already declared in this scope.
+** Error: ./rtl/fcnn_address_generator.v(20): (vlog-13282) 'R2_W' already declared in this scope.
+** Error: ./rtl/fcnn_address_generator.v(22): (vlog-13282) 'META_W' already declared in this scope.
+** Error: ./rtl/fcnn_address_generator.v(23): (vlog-13282) 'ADDR_W' already declared in this scope.
+** Error: ./rtl/fcnn_address_generator.v(7): (vlog-13294) Identifier must be declared with a port mode: fc1_neuron.
+** Error: ./rtl/fcnn_address_generator.v(8): (vlog-13294) Identifier must be declared with a port mode: fc1_row.
+** Error: ./rtl/fcnn_address_generator.v(9): (vlog-13294) Identifier must be declared with a port mode: fc2_row.
+** Error: ./rtl/fcnn_address_generator.v(10): (vlog-13294) Identifier must be declared with a port mode: weight_addr.
+** Error: ./rtl/fcnn_address_generator.v(12): (vlog-13294) Identifier must be declared with a port mode: weight_meta.
+-- Compiling module fcnn_argmax
+** Error: ./rtl/fcnn_argmax.v(4): (vlog-2730) Undefined variable: 'INDEX_W'.
+** Error (suppressible): ./rtl/fcnn_argmax.v(4): (vlog-2388) 'predicted_digit' already declared in this scope (fcnn_argmax) at ./rtl/fcnn_argmax.v(4).
+** Error: ./rtl/fcnn_argmax.v(6): (vlog-13282) 'INDEX_W' already declared in this scope.
+** Error: ./rtl/fcnn_argmax.v(4): (vlog-13294) Identifier must be declared with a port mode: predicted_digit.
+-- Compiling module fcnn_bias_rom
+** Error: ./rtl/fcnn_bias_rom.v(6): (vlog-2730) Undefined variable: 'H_W'.
+** Error (suppressible): ./rtl/fcnn_bias_rom.v(6): (vlog-2388) 'fc1_neuron' already declared in this scope (fcnn_bias_rom) at ./rtl/fcnn_bias_rom.v(6).
+** Error: ./rtl/fcnn_bias_rom.v(9): (vlog-13282) 'H_W' already declared in this scope.
+** Error: ./rtl/fcnn_bias_rom.v(6): (vlog-13294) Identifier must be declared with a port mode: fc1_neuron.
+-- Compiling module fcnn_controller
+-- Compiling module fcnn_datapath
+** Error: ./rtl/fcnn_datapath.v(11): (vlog-2730) Undefined variable: 'INDEX_W'.
+** Error (suppressible): ./rtl/fcnn_datapath.v(12): (vlog-2388) 'predicted_digit' already declared in this scope (fcnn_datapath) at ./rtl/fcnn_datapath.v(11).
+** Error: ./rtl/fcnn_datapath.v(17): (vlog-13282) 'INDEX_W' already declared in this scope.
+** Error: ./rtl/fcnn_datapath.v(11): (vlog-13294) Identifier must be declared with a port mode: predicted_digit.
+-- Compiling module fcnn_fp16_adder
+-- Compiling module fcnn_fp16_multiplier
+-- Compiling module fcnn_local_scheduler
+** Error: ./rtl/fcnn_local_scheduler.v(7): (vlog-2730) Undefined variable: 'H_W'.
+** Error (suppressible): ./rtl/fcnn_local_scheduler.v(7): (vlog-2388) 'request_neuron' already declared in this scope (fcnn_local_scheduler) at ./rtl/fcnn_local_scheduler.v(7).
+** Error: ./rtl/fcnn_local_scheduler.v(8): (vlog-2730) Undefined variable: 'R1_W'.
+** Error (suppressible): ./rtl/fcnn_local_scheduler.v(8): (vlog-2388) 'request_fc1_row' already declared in this scope (fcnn_local_scheduler) at ./rtl/fcnn_local_scheduler.v(8).
+** Error: ./rtl/fcnn_local_scheduler.v(9): (vlog-2730) Undefined variable: 'R2_W'.
+** Error (suppressible): ./rtl/fcnn_local_scheduler.v(9): (vlog-2388) 'request_fc2_row' already declared in this scope (fcnn_local_scheduler) at ./rtl/fcnn_local_scheduler.v(9).
+** Error: ./rtl/fcnn_local_scheduler.v(11): (vlog-2730) Undefined variable: 'ROW_W'.
+** Error (suppressible): ./rtl/fcnn_local_scheduler.v(11): (vlog-2388) 'compute_row' already declared in this scope (fcnn_local_scheduler) at ./rtl/fcnn_local_scheduler.v(11).
+** Error: ./rtl/fcnn_local_scheduler.v(17): (vlog-2730) Undefined variable: 'LANE_W'.
+** Error (suppressible): ./rtl/fcnn_local_scheduler.v(17): (vlog-2388) 'lane_idx' already declared in this scope (fcnn_local_scheduler) at ./rtl/fcnn_local_scheduler.v(17).
+** Error: ./rtl/fcnn_local_scheduler.v(24): (vlog-13282) 'H_W' already declared in this scope.
+** Error: ./rtl/fcnn_local_scheduler.v(25): (vlog-13282) 'R1_W' already declared in this scope.
+** Error: ./rtl/fcnn_local_scheduler.v(26): (vlog-13282) 'R2_W' already declared in this scope.
+** Error: ./rtl/fcnn_local_scheduler.v(27): (vlog-13282) 'ROW_W' already declared in this scope.
+** Error: ./rtl/fcnn_local_scheduler.v(28): (vlog-13282) 'LANE_W' already declared in this scope.
+** Error: ./rtl/fcnn_local_scheduler.v(7): (vlog-13294) Identifier must be declared with a port mode: request_neuron.
+** Error: ./rtl/fcnn_local_scheduler.v(8): (vlog-13294) Identifier must be declared with a port mode: request_fc1_row.
+** Error: ./rtl/fcnn_local_scheduler.v(9): (vlog-13294) Identifier must be declared with a port mode: request_fc2_row.
+** Error: ./rtl/fcnn_local_scheduler.v(11): (vlog-13294) Identifier must be declared with a port mode: compute_row.
+** Error: ./rtl/fcnn_local_scheduler.v(17): (vlog-13294) Identifier must be declared with a port mode: lane_idx.
+-- Compiling module fcnn_operand_router
+** Error: ./rtl/fcnn_operand_router.v(6): (vlog-2730) Undefined variable: 'META_W'.
+** Error (suppressible): ./rtl/fcnn_operand_router.v(6): (vlog-2388) 'weight_meta' already declared in this scope (fcnn_operand_router) at ./rtl/fcnn_operand_router.v(6).
+** Error: ./rtl/fcnn_operand_router.v(7): (vlog-2730) Undefined variable: 'LANE_W'.
+** Error (suppressible): ./rtl/fcnn_operand_router.v(7): (vlog-2388) 'lane_idx' already declared in this scope (fcnn_operand_router) at ./rtl/fcnn_operand_router.v(7).
+** Error: ./rtl/fcnn_operand_router.v(8): (vlog-2730) Undefined variable: 'H_W'.
+** Error (suppressible): ./rtl/fcnn_operand_router.v(8): (vlog-2388) 'hidden_rd_idx' already declared in this scope (fcnn_operand_router) at ./rtl/fcnn_operand_router.v(8).
+** Error: ./rtl/fcnn_operand_router.v(10): (vlog-2730) Undefined variable: 'DEST_W'.
+** Error (suppressible): ./rtl/fcnn_operand_router.v(10): (vlog-2388) 'term_dest' already declared in this scope (fcnn_operand_router) at ./rtl/fcnn_operand_router.v(10).
+** Error: ./rtl/fcnn_operand_router.v(16): (vlog-13282) 'H_W' already declared in this scope.
+** Error: ./rtl/fcnn_operand_router.v(18): (vlog-13282) 'DEST_W' already declared in this scope.
+** Error: ./rtl/fcnn_operand_router.v(20): (vlog-13282) 'META_W' already declared in this scope.
+** Error: ./rtl/fcnn_operand_router.v(21): (vlog-13282) 'LANE_W' already declared in this scope.
+** Error: ./rtl/fcnn_operand_router.v(6): (vlog-13294) Identifier must be declared with a port mode: weight_meta.
+** Error: ./rtl/fcnn_operand_router.v(7): (vlog-13294) Identifier must be declared with a port mode: lane_idx.
+** Error: ./rtl/fcnn_operand_router.v(8): (vlog-13294) Identifier must be declared with a port mode: hidden_rd_idx.
+** Error: ./rtl/fcnn_operand_router.v(10): (vlog-13294) Identifier must be declared with a port mode: term_dest.
+-- Compiling module fcnn_ping_pong_buffer
+-- Compiling module fcnn_product_register
+-- Compiling module fcnn_relu_fp16
+-- Compiling module fcnn_row_sram
+** Error: ./rtl/fcnn_row_sram.v(9): (vlog-2730) Undefined variable: 'ADDR_W'.
+** Error (suppressible): ./rtl/fcnn_row_sram.v(9): (vlog-2388) 'req_addr' already declared in this scope (fcnn_row_sram) at ./rtl/fcnn_row_sram.v(9).
+** Error: ./rtl/fcnn_row_sram.v(9): (vlog-2730) Undefined variable: 'META_W'.
+** Error (suppressible): ./rtl/fcnn_row_sram.v(9): (vlog-2388) 'req_meta' already declared in this scope (fcnn_row_sram) at ./rtl/fcnn_row_sram.v(9).
+** Error: ./rtl/fcnn_row_sram.v(17): (vlog-13282) 'ADDR_W' already declared in this scope.
+** Error: ./rtl/fcnn_row_sram.v(20): (vlog-13282) 'META_W' already declared in this scope.
+** Error: ./rtl/fcnn_row_sram.v(9): (vlog-13294) Identifier must be declared with a port mode: req_addr.
+** Error: ./rtl/fcnn_row_sram.v(9): (vlog-13294) Identifier must be declared with a port mode: req_meta.
+-- Compiling module fcnn_row_stage
+-- Compiling module fcnn_top
+End time: 14:54:15 on Oct 20,2026, Elapsed time: 0:00:00
+Errors: 88, Warnings: 0

@@ -1,0 +1,69 @@
+### build/verification/fp16/simulation.log
+[PASS] FP16 vectors=297008 comparisons=891024
+verification/tb_fp16.v:31: $finish called at 297008000 (1ps)
+
+
+### build/verification/argmax_1/simulation.log
+[PASS] ARGMAX outputs=1 vectors=2010
+verification/tb_argmax.v:31: $finish called at 2011000 (1ps)
+
+
+### build/verification/argmax_3/simulation.log
+[PASS] ARGMAX outputs=3 vectors=2016
+verification/tb_argmax.v:31: $finish called at 2017000 (1ps)
+
+
+### build/verification/argmax_10/simulation.log
+[PASS] ARGMAX outputs=10 vectors=2037
+verification/tb_argmax.v:31: $finish called at 2038000 (1ps)
+
+
+### build/verification/argmax_17/simulation.log
+[PASS] ARGMAX outputs=17 vectors=2058
+verification/tb_argmax.v:31: $finish called at 2059000 (1ps)
+
+
+### build/verification/pingpong_1/simulation.log
+[PASS] PINGPONG lanes=1 items=1200 blocked=878 simultaneous=852
+verification/tb_pingpong.v:86: $finish called at 24150000 (1ps)
+
+
+### build/verification/pingpong_3/simulation.log
+[PASS] PINGPONG lanes=3 items=1200 blocked=944 simultaneous=778
+verification/tb_pingpong.v:86: $finish called at 24720000 (1ps)
+
+
+### build/verification/pingpong_7/simulation.log
+[PASS] PINGPONG lanes=7 items=1200 blocked=1047 simultaneous=644
+verification/tb_pingpong.v:86: $finish called at 25770000 (1ps)
+
+
+### build/verification/pingpong_8/simulation.log
+[PASS] PINGPONG lanes=8 items=1200 blocked=1116 simultaneous=596
+verification/tb_pingpong.v:86: $finish called at 26380000 (1ps)
+
+
+### build/verification/pipeline/simulation.log
+[PASS] PIPELINE hold/replace/drain data and all tags
+verification/tb_pipeline.v:43: $finish called at 90000 (1ps)
+
+
+### build/verification/sram_1/simulation.log
+[PASS] SRAM weight_rows=908 image_rows=112 lanes=7 latency=1
+verification/tb_sram.v:97: $finish called at 12240000 (1ps)
+
+
+### build/verification/sram_3/simulation.log
+[PASS] SRAM weight_rows=908 image_rows=112 lanes=7 latency=3
+verification/tb_sram.v:97: $finish called at 12280000 (1ps)
+
+
+### build/verification/sram_7/simulation.log
+[PASS] SRAM weight_rows=908 image_rows=112 lanes=7 latency=7
+verification/tb_sram.v:97: $finish called at 12360000 (1ps)
+
+
+### build/verification/sram_11/simulation.log
+[PASS] SRAM weight_rows=908 image_rows=112 lanes=7 latency=11
+verification/tb_sram.v:97: $finish called at 12440000 (1ps)
+

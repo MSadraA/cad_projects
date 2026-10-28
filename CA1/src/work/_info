@@ -1,0 +1,425 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/sadra
+vfcnn_accumulator_bank
+Z0 !s110 1793083811
+!i10b 1
+!s100 0fON;o^OS4h;FE551?OZ=1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I45NbS093l@FoS=MK[IY?02
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 d/home/sadra/Documents/Codes/cad_projects/CA1/src
+Z4 w1792493998
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_accumulator_bank.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_accumulator_bank.v
+!i122 53
+L0 2 104
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1793083811.000000
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_accumulator_bank.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_accumulator_bank.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+vfcnn_activation_regfile
+R0
+!i10b 1
+!s100 <e>CW[M:AQ1@O1oQd3JlI0
+R1
+I22US2JgVD9=mI4j4ngeeC0
+R2
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_activation_regfile.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_activation_regfile.v
+!i122 54
+L0 2 66
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_activation_regfile.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_activation_regfile.v|
+!i113 1
+R7
+R8
+vfcnn_address_generator
+R0
+!i10b 1
+!s100 P5VYl=3o>dKR=Tjh`^eE^0
+R1
+IAzA`_QKZPc[G5z;7[k4OM3
+R2
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_address_generator.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_address_generator.v
+!i122 55
+Z9 L0 2 75
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_address_generator.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_address_generator.v|
+!i113 1
+R7
+R8
+vfcnn_argmax
+R0
+!i10b 1
+!s100 T9HUT;hKi3[5?IYEznIGj0
+R1
+IU56Cm=iljn]:fdXU5[fdC1
+R2
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_argmax.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_argmax.v
+!i122 56
+L0 2 57
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_argmax.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_argmax.v|
+!i113 1
+R7
+R8
+vfcnn_bias_rom
+R0
+!i10b 1
+!s100 <Re=b<P?Dn11GgfQ?MC4]0
+R1
+I?9ROUISk=0Cbb@FV<Vdgi3
+R2
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_bias_rom.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_bias_rom.v
+!i122 57
+L0 2 28
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_bias_rom.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_bias_rom.v|
+!i113 1
+R7
+R8
+vfcnn_controller
+R0
+!i10b 1
+!s100 VAP?3dz=XefmWib9fE5]F1
+R1
+IZ;P6I1QzTa=;Q_KIC2ODl3
+R2
+R3
+w1792488860
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_controller.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_controller.v
+!i122 58
+L0 2 32
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_controller.v|
+!i113 1
+R7
+R8
+vfcnn_datapath
+R0
+!i10b 1
+!s100 omTgCea]>RV[iMXU]VFN]0
+R1
+IIzo@CgPenWzdo]kLCjRSk3
+R2
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_datapath.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_datapath.v
+!i122 59
+L0 2 168
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_datapath.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_datapath.v|
+!i113 1
+R7
+R8
+vfcnn_fp16_adder
+R0
+!i10b 1
+!s100 ?S?Z`l8AYE;_EBXNgSTk90
+R1
+Ie6Xc^bT>8I4Yd_zI`M<GB1
+R2
+R3
+w1792489778
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_adder.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_adder.v
+!i122 60
+L0 3 270
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_adder.v|
+!i113 1
+R7
+R8
+vfcnn_fp16_multiplier
+R0
+!i10b 1
+!s100 h<[doQ:z33A9Ul1<`]GXI0
+R1
+I=HmLzLh;l<OPPT1W:5Vca2
+R2
+R3
+w1792488814
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_multiplier.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_multiplier.v
+!i122 61
+L0 3 238
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_multiplier.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_multiplier.v|
+!i113 1
+R7
+R8
+vfcnn_local_scheduler
+R0
+!i10b 1
+!s100 n]lhU0l5i0k3`5YT9NAd`1
+R1
+IK2li3GCP6_dI7zK[n:Q]F1
+R2
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_local_scheduler.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_local_scheduler.v
+!i122 62
+L0 2 155
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_local_scheduler.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_local_scheduler.v|
+!i113 1
+R7
+R8
+vfcnn_operand_router
+R0
+!i10b 1
+!s100 ^2[^`5IB]333jX=mTMNG]0
+R1
+I@IBCi;2eI7::XKMiX<EU23
+R2
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_operand_router.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_operand_router.v
+!i122 63
+L0 2 73
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_operand_router.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_operand_router.v|
+!i113 1
+R7
+R8
+vfcnn_ping_pong_buffer
+R0
+!i10b 1
+!s100 Vd5cT>a[589g0OAd7>:ga1
+R1
+IRWS6nn>Ybk1@_IE^:96TG0
+R2
+R3
+w1792490140
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_ping_pong_buffer.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_ping_pong_buffer.v
+!i122 64
+R9
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_ping_pong_buffer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_ping_pong_buffer.v|
+!i113 1
+R7
+R8
+vfcnn_product_register
+R0
+!i10b 1
+!s100 CTbUo9]CFifdi9m`WKK8E1
+R1
+I[R`E`VGkO0?26^lXQm;SG1
+R2
+R3
+w1792489018
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_product_register.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_product_register.v
+!i122 65
+L0 2 24
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_product_register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_product_register.v|
+!i113 1
+R7
+R8
+vfcnn_relu_fp16
+R0
+!i10b 1
+!s100 [gQ?iT>RKZ59QF<3DOg?90
+R1
+IHP]W^m2eZYCjzf:ij4;0A3
+R2
+R3
+w1792489150
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_relu_fp16.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_relu_fp16.v
+!i122 66
+L0 2 5
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_relu_fp16.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_relu_fp16.v|
+!i113 1
+R7
+R8
+vfcnn_row_sram
+R0
+!i10b 1
+!s100 NMh4P_@i<=<8_ciET`RYG2
+R1
+IJJZdNWD[<bnb4UT_gMP1;3
+R2
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_sram.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_sram.v
+!i122 67
+L0 3 104
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_sram.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_sram.v|
+!i113 1
+R7
+R8
+vfcnn_row_stage
+R0
+!i10b 1
+!s100 CKoBTz9Vhk<@@[2M]Dlm12
+R1
+IXECFgD2<k@h?dEoWRY@EP0
+R2
+R3
+w1792488948
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_stage.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_stage.v
+!i122 68
+L0 2 29
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_stage.v|
+!i113 1
+R7
+R8
+vfcnn_top
+R0
+!i10b 1
+!s100 NbE_nf@LJ]c[nRNR5;Xf51
+R1
+IfEfo<9QGXNOSCUPEQ>oT@1
+R2
+R3
+w1792489090
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_top.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_top.v
+!i122 69
+L0 3 45
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_top.v|
+!i113 1
+R7
+R8
+vtb_fcnn
+R0
+!i10b 1
+!s100 7JmXG_:K<CAfI]1:KZFTI1
+R1
+IWR31k[D@l]Fh[ST8@_b4a3
+R2
+R3
+w1793083227
+8/home/sadra/Documents/Codes/cad_projects/CA1/src/verification/tb_fcnn.v
+F/home/sadra/Documents/Codes/cad_projects/CA1/src/verification/tb_fcnn.v
+!i122 70
+L0 6 265
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/sadra/Documents/Codes/cad_projects/CA1/src/verification/tb_fcnn.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA1/src/verification/tb_fcnn.v|
+!i113 1
+R7
+R8

@@ -1,0 +1,30 @@
+{
+  "reported_compiler": "ModelSim Intel FPGA Edition vlog 2020.1 / 2020.02",
+  "original_reported_errors": 88,
+  "previous_project_archive_sha256": "ae59b712b2d42a07bb5288b125fa6cbf156a6ec6c03f340adced62d05ce58893",
+  "unchanged_port_contracts": 17,
+  "old_affected_modules_rejected": 9,
+  "rejected_modules": [
+    "fcnn_accumulator_bank",
+    "fcnn_activation_regfile",
+    "fcnn_address_generator",
+    "fcnn_argmax",
+    "fcnn_bias_rom",
+    "fcnn_datapath",
+    "fcnn_local_scheduler",
+    "fcnn_operand_router",
+    "fcnn_row_sram"
+  ],
+  "modified_functional_logic": false,
+  "current_module_declaration_order_checks_passed": 17,
+  "language": "Verilog-2005",
+  "actual_modelsim_execution": false,
+  "simulator_used_for_regression": "Icarus 12.0",
+  "lint_tool": "Verilator 5.020",
+  "successful_inferences": 77,
+  "verification_groups": 23,
+  "lint_profiles": 7,
+  "header_only_compile_passed": true,
+  "aggregate_compile_and_run_passed": true,
+  "scope": "Declaration-order guard and unchanged-interface/logic checks; not a ModelSim compile result."
+}

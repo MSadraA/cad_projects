@@ -1,0 +1,44 @@
+digraph FCNN {
+graph [fontname="DejaVu Sans", rankdir=TB, bgcolor="white", pad="0.3", nodesep="0.35", ranksep="0.55", splines=polyline];
+node [fontname="DejaVu Sans", fontsize=11, shape=box, style="rounded,filled", fillcolor="#edf3fa", color="#526780", margin="0.15,0.12"];
+edge [fontname="DejaVu Sans", fontsize=9, color="#526780", arrowsize=0.7];
+label="Datapath - Top defaults 784 / 8 / 10"; labelloc=t; fontsize=19;
+address_inst [label="address_generator", fillcolor="#edf3fa"];
+weight_sram_inst [label="row_sram\nraw weights / 7 stages", fillcolor="#edf3fa"];
+input_sram_inst [label="row_sram\nraw pixels / 7 stages", fillcolor="#edf3fa"];
+weight_stage_inst [label="row_stage\none weight row", fillcolor="#edf3fa"];
+input_stage_inst [label="row_stage\none input row", fillcolor="#edf3fa"];
+router_inst [label="operand_router", fillcolor="#edf3fa"];
+multiplier_inst [label="fp16_multiplier\nexactly one FP16 MUL", fillcolor="#dbf3e8"];
+product_inst [label="product_register", fillcolor="#edf3fa"];
+ping_pong_inst [label="ping_pong_buffer\n2 banks x 7 words\nread sealed bank only", fillcolor="#edf3fa"];
+adder_inst [label="fp16_adder\nexactly one FP16 ADD", fillcolor="#dbf3e8"];
+bias_inst [label="bias_rom", fillcolor="#edf3fa"];
+accumulator_inst [label="accumulator_bank\n1 FC1 + 10 FC2 accumulators\nproducts, then bias", fillcolor="#edf3fa"];
+relu_inst [label="relu_fp16", fillcolor="#edf3fa"];
+regfile_inst [label="activation_regfile\n10 shared FP16 registers\nhidden first, logits last", fillcolor="#edf3fa"];
+argmax_inst [label="argmax", fillcolor="#edf3fa"];
+{rank=same; weight_sram_inst; input_sram_inst;}
+{rank=same; weight_stage_inst; input_stage_inst;}
+{rank=same; multiplier_inst; product_inst; ping_pong_inst;}
+{rank=same; accumulator_inst; adder_inst; bias_inst;}
+{rank=same; relu_inst; regfile_inst; argmax_inst;}
+address_inst -> weight_sram_inst [label="weight_addr"];
+address_inst -> input_sram_inst [label="input_addr"];
+weight_sram_inst -> weight_stage_inst [label="weight_sram_data"];
+input_sram_inst -> input_stage_inst [label="input_sram_data"];
+weight_stage_inst -> router_inst [label="weight_stage_data"];
+input_stage_inst -> router_inst [label="input_stage_data"];
+router_inst -> multiplier_inst [label="mul_weight\nmul_input"];
+multiplier_inst -> product_inst [label="mul_result"];
+product_inst -> ping_pong_inst [label="pp_wr_data"];
+ping_pong_inst -> accumulator_inst [label="pp_rd_data"];
+accumulator_inst -> adder_inst [label="add_a\nadd_b"];
+adder_inst -> accumulator_inst [constraint=false, style=dashed, label="add_result"];
+bias_inst -> accumulator_inst [label="fc1_bias\nfc2_biases"];
+accumulator_inst -> relu_inst [label="fc1_final_value"];
+relu_inst -> regfile_inst [label="relu_out"];
+accumulator_inst -> regfile_inst [label="fc2_results"];
+regfile_inst -> argmax_inst [label="logits"];
+regfile_inst -> router_inst [constraint=false, style=dashed, label="hidden_rd_data"];
+}

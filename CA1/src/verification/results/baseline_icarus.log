@@ -1,0 +1,64 @@
+### logs / digit_0.log
+[MEASURE] run=1 latency=6367 issued=6352 added=6352 rows=908 hidden=8 fc2_first_issue=6289 digit=0
+[PASS] E2E matched all 10 logits and all timing/count assertions, runs=1
+../baseline/FCNN_Task5_Modular_Final/verification/tb_fcnn_e2e.v:75: $finish called at 63715000 (1ps)
+
+
+### logs / digit_1.log
+[MEASURE] run=1 latency=6367 issued=6352 added=6352 rows=908 hidden=8 fc2_first_issue=6289 digit=1
+[PASS] E2E matched all 10 logits and all timing/count assertions, runs=1
+../baseline/FCNN_Task5_Modular_Final/verification/tb_fcnn_e2e.v:75: $finish called at 63715000 (1ps)
+
+
+### logs / digit_2.log
+[MEASURE] run=1 latency=6367 issued=6352 added=6352 rows=908 hidden=8 fc2_first_issue=6289 digit=2
+[PASS] E2E matched all 10 logits and all timing/count assertions, runs=1
+../baseline/FCNN_Task5_Modular_Final/verification/tb_fcnn_e2e.v:75: $finish called at 63715000 (1ps)
+
+
+### logs / digit_3.log
+[MEASURE] run=1 latency=6367 issued=6352 added=6352 rows=908 hidden=8 fc2_first_issue=6289 digit=3
+[PASS] E2E matched all 10 logits and all timing/count assertions, runs=1
+../baseline/FCNN_Task5_Modular_Final/verification/tb_fcnn_e2e.v:75: $finish called at 63715000 (1ps)
+
+
+### logs / digit_4.log
+[MEASURE] run=1 latency=6367 issued=6352 added=6352 rows=908 hidden=8 fc2_first_issue=6289 digit=4
+[PASS] E2E matched all 10 logits and all timing/count assertions, runs=1
+../baseline/FCNN_Task5_Modular_Final/verification/tb_fcnn_e2e.v:75: $finish called at 63715000 (1ps)
+
+
+### logs / digit_5.log
+[MEASURE] run=1 latency=6367 issued=6352 added=6352 rows=908 hidden=8 fc2_first_issue=6289 digit=5
+[PASS] E2E matched all 10 logits and all timing/count assertions, runs=1
+../baseline/FCNN_Task5_Modular_Final/verification/tb_fcnn_e2e.v:75: $finish called at 63715000 (1ps)
+
+
+### logs / digit_6.log
+[MEASURE] run=1 latency=6367 issued=6352 added=6352 rows=908 hidden=8 fc2_first_issue=6289 digit=6
+[PASS] E2E matched all 10 logits and all timing/count assertions, runs=1
+../baseline/FCNN_Task5_Modular_Final/verification/tb_fcnn_e2e.v:75: $finish called at 63715000 (1ps)
+
+
+### logs / digit_7.log
+[MEASURE] run=1 latency=6367 issued=6352 added=6352 rows=908 hidden=8 fc2_first_issue=6289 digit=7
+[PASS] E2E matched all 10 logits and all timing/count assertions, runs=1
+../baseline/FCNN_Task5_Modular_Final/verification/tb_fcnn_e2e.v:75: $finish called at 63715000 (1ps)
+
+
+### logs / digit_8.log
+[MEASURE] run=1 latency=6367 issued=6352 added=6352 rows=908 hidden=8 fc2_first_issue=6289 digit=8
+[PASS] E2E matched all 10 logits and all timing/count assertions, runs=1
+../baseline/FCNN_Task5_Modular_Final/verification/tb_fcnn_e2e.v:75: $finish called at 63715000 (1ps)
+
+
+### logs / digit_9.log
+[MEASURE] run=1 latency=6367 issued=6352 added=6352 rows=908 hidden=8 fc2_first_issue=6289 digit=9
+[PASS] E2E matched all 10 logits and all timing/count assertions, runs=1
+../baseline/FCNN_Task5_Modular_Final/verification/tb_fcnn_e2e.v:75: $finish called at 63715000 (1ps)
+
+
+### logs / reference.log
+[MEASURE] run=1 latency=6367 issued=6352 added=6352 rows=908 hidden=8 fc2_first_issue=6289 digit=2
+[PASS] E2E matched all 10 logits and all timing/count assertions, runs=1
+../baseline/FCNN_Task5_Modular_Final/verification/tb_fcnn_e2e.v:75: $finish called at 63715000 (1ps)

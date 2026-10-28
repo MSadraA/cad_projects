@@ -1,0 +1,127 @@
+/home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_datapath.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_datapath.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_datapath
+
+Top level modules:
+	fcnn_datapath
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_argmax.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_argmax.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_argmax
+
+Top level modules:
+	fcnn_argmax
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_local_scheduler.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_local_scheduler.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_local_scheduler
+
+Top level modules:
+	fcnn_local_scheduler
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_ping_pong_buffer.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_ping_pong_buffer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_ping_pong_buffer
+
+Top level modules:
+	fcnn_ping_pong_buffer
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_stage.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_stage.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_row_stage
+
+Top level modules:
+	fcnn_row_stage
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_product_register.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_product_register.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_product_register
+
+Top level modules:
+	fcnn_product_register
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/verification/tb_fcnn.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/verification/tb_fcnn.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_fcnn
+
+Top level modules:
+	tb_fcnn
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_activation_regfile.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_activation_regfile.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_activation_regfile
+
+Top level modules:
+	fcnn_activation_regfile
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_operand_router.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_operand_router.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_operand_router
+
+Top level modules:
+	fcnn_operand_router
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_sram.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_row_sram.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_row_sram
+
+Top level modules:
+	fcnn_row_sram
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_top.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_top
+
+Top level modules:
+	fcnn_top
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_accumulator_bank.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_accumulator_bank.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_accumulator_bank
+
+Top level modules:
+	fcnn_accumulator_bank
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_multiplier.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_multiplier.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_fp16_multiplier
+
+Top level modules:
+	fcnn_fp16_multiplier
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_relu_fp16.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_relu_fp16.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_relu_fp16
+
+Top level modules:
+	fcnn_relu_fp16
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_address_generator.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_address_generator.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_address_generator
+
+Top level modules:
+	fcnn_address_generator
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_bias_rom.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_bias_rom.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_bias_rom
+
+Top level modules:
+	fcnn_bias_rom
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_controller.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_controller.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_controller
+
+Top level modules:
+	fcnn_controller
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_adder.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA1/src/rtl/fcnn_fp16_adder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fcnn_fp16_adder
+
+Top level modules:
+	fcnn_fp16_adder
+
+} {} {}}

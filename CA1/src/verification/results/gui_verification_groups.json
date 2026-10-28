@@ -1,0 +1,42 @@
+{
+  "simulator": "icarus",
+  "checks": [
+    {
+      "name": "parameters_0",
+      "passed": true
+    },
+    {
+      "name": "parameters_1",
+      "passed": true
+    },
+    {
+      "name": "parameters_2",
+      "passed": true
+    },
+    {
+      "name": "parameters_3",
+      "passed": true
+    },
+    {
+      "name": "parameters_4",
+      "passed": true
+    },
+    {
+      "name": "parameters_5",
+      "passed": true
+    },
+    {
+      "name": "guard_1",
+      "passed": true
+    },
+    {
+      "name": "guard_2",
+      "passed": true
+    },
+    {
+      "name": "checker_rejects_wrong_logit",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

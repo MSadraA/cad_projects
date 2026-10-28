@@ -1,0 +1,27 @@
+### build/lint/profile_0.log
+
+
+### build/lint/profile_1.log
+
+
+### build/lint/profile_2.log
+
+
+### build/lint/profile_3.log
+
+
+### build/lint/profile_4.log
+%Error: Internal Error: rtl/fcnn_row_sram.v:49:40: ../V3Gate.cpp:693: No pending substitutions
+   49 |                 wire [31:0] fc1_neuron=req_addr/FC1_ROWS;
+      |                                        ^~~~~~~~
+                        ... See the manual at https://verilator.org/verilator_doc.html for more assistance.
+
+RETRY: Verilator gate optimizer disabled for lint only.
+-Info: Command Line disabled gate optimization with -fno-gate.  This may cause ordering problems.
+
+
+### build/lint/profile_5.log
+
+
+### build/lint/profile_6.log
+

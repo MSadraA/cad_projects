@@ -1,0 +1,27 @@
+### build/verification/negative/guard_1.log
+[FAIL] ROW_STAGE overwrite
+rtl/fcnn_row_stage.v:23: $finish called at 45000 (1ps)
+
+
+### build/verification/negative/guard_2.log
+[FAIL] ROW_STAGE empty consume
+rtl/fcnn_row_stage.v:25: $finish called at 35000 (1ps)
+
+
+### build/verification/negative/wrong_logit.log
+[CONFIG] inputs=15 hidden=3 outputs=5 lanes=7 latency=7 runs=1 checked_outputs=1
+[CONFIG] image=test_image.mem
+[CONFIG] fc1_weights=fc1_weights.mem fc2_weights=fc2_weights.mem
+[CONFIG] fc1_bias=fc1_bias.mem fc2_bias=fc2_bias.mem
+[CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=352
+[RESULT] run=1 logit[0]=ace7
+[FAIL] logit 0 got=ace7 expected=ace6
+[RESULT] run=1 logit[1]=2d9c
+[RESULT] run=1 logit[2]=30aa
+[RESULT] run=1 logit[3]=b32c
+[RESULT] run=1 logit[4]=309b
+[RESULT] run=1 predicted_digit=2
+[MEASURE] run=1 cycles=116 mul=60 add=68 weight_rows=12 input_rows=9 fc1_gaps=14 fc2_gaps=4 digit=2
+[FAIL] E2E failures=1
+verification/tb_fcnn.v:267: $finish called at 1260000 (1ps)
+

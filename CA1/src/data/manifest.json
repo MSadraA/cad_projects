@@ -1,0 +1,31 @@
+{
+  "description": "Hashes of the retained input data and explicitly labelled legacy goldens; raw FP16 files copied unchanged from the uploaded ZIP.",
+  "sha256": {
+    "data/cases/digit_0/digit_28x28.png": "6c728c2f92c7fe3f854070156b62bcfd55666cf45942b4a0e71ef91e64fe2a64",
+    "data/cases/digit_0/test_image.mem": "2d3822c5a8d1fd32e0cbad639600cd87d7a616d48d0b19cd61084d8ac3f3bc0c",
+    "data/cases/digit_1/digit_28x28.png": "d11dfd425df589f1dba65fda9fe84d93c14809602825154dfd556308751d11db",
+    "data/cases/digit_1/test_image.mem": "5d8b0e3a914fff50daa05ac27337002a34ebc17c58e7c7228a513ffd7069d2f3",
+    "data/cases/digit_2/digit_28x28.png": "83b647eca138a11b02223563ca941fabfed6d1abb36340bcd36188deab5fcb68",
+    "data/cases/digit_2/test_image.mem": "fdcbb7730a2915a173f5ca683d4e95e0c10765e90920275ea230421aaecf5f08",
+    "data/cases/digit_3/digit_28x28.png": "b5d3660b7bee8febf86f72f937930abb7cea78b3d10289f4b6eb4420d06d5161",
+    "data/cases/digit_3/test_image.mem": "bc12e74b2792a69c862015279e42d870118b0574ba910738b37a2555b520812f",
+    "data/cases/digit_4/digit_28x28.png": "87038bb41afe43f9febdf41826a43e50e4b1d904c4bc758ef7678e21b67fcea7",
+    "data/cases/digit_4/test_image.mem": "8d18de8c322608a7880fa16efd7d8265da7218b99dde53d6adc2d519ac869ade",
+    "data/cases/digit_5/digit_28x28.png": "b43ecffad47c127f1ac64fa57a152d811f6250d26a7a522de2642c0cbb07cc6f",
+    "data/cases/digit_5/test_image.mem": "db75d7930e2946d67daf62affa607e7d3cd5b2f3ef3c4010d80014815a4a1e93",
+    "data/cases/digit_6/digit_28x28.png": "cd9bb9485506d651f43d686b18fd2a0aa899fc3fc917b42a0458d257ec72dff6",
+    "data/cases/digit_6/test_image.mem": "d1438c0c16dcbe1f70438e58104c865e8c48b84105390baaff30788762560a30",
+    "data/cases/digit_7/digit_28x28.png": "2bce89c50afca0fa2e93a301155e6ba4e99799195a48c5d26b5cc181baaf00c9",
+    "data/cases/digit_7/test_image.mem": "94069390ee8a5b3307819a5fe92042146642487bf04f73422a9376618921a3fe",
+    "data/cases/digit_8/digit_28x28.png": "d111e60849f772a984dd54911bacdeb7b1536aa852b6d0d2061b696186a54b99",
+    "data/cases/digit_8/test_image.mem": "57221ecb4f8840d38860c67e649e456fae3249395cadfa4dc1bdf9cbe7307a16",
+    "data/cases/digit_9/digit_28x28.png": "d0632fdebabea51fb22da193fe257f9743bf8d8cf3d6a82de136af7754788c7d",
+    "data/cases/digit_9/test_image.mem": "f43460cd811067fc11a2b00fe40889656d5c8d22e1a2a2446615ab6f65837b2f",
+    "data/cases/reference/test_image.mem": "2cdbcf7c94ddfbf25adcf02f59e878a2bac7d0efa940b92b133aa3b235d73910",
+    "data/legacy_bias_first.json": "e5dab37e6e49ee3009416d68a4f21b9deec349c8ee78bc30d87c1421dc5b69db",
+    "data/model/fc1_bias.mem": "270d21be696c3d285ab2cef75e1f4ec762ad09e4c7fccb45ef2b723d0961ce6b",
+    "data/model/fc1_weights.mem": "cafd295fec701d73f08ee32c882564323c84f2382e3ca4a3b9a0253a89541ba4",
+    "data/model/fc2_bias.mem": "50f703d4a0f9f02e7bdec94a86c57485dee59b58105a724dfcedeae18477737f",
+    "data/model/fc2_weights.mem": "83a685c8d442fe64c0cbf5fce389801a45b3bfa84efe5db4439c92dcdd640d99"
+  }
+}

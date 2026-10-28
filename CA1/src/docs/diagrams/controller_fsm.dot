@@ -1,0 +1,24 @@
+digraph FCNN {
+graph [fontname="DejaVu Sans", rankdir=TB, bgcolor="white", pad="0.3", nodesep="0.35", ranksep="0.55", splines=polyline];
+node [fontname="DejaVu Sans", fontsize=11, shape=box, style="rounded,filled", fillcolor="#edf3fa", color="#526780", margin="0.15,0.12"];
+edge [fontname="DejaVu Sans", fontsize=9, color="#526780", arrowsize=0.7];
+label="Controller FSM - extracted transitions"; labelloc=t; fontsize=19;
+reset [shape=point];reset -> IDLE [label="synchronous rst"];
+IDLE [label="IDLE
+busy=0 / done=0
+run_init=start && !rst"];
+FC1 [label="FC1
+busy=1 / fc1_active=1"];
+FC2 [label="FC2
+busy=1 / fc2_active=1"];
+DONE [label="DONE
+done=1 / busy=0
+one cycle"];
+IDLE -> FC1 [label="start && !rst"];
+IDLE -> IDLE [label="!(start && !rst)"];
+FC1 -> FC2 [label="fc1_finished"];
+FC1 -> FC1 [label="!(fc1_finished)"];
+FC2 -> DONE [label="fc2_finished"];
+FC2 -> FC2 [label="!(fc2_finished)"];
+DONE -> IDLE [label="next clock"];
+}

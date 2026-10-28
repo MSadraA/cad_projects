@@ -1,0 +1,76 @@
+### build/modelsim_fix_official/reference/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 129280000 (1ps)
+
+
+### build/modelsim_fix_official/digit_0/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=0
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=0
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 129280000 (1ps)
+
+
+### build/modelsim_fix_official/digit_1/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=1
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=1
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 129280000 (1ps)
+
+
+### build/modelsim_fix_official/digit_2/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 129280000 (1ps)
+
+
+### build/modelsim_fix_official/digit_3/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=3
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=3
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 129280000 (1ps)
+
+
+### build/modelsim_fix_official/digit_4/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=4
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=4
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 129280000 (1ps)
+
+
+### build/modelsim_fix_official/digit_5/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=5
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=5
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 129280000 (1ps)
+
+
+### build/modelsim_fix_official/digit_6/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=6
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=6
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 129280000 (1ps)
+
+
+### build/modelsim_fix_official/digit_7/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=7
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=7
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 129280000 (1ps)
+
+
+### build/modelsim_fix_official/digit_8/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=8
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=8
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 129280000 (1ps)
+
+
+### build/modelsim_fix_official/digit_9/simulation.log
+[MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=9
+[MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=9
+[PASS] E2E runs=2 hidden=8 logits=10 reset_abort=1
+verification/tb_fcnn.v:195: $finish called at 129280000 (1ps)
+

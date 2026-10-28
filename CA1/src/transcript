@@ -1,0 +1,172 @@
+# Loading project CA1
+vsim work.tb_fcnn
+# vsim work.tb_fcnn 
+# Start time: 16:35:40 on Oct 20,2026
+# Loading work.tb_fcnn
+# Loading work.fcnn_top
+# Loading work.fcnn_controller
+# Loading work.fcnn_datapath
+# Loading work.fcnn_address_generator
+# Loading work.fcnn_row_sram
+# Loading work.fcnn_row_stage
+# Loading work.fcnn_local_scheduler
+# Loading work.fcnn_operand_router
+# Loading work.fcnn_fp16_multiplier
+# Loading work.fcnn_product_register
+# Loading work.fcnn_ping_pong_buffer
+# Loading work.fcnn_fp16_adder
+# Loading work.fcnn_bias_rom
+# Loading work.fcnn_accumulator_bank
+# Loading work.fcnn_relu_fp16
+# Loading work.fcnn_activation_regfile
+# Loading work.fcnn_argmax
+run -all
+# [CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=0
+# [CONFIG] image=data/cases/reference/test_image.mem
+# [CONFIG] fc1_weights=data/model/fc1_weights.mem fc2_weights=data/model/fc2_weights.mem
+# [CONFIG] fc1_bias=data/model/fc1_bias.mem fc2_bias=data/model/fc2_bias.mem
+# [CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=29144
+# [INFO] Protocol/count/order/X checks active; numerical golden comparison disabled.
+# [RESULT] run=1 logit[0]=411a
+# [RESULT] run=1 logit[1]=c2bb
+# [RESULT] run=1 logit[2]=4844
+# [RESULT] run=1 logit[3]=43eb
+# [RESULT] run=1 logit[4]=cd2b
+# [RESULT] run=1 logit[5]=43e7
+# [RESULT] run=1 logit[6]=444e
+# [RESULT] run=1 logit[7]=caa2
+# [RESULT] run=1 logit[8]=3336
+# [RESULT] run=1 logit[9]=cad4
+# [RESULT] run=1 predicted_digit=2
+# [MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+# [RESULT] run=2 logit[0]=411a
+# [RESULT] run=2 logit[1]=c2bb
+# [RESULT] run=2 logit[2]=4844
+# [RESULT] run=2 logit[3]=43eb
+# [RESULT] run=2 logit[4]=cd2b
+# [RESULT] run=2 logit[5]=43e7
+# [RESULT] run=2 logit[6]=444e
+# [RESULT] run=2 logit[7]=caa2
+# [RESULT] run=2 logit[8]=3336
+# [RESULT] run=2 logit[9]=cad4
+# [RESULT] run=2 predicted_digit=2
+# [MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+# [PASS] E2E_PROTOCOL runs=2 hidden=8 logits=10 reset_abort=0 checked_outputs=0
+add wave -position end  sim:/tb_fcnn/done
+run -all
+# Break key hit
+restart
+run -all
+# [CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=0
+# [CONFIG] image=data/cases/reference/test_image.mem
+# [CONFIG] fc1_weights=data/model/fc1_weights.mem fc2_weights=data/model/fc2_weights.mem
+# [CONFIG] fc1_bias=data/model/fc1_bias.mem fc2_bias=data/model/fc2_bias.mem
+# [CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=29144
+# [INFO] Protocol/count/order/X checks active; numerical golden comparison disabled.
+# [RESULT] run=1 logit[0]=411a
+# [RESULT] run=1 logit[1]=c2bb
+# [RESULT] run=1 logit[2]=4844
+# [RESULT] run=1 logit[3]=43eb
+# [RESULT] run=1 logit[4]=cd2b
+# [RESULT] run=1 logit[5]=43e7
+# [RESULT] run=1 logit[6]=444e
+# [RESULT] run=1 logit[7]=caa2
+# [RESULT] run=1 logit[8]=3336
+# [RESULT] run=1 logit[9]=cad4
+# [RESULT] run=1 predicted_digit=2
+# [MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+# [RESULT] run=2 logit[0]=411a
+# [RESULT] run=2 logit[1]=c2bb
+# [RESULT] run=2 logit[2]=4844
+# [RESULT] run=2 logit[3]=43eb
+# [RESULT] run=2 logit[4]=cd2b
+# [RESULT] run=2 logit[5]=43e7
+# [RESULT] run=2 logit[6]=444e
+# [RESULT] run=2 logit[7]=caa2
+# [RESULT] run=2 logit[8]=3336
+# [RESULT] run=2 logit[9]=cad4
+# [RESULT] run=2 predicted_digit=2
+# [MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=2
+# [PASS] E2E_PROTOCOL runs=2 hidden=8 logits=10 reset_abort=0 checked_outputs=0
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Compile of fcnn_accumulator_bank.v was successful.
+# Compile of fcnn_activation_regfile.v was successful.
+# Compile of fcnn_address_generator.v was successful.
+# Compile of fcnn_argmax.v was successful.
+# Compile of fcnn_bias_rom.v was successful.
+# Compile of fcnn_controller.v was successful.
+# Compile of fcnn_datapath.v was successful.
+# Compile of fcnn_fp16_adder.v was successful.
+# Compile of fcnn_fp16_multiplier.v was successful.
+# Compile of fcnn_local_scheduler.v was successful.
+# Compile of fcnn_operand_router.v was successful.
+# Compile of fcnn_ping_pong_buffer.v was successful.
+# Compile of fcnn_product_register.v was successful.
+# Compile of fcnn_relu_fp16.v was successful.
+# Compile of fcnn_row_sram.v was successful.
+# Compile of fcnn_row_stage.v was successful.
+# Compile of fcnn_top.v was successful.
+# Compile of tb_fcnn.v was successful.
+# 18 compiles, 0 failed with no errors.
+vsim work.tb_fcnn
+# End time: 16:38:42 on Oct 20,2026, Elapsed time: 0:03:02
+# Errors: 0, Warnings: 2
+# vsim work.tb_fcnn 
+# Start time: 16:38:42 on Oct 20,2026
+# Loading work.tb_fcnn
+# Loading work.fcnn_top
+# Loading work.fcnn_controller
+# Loading work.fcnn_datapath
+# Loading work.fcnn_address_generator
+# Loading work.fcnn_row_sram
+# Loading work.fcnn_row_stage
+# Loading work.fcnn_local_scheduler
+# Loading work.fcnn_operand_router
+# Loading work.fcnn_fp16_multiplier
+# Loading work.fcnn_product_register
+# Loading work.fcnn_ping_pong_buffer
+# Loading work.fcnn_fp16_adder
+# Loading work.fcnn_bias_rom
+# Loading work.fcnn_accumulator_bank
+# Loading work.fcnn_relu_fp16
+# Loading work.fcnn_activation_regfile
+# Loading work.fcnn_argmax
+run -all
+# [CONFIG] inputs=784 hidden=8 outputs=10 lanes=7 latency=7 runs=2 checked_outputs=0
+# [CONFIG] image=data/cases/digit_3/test_image.mem
+# [CONFIG] fc1_weights=data/model/fc1_weights.mem fc2_weights=data/model/fc2_weights.mem
+# [CONFIG] fc1_bias=data/model/fc1_bias.mem fc2_bias=data/model/fc2_bias.mem
+# [CONFIG] clock_ns=10 reset_after=0 busy_start=1 timeout_cycles=29144
+# [INFO] Protocol/count/order/X checks active; numerical golden comparison disabled.
+# [RESULT] run=1 logit[0]=c6af
+# [RESULT] run=1 logit[1]=c518
+# [RESULT] run=1 logit[2]=3934
+# [RESULT] run=1 logit[3]=4807
+# [RESULT] run=1 logit[4]=cb23
+# [RESULT] run=1 logit[5]=383b
+# [RESULT] run=1 logit[6]=c872
+# [RESULT] run=1 logit[7]=c815
+# [RESULT] run=1 logit[8]=3433
+# [RESULT] run=1 logit[9]=c312
+# [RESULT] run=1 predicted_digit=3
+# [MEASURE] run=1 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=3
+# [RESULT] run=2 logit[0]=c6af
+# [RESULT] run=2 logit[1]=c518
+# [RESULT] run=2 logit[2]=3934
+# [RESULT] run=2 logit[3]=4807
+# [RESULT] run=2 logit[4]=cb23
+# [RESULT] run=2 logit[5]=383b
+# [RESULT] run=2 logit[6]=c872
+# [RESULT] run=2 logit[7]=c815
+# [RESULT] run=2 logit[8]=3433
+# [RESULT] run=2 logit[9]=c312
+# [RESULT] run=2 predicted_digit=3
+# [MEASURE] run=2 cycles=6403 mul=6352 add=6370 weight_rows=908 input_rows=896 fc1_gaps=7 fc2_gaps=9 digit=3
+# [PASS] E2E_PROTOCOL runs=2 hidden=8 logits=10 reset_abort=0 checked_outputs=0
+# ** Fatal: Unable to read lock file necessary for use of uncounted nodelocked license. Exiting.
+# End time: 16:43:42 on Oct 20,2026, Elapsed time: 0:05:00
+# Errors: 0, Warnings: 0
