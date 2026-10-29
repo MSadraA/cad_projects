@@ -1,0 +1,607 @@
+
+# Verilog HDL Coding Rules — Based on Lecture 3 (ECE536 CAD, University of Tehran)
+
+## Purpose and source boundary
+
+This document converts the readable rules and explanations in `Lect03_verilog.pdf` into an instruction set for an LLM that must write Verilog in the style and scope taught in the lecture. The lecture covers classic Verilog HDL, including Verilog-2001 features such as ANSI-style port lists and `@(*)`.
+
+**Source boundary:** Follow the lecture as the primary authority. Do not silently replace its conventions with SystemVerilog or with newer coding styles. Where a rule below is marked **practical interpretation**, it is a conservative implementation of the lecture's advice rather than a verbatim slide rule. The slides' diagrams and code screenshots may contain details that were not extractable as text; this guide does not claim to reproduce every pixel-level example.
+
+---
+
+# 1. Core mindset: describe hardware, not software
+
+1. Verilog is a **hardware description language**, not merely a programming language.
+2. Think in terms of **hardware structures, data paths, state, and parallel operation**. Do not translate a C algorithm mechanically into Verilog.
+3. Before coding, draw or define the **dataflow / datapath diagram** and identify:
+   - inputs and outputs;
+   - combinational logic;
+   - state-holding elements;
+   - clock and reset behavior;
+   - data/control paths and submodules.
+4. Use hierarchy and small building blocks. A module is instantiated inside another module; it is not called like a software function.
+5. Choose an abstraction level appropriate to the task:
+   - **Gate level:** instantiate logic gates and connect them.
+   - **Dataflow level:** express logic with continuous assignments and operators.
+   - **Behavioral level:** describe behavior with procedural blocks, `if`, `case`, loops, and functions where appropriate.
+   - The lecture presents transistor/switch-level descriptions as lower abstraction levels.
+6. These styles can be mixed when useful, but the result must still describe hardware.
+7. RTL is intended to represent register-transfer behavior and to be processed by synthesis tools. Do not assume every legal simulation construct is synthesizable.
+
+# 2. Language and file conventions
+
+1. Write **Verilog HDL**, not SystemVerilog, unless the user explicitly asks otherwise.
+2. Use classic Verilog constructs shown in the lecture: `module`, `endmodule`, `input`, `output`, `inout`, `wire`, `reg`, `parameter`, `assign`, `always`, `initial`, `begin`, `end`, `if`, `else`, and `case`.
+3. Verilog identifiers are **case-sensitive**.
+4. A module name must not begin with a number.
+5. End each module with `endmodule`.
+6. Terminate declarations, continuous assignments, and procedural statements with semicolons where Verilog syntax requires them.
+7. Use `@(*)` for combinational `always` sensitivity when using the Verilog-2001 style taught in the lecture.
+8. Do not use SystemVerilog-only conveniences such as `logic`, `always_comb`, `always_ff`, `typedef enum`, `unique case`, `int` as a SystemVerilog type, or `interface` unless explicitly requested. In this lecture's style, use `reg`/`wire`, ordinary `always`, and Verilog parameters.
+
+# 3. Module structure and ports
+
+A module is the primary design building block. A typical structure is:
+
+```verilog
+module module_name (
+    input  wire       clk,
+    input  wire       reset,
+    input  wire [7:0] data_in,
+    output reg  [7:0] data_out
+);
+
+    // Internal declarations
+
+    // Combinational and/or sequential logic
+
+endmodule
+```
+
+The example is a structural template; choose the actual ports and widths for the design.
+
+Rules:
+1. Declare a module name and a port list.
+2. Specify **direction and bit width** for each port.
+3. Port directions are `input`, `output`, and `inout`.
+4. The lecture notes that Verilog-2001 introduced an ANSI C-style port list. Prefer this style for new code in this lecture's context.
+5. Use `wire` for ports/signals driven by continuous assignments or module outputs where appropriate; use `reg` for signals assigned procedurally in `always`/`initial` blocks.
+6. A procedural assignment target must be a procedural variable (`reg` in the classic Verilog style); a continuous `assign` target must be a net, normally `wire`.
+7. Keep widths consistent across ports, internal signals, operators, and module connections. Do not leave width choices implicit when the intended width is known.
+8. Prefer named-port connections when a module has many ports, because the connection does not depend on port order. Ordered connections are possible and may be convenient for small interfaces.
+
+## Module instantiation
+
+Modules are connected through nets. Instantiate a module; do not write a software-style function call.
+
+Named connection pattern:
+
+```verilog
+submodule_name instance_name (
+    .clk(clk),
+    .data_in(data_in),
+    .data_out(data_out)
+);
+```
+
+Rules:
+- Ensure every named port matches the declared port name.
+- Connect compatible widths and directions.
+- Give each instance a distinct instance name.
+- Prefer named connections for modules with many ports.
+- Use positional connections only when their order is unambiguous and easy to verify.
+
+# 4. Data types and values
+
+## 4.1 Four-state logic
+
+Verilog logic values include:
+- `0`: logic zero / false;
+- `1`: logic one / true;
+- `x`: unknown logic value;
+- `z`: high-impedance state.
+
+Do not casually treat `x` and `z` as ordinary zero/one values. Unknown values can propagate through expressions and comparisons.
+
+## 4.2 Nets (`wire`)
+
+Nets represent physical connections:
+- They do **not** store a value.
+- They must be driven by a source, such as a gate output or continuous assignment.
+- An undriven net resolves to `z` in the lecture's explanation.
+- Example declarations:
+
+```verilog
+wire d;
+wire [3:0] e;
+wire [3:0] f;
+```
+
+Use a net for connections and continuous-logic outputs. Avoid assigning the same net from multiple unrelated sources unless multiple-driver resolution is explicitly intended.
+
+## 4.3 Registers (`reg`)
+
+In classic Verilog, `reg` means a variable capable of holding a value between procedural assignments; it does **not automatically mean a physical flip-flop**.
+
+```verilog
+reg a;
+reg [3:0] b;
+```
+
+Rules:
+- A `reg` can be assigned in a procedural block.
+- A `reg` does not inherently require a clock.
+- Whether it becomes combinational logic, a latch, or a flip-flop depends on how it is assigned.
+- For combinational logic, assign every output on every path to avoid unintended latch inference.
+- For edge-triggered sequential logic, use a clocked `always` block and nonblocking assignments.
+
+## 4.4 Memories and arrays
+
+Arrays use an index range:
+
+```verilog
+integer count [0:7];
+reg [31:0] Imem [0:255];
+```
+
+The second declaration represents 256 words, each 32 bits wide. A memory is modeled as an array of registers; each word is selected by one array index.
+
+Rules:
+- Distinguish a vector's bit range from a memory's word-index range.
+- Use an explicit and consistent index range.
+- Ensure addresses stay within the declared range.
+- Consider the intended hardware and synthesis support when describing memory reads/writes.
+
+## 4.5 Integer, real, time, and parameters
+
+The lecture introduces:
+
+```verilog
+integer counter;
+real delta;
+time sim_time;
+parameter size = 8;
+```
+
+- `integer`, `real`, and `time` are general-purpose variable types described in the lecture.
+- `parameter` defines a constant, not a variable.
+- Use parameters for design constants such as widths and counts when a configurable constant is useful.
+- For synthesizable RTL, prefer hardware-sized vectors for datapath values and counters when the width and bit-level behavior matter. Treat `real`/`time` primarily as simulation-oriented unless the target flow explicitly supports them.
+
+# 5. Numeric literals and widths
+
+The general literal form taught is:
+
+`<size>'<base><number>`
+
+Bases:
+- `b`: binary;
+- `o`: octal;
+- `d`: decimal;
+- `h`: hexadecimal.
+
+Examples:
+
+```verilog
+4'b1001
+8'b1010_1110
+16'hA04F
+16'd255
+4'b01x0
+12'hx
+```
+
+Rules:
+1. Specify a width when the intended bit width matters.
+2. Use the correct base marker and legal digits for that base.
+3. Underscores may be used to make long binary literals easier to read.
+4. Unsized decimal constants are allowed in ordinary expressions, but **do not use unsized constants inside concatenations**.
+5. A negative number is represented in two's-complement form at the chosen width; be careful because width affects the resulting bit pattern.
+6. Registers are treated as unsigned values in the lecture's explanation unless signedness is explicitly declared/handled.
+7. Do not assume arithmetic results have the width you intuitively expect. Check operand widths, result widths, truncation, and extension.
+8. When assigning a wider RHS to a narrower LHS, high-order bits can be truncated. When assigning a narrower RHS to a wider LHS, Verilog's extension rules apply; the lecture describes zero filling for the assignment case. For portable, unambiguous RTL, size constants and explicitly construct the desired extension.
+
+# 6. Operators and expression rules
+
+The lecture covers arithmetic, relational, equality/identity, logical, bitwise, reduction, shift, concatenation, and conditional operators.
+
+## 6.1 Arithmetic
+
+Common operators include `+`, `-`, `*`, `/`, and `%`.
+
+Lecture rules:
+- Integer division truncates the fractional part.
+- The result of modulus takes the sign of the first operand.
+- An unknown `x` bit in an arithmetic operand can make the entire result `x`.
+- Negative values use two's complement.
+- Check widths and signedness before arithmetic operations.
+
+## 6.2 Relational operators
+
+Operators: `<`, `<=`, `>`, `>=`.
+
+The result is a one-bit scalar:
+- `0` if false;
+- `1` if true;
+- `x` if unknown bits prevent a definite result.
+
+## 6.3 Equality and identity
+
+- `==` and `!=` are logical equality/inequality operators.
+- `===` and `!==` compare `x` and `z` bits as literal values too.
+- With `==` / `!=`, operands containing `x` or `z` can yield an unknown result; do not rely on them to identify unknowns.
+- With `===` / `!==`, `x` and `z` positions must match, and the result is always `0` or `1`.
+- Operands are compared bit by bit; the lecture describes zero-filling when lengths differ.
+
+## 6.4 Logical operators
+
+Operators: `!`, `&&`, `||`.
+
+- Logical expressions produce a scalar result (`0`, `1`, or possibly `x`).
+- `&&` and `||` are evaluated left to right and can stop when the result is already known.
+- Use logical operators for truth-value conditions, not for bit-by-bit vector operations.
+
+## 6.5 Bitwise and reduction operators
+
+- Bitwise operations act on corresponding bits.
+- Reduction operators reduce a vector to a scalar result.
+- When operand lengths differ, the lecture notes that the shorter operand is zero-filled at the most-significant side for the relevant bitwise operation context.
+- Make operand widths explicit to avoid accidental extension.
+
+## 6.6 Shift operators
+
+Use shift operators only after checking the intended vector width and direction. Confirm whether shifted-out bits are discarded and how the result width is determined.
+
+## 6.7 Concatenation and repetition
+
+Use braces to concatenate:
+
+```verilog
+{a, b[3:0], c, 4'b1001}
+{3{a}}
+{b, {3{c, d}}}
+```
+
+Rules:
+- Concatenation joins bit vectors in the written order, with the leftmost item becoming the most-significant portion.
+- The total width is the sum of the widths of the concatenated items.
+- **Unsized constant numbers are not allowed in concatenations**; size literals explicitly.
+- Repetition counts must be constants.
+- Nested concatenations are allowed.
+
+## 6.8 Conditional operator
+
+The conditional operator `condition ? expression1 : expression2` selects between two expressions. Make both branches width-compatible and ensure the condition has the intended logic meaning.
+
+## 6.9 Precedence
+
+Verilog has operator precedence. Do not rely on memory of precedence for complex expressions: use parentheses to make the intended order explicit, especially when mixing arithmetic, shifts, comparisons, and logical/bitwise operators.
+
+# 7. Continuous assignments and dataflow modeling
+
+Use `assign` to continuously drive a net:
+
+```verilog
+wire [15:0] sum;
+assign sum = a + b;
+```
+
+Rules:
+1. Continuous assignments drive nets (`wire` in ordinary RTL).
+2. The RHS is re-evaluated whenever an input to the expression changes.
+3. Use continuous assignments to describe combinational dataflow.
+4. Each signal should have **one source of assignment**. Do not reuse the same LHS in multiple `assign` statements.
+5. Avoid cyclic dependencies, such as A depending on X, X on B, and B on A.
+6. Do not assign a signal procedurally and continuously at the same time.
+7. Ensure the assigned expression has the intended width.
+8. A continuous assignment is not a procedural sequence; it describes a continuously driven relationship.
+
+# 8. Procedural blocks: `initial` and `always`
+
+## 8.1 `initial`
+
+- Starts at the beginning of simulation.
+- Executes once.
+- If it contains multiple statements, enclose them in `begin ... end`.
+- Treat `initial` as simulation/testbench-oriented unless the target synthesis tool and hardware platform explicitly support the intended use.
+
+## 8.2 `always`
+
+- Starts executing at the beginning of simulation and repeats continuously.
+- Multiple statements must be enclosed in `begin ... end`.
+- An `always` block without timing controls loops forever.
+- In classic Verilog, procedural assignments in `always` target variables such as `reg`, `integer`, `real`, or `time`, not nets.
+- Every `always` block must have a clear hardware interpretation: combinational logic, a latch (if intentionally required), or edge-triggered sequential logic.
+
+## 8.3 Sensitivity lists
+
+For combinational logic, use the Verilog-2001 form:
+
+```verilog
+always @(*) begin
+    ...
+end
+```
+
+This includes all signals read by the block in the sensitivity behavior described by the lecture. Do not omit an input from a manually written sensitivity list; omission can cause simulation behavior to disagree with the intended combinational circuit.
+
+For sequential logic, use explicit clock edges, such as `posedge clk` or `negedge clk`, and include reset edges if an asynchronous reset is intended.
+
+# 9. Blocking (`=`) versus nonblocking (`<=`)
+
+This is one of the most important rules in the lecture.
+
+## 9.1 Blocking assignment `=`
+
+- Executes immediately in procedural order.
+- Later statements in the same sequential block see the updated value.
+- Use it for combinational procedural logic.
+
+Example:
+
+```verilog
+always @(*) begin
+    temp = a & b;
+    y = temp | c;
+end
+```
+
+## 9.2 Nonblocking assignment `<=`
+
+- Evaluates the RHS when the statement is executed, then schedules the LHS update for the end of the relevant simulation time step.
+- Multiple registers can be updated without later assignments seeing earlier scheduled updates.
+- Use it for edge-triggered sequential logic.
+
+Example:
+
+```verilog
+always @(posedge clk) begin
+    q1 <= d;
+    q2 <= q1;
+end
+```
+
+At a rising edge, `q1` receives the old `d`, and `q2` receives the old `q1`. This models two sequential storage elements.
+
+## 9.3 Mandatory assignment policy for this lecture
+
+- **Combinational `always` block:** use blocking assignments (`=`).
+- **Clocked/sequential `always` block:** use nonblocking assignments (`<=`).
+- Do not casually mix the two styles in the same block.
+- Avoid blocking assignments for flip-flop state updates; the lecture warns that this can produce simulation/synthesis mismatches or race conditions.
+- Do not depend on the execution order of separate clocked blocks to resolve shared assignments; that can create race conditions.
+- A nonblocking assignment does not mean the statement itself waits before the next statement; it defers the update.
+
+# 10. Combinational logic coding rules
+
+Use `assign` for simple continuous relationships or `always @(*)` for procedural combinational logic.
+
+Example with complete assignments:
+
+```verilog
+always @(*) begin
+    y = 1'b0;
+    case (sel)
+        2'b00: y = a;
+        2'b01: y = b;
+        2'b10: y = c;
+        2'b11: y = d;
+        default: y = 1'b0;
+    endcase
+end
+```
+
+Rules:
+1. Use blocking assignments.
+2. Assign every output on every possible path.
+3. Provide a default assignment before a conditional/case structure, or otherwise prove that every branch assigns every output.
+4. Include a `default` branch in `case` statements for robust, complete behavior.
+5. Use `if/else` for straightforward conditions; use `case` when selecting among several discrete values, especially when it improves readability.
+6. Avoid unintended latches. If an output is not assigned on some path in a combinational block, the value must be retained, which implies storage/latch behavior.
+7. Do not create multiple procedural drivers for the same signal.
+8. Do not create combinational loops or cyclic dependencies.
+9. Keep combinational and sequential responsibilities in separate blocks when that makes behavior clear.
+
+# 11. Sequential logic, latches, and flip-flops
+
+Sequential circuits store state. The lecture distinguishes level-sensitive latches from edge-triggered flip-flops.
+
+## 11.1 Edge-triggered flip-flop
+
+Use an edge-sensitive `always` block and nonblocking assignments:
+
+```verilog
+always @(posedge clk) begin
+    q <= d;
+end
+```
+
+- `posedge clk` triggers on a low-to-high transition.
+- `negedge clk` triggers on a high-to-low transition.
+- State changes only on the specified edge.
+
+## 11.2 Asynchronous reset
+
+For an active-low asynchronous reset, the sensitivity list includes the reset edge as well as the clock edge:
+
+```verilog
+always @(posedge clk or negedge reset_n) begin
+    if (!reset_n)
+        q <= 1'b0;
+    else
+        q <= d;
+end
+```
+
+Rules:
+- Check reset first.
+- The reset can act independently of the clock.
+- The sensitivity list must reflect the reset edge.
+- Use the reset polarity specified by the design; do not assume active-high or active-low without evidence.
+
+## 11.3 Synchronous reset
+
+A synchronous reset is checked only on the clock edge:
+
+```verilog
+always @(posedge clk) begin
+    if (reset)
+        q <= 1'b0;
+    else
+        q <= d;
+end
+```
+
+Do not add the reset to the sensitivity list for a synchronous reset.
+
+## 11.4 Enable
+
+```verilog
+always @(posedge clk) begin
+    if (reset)
+        q <= 1'b0;
+    else if (en)
+        q <= d;
+end
+```
+
+- Data is stored on the active clock edge only when enable is asserted.
+- If no assignment occurs in the sequential block's hold branch, the flip-flop retains its state; that is intentional for a clocked register.
+- Follow the required priority among reset, enable, and data.
+
+## 11.5 Latches
+
+- A latch is level-sensitive; a positive D latch is transparent when `clk` is high and holds its state when low.
+- A flip-flop is edge-sensitive.
+- Do not accidentally infer a latch from incomplete combinational assignments.
+- Only infer a latch when the specification explicitly requires level-sensitive storage.
+
+# 12. FSM (finite-state machine) rules
+
+The lecture introduces both Mealy and Moore machines:
+- **Mealy:** output depends on the present state and current input.
+- **Moore:** output depends only on the present state.
+
+When implementing an FSM:
+1. Identify the states and what each state represents.
+2. Define the state transitions from the current state and input.
+3. Decide whether outputs are Moore-style or Mealy-style based on the specification.
+4. Use a clocked block for state storage and nonblocking assignment for state updates.
+5. Use combinational logic for next-state and, where appropriate, output decoding; use blocking assignments in that combinational block.
+6. Define behavior for every state and provide a `default` case so invalid/unknown state encodings have a deliberate response.
+7. Reset the state to a defined initial state according to the required reset behavior.
+8. Do not confuse state transition logic with a software loop: an FSM is hardware whose state updates on clock events.
+
+The lecture shows sequence detection as an example: states represent the number of consecutive `1` bits detected, and both Moore and Mealy implementations are possible.
+
+# 13. Hierarchy and modeling style
+
+1. Break a large design into modules with clear interfaces.
+2. Keep each module's purpose narrow and its port list explicit.
+3. Use gate primitives when the task explicitly requests gate-level modeling.
+4. Use `assign` and operators for dataflow modeling.
+5. Use procedural blocks for behavioral descriptions.
+6. Do not use an abstract behavioral algorithm if the assignment requires a specific datapath, registers, counters, muxes, or control signals.
+7. Conversely, do not instantiate every gate manually if the task requests RTL/dataflow and does not require gate-level structure.
+8. Module connections are nets; check all widths and signal directions.
+
+# 14. Synthesizable RTL versus simulation-only code
+
+The lecture emphasizes that not all HDL constructs are synthesizable and that synthesis converts a higher-level description into hardware.
+
+For synthesizable design code:
+- Prefer clear combinational and clocked RTL patterns.
+- Avoid using `initial` as a hardware initialization mechanism unless the target technology/flow explicitly supports it.
+- Avoid `real` and `time` in datapath logic.
+- Avoid simulation delays (`#...`) in synthesizable logic unless the assignment specifically concerns simulation and the synthesis flow supports the construct.
+- Do not write code that describes an unbounded software process with no hardware interpretation.
+- Ensure every variable has a clear driver and every state element has a clear update event.
+- Remember: syntactically legal Verilog is not automatically synthesizable.
+
+The lecture's key advice is to describe circuits, draw the dataflow first, assign each signal from one source, use blocking assignments for combinational circuits, and nonblocking assignments for sequential circuits.
+
+# 15. Testbench and validation
+
+The lecture stresses that validation and simulation are a major part of hardware design.
+
+When a testbench is requested:
+1. Keep testbench-only stimulus separate from synthesizable design modules.
+2. Generate clock and reset behavior explicitly.
+3. Apply representative input cases, including boundary cases.
+4. Check outputs against expected results rather than merely observing waveforms.
+5. Test reset, enable, state transitions, and edge cases.
+6. Account for Verilog's four-state values (`x` and `z`) where relevant.
+7. Avoid race conditions between testbench stimulus and clocked DUT logic; schedule stimulus so it does not ambiguously compete with the active clock edge.
+8. Do not claim correctness solely because the code compiles; simulate and validate behavior.
+
+# 16. Common errors the LLM must actively prevent
+
+Before returning code, check for all of the following:
+
+- Using SystemVerilog syntax when classic Verilog is required.
+- Module name begins with a digit or inconsistent capitalization.
+- Missing `endmodule`, semicolons, or `begin/end`.
+- Port direction or width omitted or inconsistent.
+- Connecting ports in the wrong positional order.
+- Assigning a net procedurally or a procedural variable with continuous `assign`.
+- Driving one signal from multiple sources.
+- Reusing one `assign` LHS in multiple continuous assignments.
+- Creating cyclic combinational dependencies.
+- Incomplete combinational assignment causing an unintended latch.
+- Missing `default` behavior in a `case`.
+- Using `<=` for combinational calculations or `=` for clocked register state updates.
+- Using the wrong sensitivity list.
+- Forgetting asynchronous reset edge in the sensitivity list.
+- Treating a synchronous reset as asynchronous, or vice versa.
+- Forgetting that nonblocking assignments use old RHS values within the same clock event.
+- Width mismatch, unintended truncation/extension, or unsized literals in concatenations.
+- Assuming `==` can reliably detect `x`/`z`.
+- Using `initial`, delays, `real`, or `time` in synthesizable RTL without checking tool support.
+- Describing a software algorithm without mapping it to actual hardware state/dataflow.
+- Returning unvalidated code without explaining what simulation checks are still needed.
+
+# 17. Required workflow for an LLM writing Verilog
+
+For every design request, follow this sequence:
+
+1. **Extract the specification.** List inputs, outputs, widths, clock, reset polarity/type, timing requirements, and required behavior.
+2. **Resolve ambiguities.** If a missing detail changes hardware behavior, ask a concise clarification instead of inventing it. If proceeding with an assumption is reasonable, state the assumption outside the code.
+3. **Plan hardware.** Identify registers, counters, memories, combinational units, muxes, FSM states, and module boundaries.
+4. **Define timing.** State when each register updates, what happens on reset, and how enables/handshakes behave.
+5. **Choose the modeling level.** Gate-level only when requested; otherwise use the level appropriate to the assignment, typically dataflow/behavioral RTL.
+6. **Write classic Verilog.** Use the constructs and rules in this guide, not SystemVerilog.
+7. **Separate combinational and sequential logic.** Use `always @(*)` + blocking `=` for combinational logic, and edge-triggered `always` + nonblocking `<=` for sequential logic.
+8. **Audit all drivers.** Every signal must have one intentional source.
+9. **Audit widths and constants.** Explicitly check vector ranges, signedness, literal sizes, concatenation widths, and arithmetic truncation.
+10. **Audit synthesizability.** Check every construct against the intended hardware.
+11. **Validate.** If possible, compile/simulate and test reset, normal operation, corner cases, and state transitions. Never claim simulation passed unless it actually ran.
+12. **Deliver clean code.** Code blocks must contain code only. Put explanations, assumptions, diagrams, and verification notes outside the code block.
+
+# 18. Copy-ready system prompt for another LLM
+
+You are writing Verilog HDL according to the conventions taught in the University of Tehran ECE536 CAD Lecture 3. Treat the supplied lecture-derived rules as the primary authority.
+
+- Write classic Verilog HDL, not SystemVerilog, unless explicitly requested.
+- Think in hardware: data paths, registers, counters, muxes, memories, state machines, parallel logic, and clock events. Do not translate C algorithms mechanically.
+- Plan the hardware/dataflow before coding.
+- Use explicit module interfaces and bit widths. Module names must not start with a digit; names are case-sensitive.
+- Use `wire` for nets and continuous-assignment connections; use `reg` for classic Verilog variables assigned in procedural blocks. Remember that `reg` does not by itself imply a flip-flop.
+- Use `assign` for continuous combinational relationships. Do not drive the same signal from multiple sources, reuse an LHS in multiple `assign` statements, or create cyclic dependencies.
+- Use `always @(*)` for combinational procedural logic, blocking assignments (`=`), and complete assignments on every path. Include safe defaults and `default` branches to prevent unintended latches.
+- Use edge-triggered `always` blocks for sequential logic and nonblocking assignments (`<=`). Use `posedge`/`negedge` according to the specification. For asynchronous reset, include the reset edge in the sensitivity list; for synchronous reset, check reset only at the clock edge.
+- Do not mix blocking and nonblocking assignment styles casually. Avoid race conditions and simulation/synthesis mismatches.
+- Use the Verilog four-state model (`0`, `1`, `x`, `z`) correctly. Know the distinction between `==`/`!=` and `===`/`!==`.
+- Size constants and signals deliberately. Check arithmetic width, signedness, truncation, extension, and concatenation width. Never put unsized constants in concatenations.
+- Use named module-port connections when there are many ports. Check all widths, names, and directions.
+- Choose gate-level, dataflow, or behavioral modeling according to the task. Do not over-abstract a design when the assignment specifies registers, counters, datapath blocks, or control signals.
+- Keep synthesizable RTL distinct from testbench code. Do not assume that `initial`, delays, `real`, or `time` are synthesizable in the target flow.
+- Validate behavior; compilation alone is not proof of correctness. Never claim a test passed unless it was actually run.
+- Return code blocks containing code only, with no explanatory comments inside them unless the user explicitly requests comments. Put explanations and assumptions outside code blocks.
+- Before finalizing, run the checklist in Section 16 and the workflow in Section 17.
+- If the lecture does not specify a detail, say so or make a clearly labeled conservative assumption; do not attribute outside conventions to the lecture.
+
+# 19. Source reference
+
+Source: *Computer-Aided Design of Digital Systems (CAD), ECE536, Lecture 3: Verilog Hardware Description Language*, Mostafa E. Salehi, School of Electrical & Computer Engineering, University of Tehran, 93 slides.
+
+This guide is a practical synthesis of the lecture's textual content, not a substitute for the original diagrams or tool-specific synthesis documentation.
