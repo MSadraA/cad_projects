@@ -1,0 +1,12 @@
+{
+  "top": "fcnn_fp16_adder",
+  "parameters": {},
+  "cells": {
+    "c1": 225,
+    "c2": 72
+  },
+  "gates": 3042,
+  "limit": 3060,
+  "within_limit": true,
+  "method": "unoptimized elaborated Actel leaves; 10*c1+11*c2+13*s1+13*s2"
+}

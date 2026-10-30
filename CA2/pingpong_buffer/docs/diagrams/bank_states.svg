@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#287AA6"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="DejaVu Sans,Arial,sans-serif" fill="#203441">
+<rect x="55" y="30" width="310" height="75" rx="9" fill="#EEF5F8" stroke="#287AA6" stroke-width="1.7"/>
+<text x="210.0" y="62.5" text-anchor="middle" font-size="18" font-weight="bold">EMPTY</text>
+<text x="210.0" y="87.5" text-anchor="middle" font-size="14">not sealed; no accepted payload</text>
+<rect x="535" y="30" width="310" height="75" rx="9" fill="#EEF5F8" stroke="#287AA6" stroke-width="1.7"/>
+<text x="690.0" y="62.5" text-anchor="middle" font-size="18" font-weight="bold">FILLING</text>
+<text x="690.0" y="87.5" text-anchor="middle" font-size="14">not sealed; group incomplete</text>
+<rect x="535" y="290" width="310" height="75" rx="9" fill="#EEF5F8" stroke="#287AA6" stroke-width="1.7"/>
+<text x="690.0" y="322.5" text-anchor="middle" font-size="18" font-weight="bold">SEALED / READING</text>
+<text x="690.0" y="347.5" text-anchor="middle" font-size="14">sealed; data exposed only in read bank</text>
+<path d="M365,68 L535,68" fill="none" stroke="#287AA6" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="458.0" y="61.0" font-size="13">push, not group_last</text>
+<path d="M690,105 L690,290" fill="none" stroke="#287AA6" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="698.0" y="190.5" font-size="13">push with group_last</text>
+<path d="M535,330 L210,330" fill="none" stroke="#287AA6" stroke-width="2"/>
+<path d="M210,330 L210,105" fill="none" stroke="#287AA6" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="218.0" y="210.5" font-size="13">pop of stored end flag</text>
+<path d="M260,105 L550,290" fill="none" stroke="#287AA6" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="413.0" y="190.5" font-size="13">one-item group</text>
+<text x="450" y="400" font-size="14" text-anchor="middle">Conceptual states; RTL uses flags and one-hot position, not an encoded FSM.</text>
+</g></svg>

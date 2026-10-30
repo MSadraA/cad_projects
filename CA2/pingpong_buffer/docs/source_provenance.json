@@ -1,0 +1,13 @@
+{
+  "inputs_sha256": {
+    "CAD-CA2-P1.pdf": "2cfe473472b94ea48cd5b27fd3e7b26b98d805a424e5d32181707beec28b75c1",
+    "CAD-codes.zip": "0f885e8d903861ed7ac7ece961d95c6445fe3f6ae31c2ac3f68adb1fe85a550f",
+    "CAD_CA1_810102420_810101469..zip": "fd16de59928e29ea708d6d74811daee5bd7146648668a877e83766e1e148d5ce"
+  },
+  "student_ids": [
+    "810102420",
+    "810101469"
+  ],
+  "references": "CA2 PDF + TA cell code + current CA1 rtl/ sources, not stale aggregate code or simulator caches",
+  "scope": "Only three phase-1 modules redesigned"
+}

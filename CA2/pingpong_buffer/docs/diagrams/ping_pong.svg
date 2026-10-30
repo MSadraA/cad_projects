@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="610" viewBox="0 0 900 610">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#287AA6"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="DejaVu Sans,Arial,sans-serif" fill="#203441">
+<rect x="210" y="10" width="480" height="65" rx="9" fill="#EEF5F8" stroke="#287AA6" stroke-width="1.7"/>
+<text x="450.0" y="37.5" text-anchor="middle" font-size="18" font-weight="bold">Shared one-hot write pointer</text>
+<text x="450.0" y="62.5" text-anchor="middle" font-size="14">7 S2 cells; rotate by wiring; group-close reset</text>
+<rect x="40" y="145" width="340" height="220" rx="9" fill="#EEF5F8" stroke="#287AA6" stroke-width="1.7"/>
+<text x="210.0" y="250.0" text-anchor="middle" font-size="18" font-weight="bold">BANK 0</text>
+<text x="210.0" y="275.0" text-anchor="middle" font-size="14">7 x W payload + 6 mutable end flags</text>
+<rect x="520" y="145" width="340" height="220" rx="9" fill="#EEF5F8" stroke="#287AA6" stroke-width="1.7"/>
+<text x="690.0" y="250.0" text-anchor="middle" font-size="18" font-weight="bold">BANK 1</text>
+<text x="690.0" y="275.0" text-anchor="middle" font-size="14">7 x W payload + 6 mutable end flags</text>
+<text x="210" y="315" font-size="14" text-anchor="middle">pop0: shift toward fixed head</text>
+<text x="690" y="315" font-size="14" text-anchor="middle">pop1: shift toward fixed head</text>
+<rect x="210" y="420" width="480" height="70" rx="9" fill="#EEF5F8" stroke="#287AA6" stroke-width="1.7"/>
+<text x="450.0" y="450.0" text-anchor="middle" font-size="18" font-weight="bold">Head selector</text>
+<text x="450.0" y="475.0" text-anchor="middle" font-size="14">W C1 cells; read_bank selects bank head</text>
+<rect x="210" y="525" width="480" height="65" rx="9" fill="#EEF5F8" stroke="#287AA6" stroke-width="1.7"/>
+<text x="450.0" y="552.5" text-anchor="middle" font-size="18" font-weight="bold">Bank control</text>
+<text x="450.0" y="577.5" text-anchor="middle" font-size="14">sealed0, sealed1, read_bank; derive write_bank</text>
+<path d="M300,75 L210,145" fill="none" stroke="#287AA6" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="263.0" y="103.0" font-size="13">decoded write enable</text>
+<path d="M600,75 L690,145" fill="none" stroke="#287AA6" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="653.0" y="103.0" font-size="13">decoded write enable</text>
+<path d="M210,365 L340,420" fill="none" stroke="#287AA6" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="283.0" y="385.5" font-size="13">head0</text>
+<path d="M690,365 L560,420" fill="none" stroke="#287AA6" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="633.0" y="385.5" font-size="13">head1</text>
+<text x="450" y="403" font-size="14" text-anchor="middle">wr_data[W-1:0] feeds both banks</text>
+<path d="M450,490 L450,525" fill="none" stroke="#287AA6" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="458.0" y="500.5" font-size="13">end / valid / ready</text>
+</g></svg>

@@ -1,0 +1,26 @@
+{
+  "pass": true,
+  "scope": "compile/elaboration of original CA1 top with exactly three replaced modules",
+  "unchanged_original_rtl": [
+    "fcnn_accumulator_bank.v",
+    "fcnn_activation_regfile.v",
+    "fcnn_address_generator.v",
+    "fcnn_argmax.v",
+    "fcnn_bias_rom.v",
+    "fcnn_controller.v",
+    "fcnn_datapath.v",
+    "fcnn_local_scheduler.v",
+    "fcnn_operand_router.v",
+    "fcnn_product_register.v",
+    "fcnn_relu_fp16.v",
+    "fcnn_row_sram.v",
+    "fcnn_row_stage.v",
+    "fcnn_top.v"
+  ],
+  "simulation": false,
+  "overlay_script_test": {
+    "pass": true,
+    "unchanged_rtl_modules": 14,
+    "new_copy_compiles": true
+  }
+}

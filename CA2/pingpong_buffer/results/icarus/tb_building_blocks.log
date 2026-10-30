@@ -1,0 +1,2 @@
+[PASS] BUILDING_BLOCKS checks=41992
+tb/tb_building_blocks.sv:48: $finish called at 41992000 (1ps)

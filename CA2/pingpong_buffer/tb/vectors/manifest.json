@@ -1,0 +1,14 @@
+{
+  "vectors": 404014,
+  "seed": 810102420,
+  "quick": false,
+  "fields": [
+    "a",
+    "b",
+    "add_literal",
+    "mul_literal",
+    "add_hidden_one",
+    "mul_hidden_one"
+  ],
+  "oracle": "exact signed integer arithmetic with one final truncate"
+}

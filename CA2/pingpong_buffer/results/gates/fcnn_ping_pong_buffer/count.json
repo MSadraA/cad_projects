@@ -1,0 +1,13 @@
+{
+  "top": "fcnn_ping_pong_buffer",
+  "parameters": {},
+  "cells": {
+    "c1": 38,
+    "c2": 1,
+    "s2": 316
+  },
+  "gates": 4499,
+  "limit": 3540,
+  "within_limit": false,
+  "method": "unoptimized elaborated Actel leaves; 10*c1+11*c2+13*s1+13*s2"
+}

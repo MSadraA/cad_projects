@@ -1,0 +1,28 @@
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_accumulator_bank.v:2: warning: timescale for fcnn_accumulator_bank inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_activation_regfile.v:2: warning: timescale for fcnn_activation_regfile inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_address_generator.v:2: warning: timescale for fcnn_address_generator inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_argmax.v:2: warning: timescale for fcnn_argmax inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_bias_rom.v:2: warning: timescale for fcnn_bias_rom inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_controller.v:2: warning: timescale for fcnn_controller inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_datapath.v:2: warning: timescale for fcnn_datapath inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_local_scheduler.v:2: warning: timescale for fcnn_local_scheduler inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_operand_router.v:2: warning: timescale for fcnn_operand_router inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_product_register.v:2: warning: timescale for fcnn_product_register inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_relu_fp16.v:2: warning: timescale for fcnn_relu_fp16 inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_row_sram.v:3: warning: timescale for fcnn_row_sram inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_row_stage.v:2: warning: timescale for fcnn_row_stage inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.
+/workspace/scratch/7d40d6f53eb3/reference/ca1/CAD_CA1/CA1/src/rtl/fcnn_top.v:3: warning: timescale for fcnn_top inherited from another file.
+integration/fcnn_ping_pong_buffer.v:1: ...: The inherited timescale is here.

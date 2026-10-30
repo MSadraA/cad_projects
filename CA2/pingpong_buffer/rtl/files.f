@@ -1,0 +1,9 @@
+rtl/actel/modules.v
+rtl/common/actel_logic.v
+rtl/common/fp16_support.v
+rtl/common/ping_pong_core.v
+rtl/common/sig11_product.v
+rtl/fcnn_fp16_adder.v
+rtl/fcnn_fp16_multiplier.v
+rtl/ping_pong_buffer.v
+integration/fcnn_ping_pong_buffer.v

@@ -1,0 +1,52 @@
+[
+  {
+    "top": "fcnn_fp16_adder",
+    "parameters": {},
+    "cells": {
+      "c1": 225,
+      "c2": 72
+    },
+    "gates": 3042,
+    "limit": 3060,
+    "within_limit": true,
+    "method": "unoptimized elaborated Actel leaves; 10*c1+11*c2+13*s1+13*s2"
+  },
+  {
+    "top": "fcnn_fp16_multiplier",
+    "parameters": {},
+    "cells": {
+      "c1": 372,
+      "c2": 133
+    },
+    "gates": 5183,
+    "limit": 5340,
+    "within_limit": true,
+    "method": "unoptimized elaborated Actel leaves; 10*c1+11*c2+13*s1+13*s2"
+  },
+  {
+    "top": "ping_pong_buffer",
+    "parameters": {},
+    "cells": {
+      "c1": 33,
+      "c2": 1,
+      "s2": 246
+    },
+    "gates": 3539,
+    "limit": 3540,
+    "within_limit": true,
+    "method": "unoptimized elaborated Actel leaves; 10*c1+11*c2+13*s1+13*s2"
+  },
+  {
+    "top": "fcnn_ping_pong_buffer",
+    "parameters": {},
+    "cells": {
+      "c1": 38,
+      "c2": 1,
+      "s2": 316
+    },
+    "gates": 4499,
+    "limit": 3540,
+    "within_limit": false,
+    "method": "unoptimized elaborated Actel leaves; 10*c1+11*c2+13*s1+13*s2"
+  }
+]

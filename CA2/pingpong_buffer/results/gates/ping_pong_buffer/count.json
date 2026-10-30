@@ -1,0 +1,13 @@
+{
+  "top": "ping_pong_buffer",
+  "parameters": {},
+  "cells": {
+    "c1": 33,
+    "c2": 1,
+    "s2": 246
+  },
+  "gates": 3539,
+  "limit": 3540,
+  "within_limit": true,
+  "method": "unoptimized elaborated Actel leaves; 10*c1+11*c2+13*s1+13*s2"
+}

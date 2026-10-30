@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "structural_files": 8,
+  "source_sha256": {
+    "rtl/actel/modules.v": "53a828891dd344fb151ec8608ea99197eeaef21208e890861ba940e8d3721376",
+    "rtl/common/actel_logic.v": "7049fc774f63d5867c2b5f8b240a13881ff1d49f25000b4f900d9675d3ec407a",
+    "rtl/common/fp16_support.v": "6befc2bb79a929d3615b03601bb8beb4530216dfd300c6b1d69e9494ad462493",
+    "rtl/common/ping_pong_core.v": "f85dd0e2a5ff1660bd5d333cf082989b0a20d817a82a5af7c10a2d78ea6b909f",
+    "rtl/common/sig11_product.v": "8b7360ca1ef76f67ae3b88d9aeeb8843449c2b470b5ecfcf493aec4bb79c73b8",
+    "rtl/fcnn_fp16_adder.v": "7d0389649dc5bffd6b3e606b1d5b0cd69d239ba5eb735717f485feb514666c30",
+    "rtl/fcnn_fp16_multiplier.v": "81c548f826fbbae1f1b7dfec390d4b26c677347cee88728abce299354192f482",
+    "rtl/ping_pong_buffer.v": "a3db4fef95c2a6fec5ea3a52d6e1b14541cc8a53b47ecfc0a2a713caa9c50adc",
+    "integration/fcnn_ping_pong_buffer.v": "7c3cf6833b4dbff08f912df695ada0630eee949169372c4c7c7d8916752230d3"
+  },
+  "phase1_gate_limits_pass": true,
+  "metadata_extension_within_limit": false,
+  "notes": "No behavioral blocks outside TA cell library; all flattened leaves are c1/c2/s1/s2."
+}

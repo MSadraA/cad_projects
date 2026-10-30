@@ -1,0 +1,12 @@
+{
+  "top": "fcnn_fp16_multiplier",
+  "parameters": {},
+  "cells": {
+    "c1": 372,
+    "c2": 133
+  },
+  "gates": 5183,
+  "limit": 5340,
+  "within_limit": true,
+  "method": "unoptimized elaborated Actel leaves; 10*c1+11*c2+13*s1+13*s2"
+}

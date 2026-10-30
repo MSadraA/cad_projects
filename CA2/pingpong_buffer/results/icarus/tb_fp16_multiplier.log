@@ -1,0 +1,2 @@
+[PASS] MUL vectors=404014 policies=2 checks=808028
+tb/tb_fp16_multiplier.sv:24: $finish called at 404014000 (1ps)

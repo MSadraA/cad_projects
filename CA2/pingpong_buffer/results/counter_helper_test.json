@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "platform": "Linux POSIX file lock",
+  "executions": 63,
+  "parallel_workers": 8,
+  "expected": 714,
+  "observed": 714,
+  "scope": "C++ helper atomicity; this is not the ModelSim native instance-count run"
+}

@@ -1,0 +1,137 @@
+{
+  "simulator": "icarus",
+  "quick": false,
+  "results": [
+    {
+      "test": "tb_actel_cells",
+      "parameters": {},
+      "pass": true,
+      "seconds": 0.008,
+      "compile_seconds": 0.011,
+      "summary": [
+        "[PASS] ACTEL_CELLS checks=1028"
+      ]
+    },
+    {
+      "test": "tb_building_blocks",
+      "parameters": {},
+      "pass": true,
+      "seconds": 1.335,
+      "compile_seconds": 0.048,
+      "summary": [
+        "[PASS] BUILDING_BLOCKS checks=41992"
+      ]
+    },
+    {
+      "test": "tb_fp16_adder",
+      "parameters": {},
+      "pass": true,
+      "seconds": 654.579,
+      "compile_seconds": 0.108,
+      "summary": [
+        "[PASS] ADD vectors=404014 policies=2 checks=808028"
+      ]
+    },
+    {
+      "test": "tb_fp16_multiplier",
+      "parameters": {},
+      "pass": true,
+      "seconds": 261.668,
+      "compile_seconds": 0.17,
+      "summary": [
+        "[PASS] MUL vectors=404014 policies=2 checks=808028"
+      ]
+    },
+    {
+      "test": "tb_ping_pong_buffer_LANES1_DEST_W1",
+      "parameters": {
+        "LANES": 1,
+        "DEST_W": 1
+      },
+      "pass": true,
+      "seconds": 0.344,
+      "compile_seconds": 0.055,
+      "summary": [
+        "[PASS] PINGPONG lanes=1 items=1200 blocked=878 simultaneous=852"
+      ]
+    },
+    {
+      "test": "tb_ping_pong_buffer_LANES2_DEST_W1",
+      "parameters": {
+        "LANES": 2,
+        "DEST_W": 1
+      },
+      "pass": true,
+      "seconds": 0.557,
+      "compile_seconds": 0.049,
+      "summary": [
+        "[PASS] PINGPONG lanes=2 items=1200 blocked=1093 simultaneous=730"
+      ]
+    },
+    {
+      "test": "tb_ping_pong_buffer_LANES3_DEST_W2",
+      "parameters": {
+        "LANES": 3,
+        "DEST_W": 2
+      },
+      "pass": true,
+      "seconds": 0.75,
+      "compile_seconds": 0.087,
+      "summary": [
+        "[PASS] PINGPONG lanes=3 items=1200 blocked=944 simultaneous=778"
+      ]
+    },
+    {
+      "test": "tb_ping_pong_buffer_LANES5_DEST_W3",
+      "parameters": {
+        "LANES": 5,
+        "DEST_W": 3
+      },
+      "pass": true,
+      "seconds": 1.073,
+      "compile_seconds": 0.121,
+      "summary": [
+        "[PASS] PINGPONG lanes=5 items=1200 blocked=1135 simultaneous=671"
+      ]
+    },
+    {
+      "test": "tb_ping_pong_buffer_LANES7_DEST_W4",
+      "parameters": {
+        "LANES": 7,
+        "DEST_W": 4
+      },
+      "pass": true,
+      "seconds": 1.052,
+      "compile_seconds": 0.354,
+      "summary": [
+        "[PASS] PINGPONG lanes=7 items=1200 blocked=1047 simultaneous=644"
+      ]
+    },
+    {
+      "test": "tb_ping_pong_buffer_LANES8_DEST_W4",
+      "parameters": {
+        "LANES": 8,
+        "DEST_W": 4
+      },
+      "pass": true,
+      "seconds": 1.283,
+      "compile_seconds": 0.193,
+      "summary": [
+        "[PASS] PINGPONG lanes=8 items=1200 blocked=1116 simultaneous=596"
+      ]
+    },
+    {
+      "test": "tb_ping_pong_buffer_LANES9_DEST_W5",
+      "parameters": {
+        "LANES": 9,
+        "DEST_W": 5
+      },
+      "pass": true,
+      "seconds": 1.278,
+      "compile_seconds": 0.371,
+      "summary": [
+        "[PASS] PINGPONG lanes=9 items=1200 blocked=973 simultaneous=668"
+      ]
+    }
+  ]
+}

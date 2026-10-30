@@ -1,0 +1,2 @@
+[PASS] PINGPONG lanes=5 items=1200 blocked=1135 simultaneous=671
+tb/tb_ping_pong_buffer.sv:115: $finish called at 26810000 (1ps)

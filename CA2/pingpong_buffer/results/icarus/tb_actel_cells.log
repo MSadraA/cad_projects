@@ -1,0 +1,2 @@
+[PASS] ACTEL_CELLS checks=1028
+tb/tb_actel_cells.sv:37: $finish called at 1027000 (1ps)
