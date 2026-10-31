@@ -196,3 +196,4 @@ module ac_normalize13(input [12:0] a,output [12:0] y,output [3:0] shift,output n
     end endgenerate
 endmodule
 `default_nettype wire
+
