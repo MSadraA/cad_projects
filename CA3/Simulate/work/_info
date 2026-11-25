@@ -1,0 +1,477 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/sadra/Documents/Codes/cad_projects/CA2/Phase1/multiplier
+vO3DupOo1Q/sODKHhI0Y56A==
+Z0 !s110 1795602998
+!i10b 0
+!s100 L0;27L_]g2P^aBMSgPU7f3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ij=lb5S[GFzPX<MIUmJF=53
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!i119 1
+!i8a 748217520
+Z3 d/home/sadra/Documents/Codes/cad_projects/CA3/Simulate
+Z4 w1795602998
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ALU.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ALU.vp
+!i122 17
+Z5 L0 17 1
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1795602998.000000
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ALU.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ALU.vp|
+!i113 1
+Z8 o-work work
+Z9 tCvgOpt 0
+n4615
+v4XhnQau+FQpFSi4trHN1ZA==
+R0
+!i10b 0
+!s100 H99MK2RVIINN[CD]LE8KJ0
+R1
+IBaKnagLQohz[o::ARmoKd2
+R2
+!i119 1
+!i8a 1031769536
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/Controller.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/Controller.vp
+!i122 18
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/Controller.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/Controller.vp|
+!i113 1
+R8
+R9
+nb929492
+vnEaMkdFgjgxZUa7NjA7Scw==
+R0
+!i10b 0
+!s100 T;N_>TY?^mE;OX7KoPceB1
+R1
+I?Z7Ez;h1e<deffc36k5??1
+R2
+!i119 1
+!i8a 1484737088
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/DataMemory.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/DataMemory.vp
+!i122 19
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/DataMemory.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/DataMemory.vp|
+!i113 1
+R8
+R9
+n640ae39
+vcOSgL8GihsNpGkz/MPwh2g==
+R0
+!i10b 0
+!s100 >Rg1SHfLY[h72oHDm>T=B2
+R1
+IKokBbVK05EGl`RVUUN=J=0
+R2
+!i119 1
+!i8a 639617056
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/EXE.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/EXE.vp
+!i122 20
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/EXE.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/EXE.vp|
+!i113 1
+R8
+R9
+n4ac5
+vGWDaE3EqHavvFe+zn6lcRA==
+R0
+!i10b 0
+!s100 K<FgFTKK^bVKj34W6=Akc1
+R1
+Im`_9McjM`AZP8^hY0N4:?3
+R2
+!i119 1
+!i8a 69463008
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ForwardUnit.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ForwardUnit.vp
+!i122 21
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ForwardUnit.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ForwardUnit.vp|
+!i113 1
+R8
+R9
+n8c4eed4
+vuxn5FAvAqW1UzNZaO2ijuA==
+R0
+!i10b 0
+!s100 DGUfX?gNjEJC]P;IGVRnK1
+R1
+Ib558OZE07=g6n<LLV>ozo0
+R2
+!i119 1
+!i8a 1519029376
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/HazardUnit.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/HazardUnit.vp
+!i122 22
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/HazardUnit.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/HazardUnit.vp|
+!i113 1
+R8
+R9
+n88d6e04
+v8srVli8pPuYK2ziSMixUPw==
+R0
+!i10b 0
+!s100 QhSKE_AO58P_43TPU<YdF2
+R1
+I8hba[[XV=lMSE3iQEX4^i2
+R2
+!i119 1
+!i8a 1330869408
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ID.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ID.vp
+!i122 23
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ID.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ID.vp|
+!i113 1
+R8
+R9
+n4d4
+vk3Q2xptv67bH08D1y6crAQ==
+R0
+!i10b 0
+!s100 GOeVBZQ:B>ToMm:MzKInL2
+R1
+IUW?;?1FoT[bUz9X1?:LgM2
+R2
+!i119 1
+!i8a 1803877968
+R3
+R4
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/IDForwardUnit.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/IDForwardUnit.vp
+!i122 24
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/IDForwardUnit.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/IDForwardUnit.vp|
+!i113 1
+R8
+R9
+n504ee94
+vXpq0Cm3KM76FSPdPA7PJaw==
+Z10 !s110 1795602999
+!i10b 0
+!s100 VkQbNjLTe4>EnS]Z9bkKI1
+R1
+IoSBkeZQT`nQicPPX5>HKj2
+R2
+!i119 1
+!i8a 930375840
+R3
+Z11 w1795602999
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/IF.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/IF.vp
+!i122 25
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/IF.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/IF.vp|
+!i113 1
+R8
+R9
+n4d6
+vnYZ/ff6yDStr6kM/qLQAhQ==
+R10
+!i10b 0
+!s100 0:NdGVWid=TCg28Y7<I8W3
+R1
+IB7>Q:@3=cnK:C63HIoQSB0
+R2
+!i119 1
+!i8a 2117037376
+R3
+R11
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ImmExtend.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ImmExtend.vp
+!i122 26
+R5
+R6
+r1
+!s85 0
+31
+Z12 !s108 1795602999.000000
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ImmExtend.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/ImmExtend.vp|
+!i113 1
+R8
+R9
+n1cffc04
+vWuvfX2kZOGY/1w/0iGBEBbD904o7MDMt4ZUAsCaC4NU=
+R10
+!i10b 0
+!s100 Lied4eNOA2U@7HBRZE5Sb3
+R1
+Iglg1<3ADnAW5d<X;ch3Z;1
+R2
+!i119 1
+!i8a 288939008
+R3
+R11
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/InstructionMemory.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/InstructionMemory.vp
+!i122 27
+R5
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/InstructionMemory.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/InstructionMemory.vp|
+!i113 1
+R8
+R9
+ncd2d069
+vl9EFn+kcoemC3VwQoc8w9Q==
+R10
+!i10b 0
+!s100 UIcM94U60CLNfeV=OGY;_2
+R1
+I8U4j860zDjnbEOAbJ[@`H0
+R2
+!i119 1
+!i8a 139932352
+R3
+R11
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/MEM.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/MEM.vp
+!i122 28
+R5
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/MEM.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/MEM.vp|
+!i113 1
+R8
+R9
+n519d
+vfqfd3EhS/bYqZWJlYWmnjw==
+R10
+!i10b 0
+!s100 l?d3`HHIVOe9NU>N]XDd`3
+R1
+IBR=BT9]TKj<JN7Ro7W1mg0
+R2
+!i119 1
+!i8a 1467763632
+R3
+R11
+Z13 8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/Register.vp
+Z14 F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/Register.vp
+!i122 29
+R5
+R6
+r1
+!s85 0
+31
+R12
+Z15 !s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/Register.vp|
+Z16 !s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/Register.vp|
+!i113 1
+R8
+R9
+nbe0af42
+vuvInoP63tQanCIp6HC9jnQ==
+R10
+!i10b 0
+!s100 NJRaBWIk3?i?f<DHibSBc3
+R1
+ILZ@ncenLkA`H?ZMj:l9SY2
+R2
+!i119 1
+!i8a 311427008
+R3
+R11
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/RegisterFile.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/RegisterFile.vp
+!i122 30
+R5
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/RegisterFile.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/RegisterFile.vp|
+!i113 1
+R8
+R9
+nf4d3085
+v6ooPPra5z73B3jucew9yPFbJEcWGEl2Lt2zzIrX0X+s=
+R10
+!i10b 0
+!s100 aL5Y9kgLJIg3g@BOozNlP0
+R1
+IzCB5dWU436nD[Lm7nfciG3
+R2
+!i119 1
+!i8a 1227398176
+R3
+R11
+R13
+R14
+!i122 29
+R5
+R6
+r1
+!s85 0
+31
+R12
+R15
+R16
+!i113 1
+R8
+R9
+n39f898
+vn3iJ8MBCwpkVXclKRfHMmA==
+R10
+!i10b 0
+!s100 WceBAf?]Jl`AN3PP>jWo?3
+R1
+IUYF5V7^i^:?;fQHU=JMgT3
+R2
+!i119 1
+!i8a 13779168
+R3
+R11
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline.vp
+!i122 31
+R5
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline.vp|
+!i113 1
+R8
+R9
+n314b35
+vTopPipeline_tb
+R10
+!i10b 1
+!s100 =o>X_n@HdmPQzKIWTSmL[2
+R1
+INb7jo:bYj;VE5i^H2XY5O2
+R2
+R3
+w1794782208
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v
+!i122 32
+L0 2 19
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v|
+!i113 1
+R8
+R9
+n@top@pipeline_tb
+vJSpdx6eWe9FBDd+qS5zv4w==
+R10
+!i10b 0
+!s100 MQB5cZ`]JSW3NmS0RdoNE1
+R1
+IIP;SG@FR0XB0CI?4SjF^Q0
+R2
+!i119 1
+!i8a 1611632240
+R3
+R11
+8/home/sadra/Documents/Codes/cad_projects/CA3/CPU/WB.vp
+F/home/sadra/Documents/Codes/cad_projects/CA3/CPU/WB.vp
+!i122 33
+R5
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/sadra/Documents/Codes/cad_projects/CA3/CPU/WB.vp|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/sadra/Documents/Codes/cad_projects/CA3/CPU/WB.vp|
+!i113 1
+R8
+R9
+n5b2

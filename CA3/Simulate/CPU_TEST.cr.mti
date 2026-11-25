@@ -1,0 +1,88 @@
+/home/sadra/Documents/Codes/cad_projects/CA3/CPU/WB.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/WB.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/HazardUnit.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/HazardUnit.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/DataMemory.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/DataMemory.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ForwardUnit.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ForwardUnit.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ID.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ID.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TopPipeline_tb
+
+Top level modules:
+	TopPipeline_tb
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/IF.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/IF.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/MEM.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/MEM.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ALU.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ALU.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/EXE.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/EXE.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/IDForwardUnit.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/IDForwardUnit.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/InstructionMemory.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/InstructionMemory.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ImmExtend.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/ImmExtend.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/Controller.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/Controller.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/Register.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/Register.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}} /home/sadra/Documents/Codes/cad_projects/CA3/CPU/RegisterFile.vp {1 {vlog -work work -stats=none /home/sadra/Documents/Codes/cad_projects/CA3/CPU/RegisterFile.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+Top level modules:
+
+} {} {}}

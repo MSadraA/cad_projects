@@ -1,0 +1,80 @@
+# Loading project TEST
+# reading /home/sadra/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini
+# Loading project CPU_TEST
+# Compile of ALU.vp was successful.
+# Compile of Controller.vp was successful.
+# Compile of DataMemory.vp was successful.
+# Compile of EXE.vp was successful.
+# Compile of ForwardUnit.vp was successful.
+# Compile of HazardUnit.vp was successful.
+# Compile of ID.vp was successful.
+# Compile of IDForwardUnit.vp was successful.
+# Compile of IF.vp was successful.
+# Compile of ImmExtend.vp was successful.
+# Compile of InstructionMemory.vp was successful.
+# Compile of MEM.vp was successful.
+# Compile of Register.vp was successful.
+# Compile of RegisterFile.vp was successful.
+# Compile of TopPipeline.vp was successful.
+# Compile of TopPipeline_tb.v was successful.
+# Compile of WB.vp was successful.
+# 17 compiles, 0 failed with no errors.
+# Load canceled
+vsim work.TopPipeline_tb
+# vsim work.TopPipeline_tb 
+# Start time: 13:52:06 on Nov 25,2026
+# Loading work.TopPipeline_tb
+add wave -position end  sim:/TopPipeline_tb/clk
+add wave -position end  sim:/TopPipeline_tb/rst
+add wave -position end  sim:/TopPipeline_tb/shadow_imem
+add wave -position end  sim:/TopPipeline_tb/shadow_dmem
+add wave -position end  sim:/TopPipeline_tb/shadow_registerFile
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "data50.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/DataMemory.vp(17)
+#    Time: 0 ps  Iteration: 0  Protected: /TopPipeline_tb/dut/<protected>/<protected>
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "test_results"
+# test_results
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+# Compile of ALU.vp was successful.
+# Compile of Controller.vp was successful.
+# Compile of DataMemory.vp was successful.
+# Compile of EXE.vp was successful.
+# Compile of ForwardUnit.vp was successful.
+# Compile of HazardUnit.vp was successful.
+# Compile of ID.vp was successful.
+# Compile of IDForwardUnit.vp was successful.
+# Compile of IF.vp was successful.
+# Compile of ImmExtend.vp was successful.
+# Compile of InstructionMemory.vp was successful.
+# Compile of MEM.vp was successful.
+# Compile of Register.vp was successful.
+# Compile of RegisterFile.vp was successful.
+# Compile of TopPipeline.vp was successful.
+# Compile of TopPipeline_tb.v was successful.
+# Compile of WB.vp was successful.
+# 17 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TopPipeline_tb
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "data50.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/DataMemory.vp(17)
+#    Time: 0 ps  Iteration: 0  Protected: /TopPipeline_tb/dut/<protected>/<protected>
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# End time: 14:06:55 on Nov 25,2026, Elapsed time: 0:14:49
+# Errors: 0, Warnings: 1

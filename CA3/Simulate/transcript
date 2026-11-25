@@ -1,0 +1,849 @@
+# Loading project CPU_TEST
+vsim work.TopPipeline_tb
+# vsim work.TopPipeline_tb 
+# Start time: 14:14:14 on Nov 25,2026
+# Loading work.TopPipeline_tb
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "data50.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/DataMemory.vp(17)
+#    Time: 0 ps  Iteration: 0  Protected: /TopPipeline_tb/dut/<protected>/<protected>
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+run -all
+add wave -position end  sim:/TopPipeline_tb/clk
+add wave -position end  sim:/TopPipeline_tb/rst
+add wave -position end  sim:/TopPipeline_tb/shadow_imem
+add wave -position end  sim:/TopPipeline_tb/shadow_dmem
+add wave -position end  sim:/TopPipeline_tb/shadow_registerFile
+# Break key hit
+# Simulation stop requested.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Break key hit
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch2"
+# ../test_results/test_batch2
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch3"
+# ../test_results/test_batch3
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch4"
+# ../test_results/test_batch4
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch5"
+# ../test_results/test_batch5
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch6"
+# ../test_results/test_batch6
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch7"
+# ../test_results/test_batch7
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch8_fwd"
+# ../test_results/test_batch8_fwd
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch9_loaduse"
+# ../test_results/test_batch9_loaduse
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch10_adv_fwd"
+# ../test_results/test_batch10_adv_fwd
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch12_arith"
+# ../test_results/test_batch12_arith
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch11_br_fixed"
+# ../test_results/test_batch11_br_fixed
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch13"
+# ../test_results/test_batch13
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch14_final"
+# ../test_results/test_batch14_final
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch15_untested"
+# ../test_results/test_batch15_untested
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch16_hazards"
+# ../test_results/test_batch16_hazards
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch15_branch_race"
+# ../test_results/test_batch15_branch_race
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test17_alu_to_branch"
+# ../test_results/test17_alu_to_branch
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test18_load_to_memory_base"
+# ../test_results/test18_load_to_memory_base
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test19_load_to_jr"
+# ../test_results/test19_load_to_jr
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test20_jal_ra_forwarding"
+# ../test_results/test20_jal_ra_forwarding
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch21_jr_timing"
+# ../test_results/test_batch21_jr_timing
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch22_uncovered_ops"
+# ../test_results/test_batch22_uncovered_ops
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test23_lw_jr_immediate"
+# ../test_results/test23_lw_jr_immediate
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test24_lw_nop_jr"
+# ../test_results/test24_lw_nop_jr
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test25_lw_alu_consumer"
+# ../test_results/test25_lw_alu_consumer
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test26_branch_double_hazard_beq"
+# ../test_results/test26_branch_double_hazard_beq
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test27_branch_double_hazard_bne"
+# ../test_results/test27_branch_double_hazard_bne
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test28_beq_single_immediate"
+# ../test_results/test28_beq_single_immediate
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test29_bne_single_immediate"
+# ../test_results/test29_bne_single_immediate
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test30_beq_single_gap"
+# ../test_results/test30_beq_single_gap
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test31_bne_single_gap"
+# ../test_results/test31_bne_single_gap
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test32_beq_double_gap"
+# ../test_results/test32_beq_double_gap
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test33_bne_double_gap"
+# ../test_results/test33_bne_double_gap
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test34_lw_two_nops_jr"
+# ../test_results/test34_lw_two_nops_jr
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test35_beq_reverse_rs"
+# ../test_results/test35_beq_reverse_rs
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test35_beq_reverse_rs"
+# ../test_results/test35_beq_reverse_rs
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test35_beq_reverse_rs"
+# ../test_results/test35_beq_reverse_rs
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test36_bne_reverse_rs"
+# ../test_results/test36_bne_reverse_rs
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test37_beq_double_rt"
+# ../test_results/test37_beq_double_rt
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test38_bne_double_rt"
+# ../test_results/test38_bne_double_rt
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test39_beq_nonzero_compare"
+# ../test_results/test39_beq_nonzero_compare
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test40_bne_nonzero_compare"
+# ../test_results/test40_bne_nonzero_compare
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch17_audit"
+# ../test_results/test_batch17_audit
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch18_audit_clean"
+# ../test_results/test_batch18_audit_clean
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
+restart -f
+run -all
+# ** Note: $finish    : /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v(18)
+#    Time: 100011 ns  Iteration: 0  Instance: /TopPipeline_tb
+# 1
+# Break in Module TopPipeline_tb at /home/sadra/Documents/Codes/cad_projects/CA3/CPU/TopPipeline_tb.v line 18
+set output_dir "../test_results/test_batch19_lw_jalr"
+# ../test_results/test_batch19_lw_jalr
+
+file mkdir $output_dir
+
+mem save -outfile "$output_dir/register_file.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_registerFile
+
+mem save -outfile "$output_dir/data_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_dmem
+
+mem save -outfile "$output_dir/instruction_memory.txt" -format mti -dataradix hex /TopPipeline_tb/shadow_imem
+
+puts "Memory dump completed."
